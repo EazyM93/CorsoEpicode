@@ -5,7 +5,6 @@
     <meta name="description" content="Primi passi operativi per creare un modello di pagina HTML per un post. Scopri come iniziare in modo facile.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assetts/style.css">
     <title>Sviluppo di una pagina web - Blog Epicode</title>
 </head>
 <body>
@@ -94,9 +93,11 @@
                 <div id="form_newsletter">
                     <h2>Novità</h2>
                     <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
-                    <form action="" method="post" style="border: 1px solid black; padding: 10px;">
-                        <input type="email" id="mail_utente" name="mail_utente" placeholder="inserisci l'email">
-                        <button type="submit">Iscriviti!</button>
+                    <form action="" method="post">
+                        <fieldset>
+                            <input type="email" id="mail_utente" name="mail_utente" placeholder="inserisci l'email">
+                            <button type="submit">Iscriviti!</button>
+                        </fieldset>
                     </form>
                 </div>
             </section>
