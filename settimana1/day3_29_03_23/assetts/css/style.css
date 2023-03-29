@@ -1,0 +1,76 @@
+body{
+    background: linear-gradient(90deg, #800080, #F97E72);
+    margin: auto;
+    display: block;
+    color: #333333;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container{
+    /* border: 1px solid red; */
+    width: 800px;
+    margin: auto;
+}
+
+#main_logo{
+    text-align: center;
+    margin-top: 17px;
+}
+
+#subtitle{
+    background: white;
+    text-align: center;
+}
+
+#subtitle p {
+    color: #0F7777;
+    padding: 10px;
+}
+
+h2{
+    font-weight: normal;
+}
+
+#recipe{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#description{
+    text-align: left;
+}
+
+#extra{
+    border-left: 1px solid white;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#extra p{
+    margin: 0;
+    color: #F97E72;
+}
+
+#extra a:link, a:visited{
+    color: #0F7777;
+}
+
+#read_more a:link, a:visited{
+    color: #0F7777;
+}
+
+#ingredients, #method, #lesson{
+    text-align: left;
+}
+
+#met{
+    padding-top: 15px;
+}
+
+#read_more{
+    text-align: left;
+}
+
+#lesson{
+    padding-bottom: 50px;
+}
