@@ -11,6 +11,7 @@ html, body {
     background-attachment: scroll;
     background-size: auto;
     text-align: left;
+    line-height: 1.5;
 }
 
 header,main {
