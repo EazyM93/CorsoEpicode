@@ -1,0 +1,177 @@
+/* IMPOSTAZIONI GENERALI */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../img/sfondo.png);
+    background-attachment: scroll;
+    background-size: auto;
+    text-align: left;
+}
+
+header,main {
+    margin: 20px;
+}
+
+/* HEADER */
+header{
+    background-image: linear-gradient(rgba(0,160,198,1),rgba(3,109,134,1));
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header img{
+    padding: 40px 0px 15px;
+}
+
+#navigation_bar{
+    padding-bottom: 20px;
+}
+
+#navigation_bar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#navigation_bar ul li a {
+    text-decoration: none;
+}
+
+#navigation_bar ul li a:link, #navigation_bar ul li a:visited{
+    color: white;
+}
+
+#navigation_bar ul li a:hover{
+    color: red;
+}
+
+/* MAIN */
+main{
+    background-color: #FFFFFF;
+    color: #333;
+    box-shadow: 1px 1px 5px rgb(53, 53, 53), -1px -1px 5px rgb(53, 53, 53);
+    padding: 15px;
+}
+
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+#autore{
+    color: #a0a0a0;
+}
+
+
+.boxed{
+    background-color: #DDDDDE;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px ;
+    box-shadow: 1px 1px 3px #DDDDDE, -1px -1px 3px #DDDDDE;
+
+}
+
+.important{
+    color: #AA2072;
+}
+
+main a{
+    color: #00A0C6;
+}
+
+#link_articolo1{
+    text-align: center;
+}
+
+#epicode_youtube{
+    border-radius: 20px;
+}
+
+/* TABELLE */
+#tabella1{
+    border-collapse: collapse;
+    border-bottom: 2px solid #3366CC;
+    margin-bottom: 30px;
+}
+
+#tabella1 tbody tr:nth-child(even){
+    background-color: #d8d8d8;
+}
+
+#tabella1 td, th{
+    padding: 10px;
+    text-align: center;
+}
+
+#tabella1 thead{
+    background-color: #3366CC;
+    color: white;
+}
+
+#tabella1 th{
+    border-left: 1px solid white;
+}
+
+
+/* FORM */
+
+#epicode_newsletter{
+    background-color: #e3e3e3;
+    margin: 20px 5px
+}
+
+#form_newsletter h2{
+    text-align: center;
+}
+
+#form_newsletter{
+    padding: 1px 10px 10px;
+}
+
+#form_newsletter button{
+    background-color: #3366CC;
+    color: white;
+    border: none;
+}
+
+#form_newsletter input{
+    border: none;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+#form_newsletter form{
+    text-align: center;
+}
+
+/* ELEMENTI NELL' ASIDE */
+
+#correlati h2{
+    text-align: center;
+}
+
+
+.correlato {
+    background-color: #e3e3e3;
+    margin: 5px 5px 20px;
+    padding: 15px;
+}
+
+.date{
+    text-align: right;
+}
+
+/* FOOTER */
+footer{
+    color: white;
+    text-align: center;
+    background-image: linear-gradient(#005566,#2A3338);
+    padding: 10px;
+    margin: 20px;
+}
+
+#info a{
+    color: #F811E4;
+}
