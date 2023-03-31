@@ -1,13 +1,170 @@
-/* import font */
+/* -------- IMPORT FONT -------- */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
-/* impostazioni generali */
-body {
+/* -------- GENERALI -------- */
+html, body {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    line-height: 1.65;
     color: #393d41;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.65;
+}
+
+
+article{
+    margin: 0px 40px;
+}
+
+.blue_titles{
+    color: #25a2c3;
+    font-family: 'Montserrat bold', sans-serif;
+    line-height: 1.5;
+}
+
+/* -------- HEADER -------- */
+#box_logo{
+    background-color: black;
+}
+
+
+#logo{
+    width: 35%;
+    padding: 35px;
+}
+
+/* -------- MAIN -------- */
+
+/* intro */
+#intro{
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    margin-bottom: 80px;
+}
+
+#box_intro{
+     padding: 60px 0px 50px; 
+}
+
+#descrizione h1{
+    margin: 0px;
+    line-height: 1.0;
+    font-size: 2rem;
+    padding: 0px 20px;
+}
+
+#descrizione p{
+    margin-bottom: 50px;
+}
+
+#fake_button{
+    background-color: #f04c2f;
+    padding: 16px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+/* informativa */
+#box_informativa{
+    margin-bottom: 80px;
+}
+
+#immagine_informativa{
+    margin: 15%;
+}
+
+#immagine_informativa img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+/* quote */
+#quotes{
+    background-color: #e22d0e;
+    color: white;
+    margin-bottom: 70px;
+}
+
+#box_quotes{
+    padding: 30px;
+}
+
+#quote{
+    font-style: italic;
+    font-size: 1.0rem;
+}
+
+#autore, #azienda{
+    line-height: 0.5;
+}
+
+#azienda{
+    font-size: 0.8rem;
+}
+
+#box_quotes h2{
+    font-family: 'Montserrat bold', sans-serif;
+    font-size: 2.0rem;
+}
+
+/* info_cards */
+.card{
+    border: 1px solid #dee1e3;
+    margin-bottom: 50px;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card p{
+    font-size: 0.9rem;
+    padding: 0px 30px 30px;
+}
+
+.card h3{
+    font-size: 1rem;
+}
+
+/* -------- FOOTER -------- */
+footer{
+    padding-top: 10px;
+    padding-bottom: 60px;
+    background-color: #25a2c3;
+    color: #c8e7f0;
+}
+
+footer h2{
+    color: white;
+    font-family: 'Montserrat bold', sans-serif;
+}
+
+footer a:link, a:visited{
+    color: #c8e7f0;
+}
+
+
+/* contatti */
+#box_contatti p{
+    line-height: 0.8;
+}
+
+/* credits */
+#credits{
+    padding-top: 20px;
+}
+
+#box_credits{
+    border-top: 1px solid #c8e7f0;
+    width: fit-content;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 0.8rem;
 }
