@@ -15,11 +15,6 @@ html, body {
     line-height: 1.65;
 }
 
-
-article{
-    margin: 0px 40px;
-}
-
 .blue_titles{
     color: #25a2c3;
     font-family: 'Montserrat bold', sans-serif;
@@ -29,12 +24,12 @@ article{
 /* -------- HEADER -------- */
 #box_logo{
     background-color: black;
+    padding: 15px 40px;
+    text-align: left;
 }
 
-
 #logo{
-    width: 35%;
-    padding: 35px;
+    height: 40px;
 }
 
 /* -------- MAIN -------- */
@@ -43,11 +38,10 @@ article{
 #intro{
     background-image: url(../img/banner.jpg);
     background-size: cover;
-    margin-bottom: 80px;
 }
 
 #box_intro{
-     padding: 60px 0px 50px; 
+     padding: 200px; 
 }
 
 #descrizione h1{
@@ -73,16 +67,24 @@ article{
 
 /* informativa */
 #box_informativa{
-    margin-bottom: 80px;
+    text-align: center;
+    padding: 100px;
 }
 
 #immagine_informativa{
-    margin: 15%;
+    display: inline-block;
+    padding-right: 25px;
 }
 
-#immagine_informativa img {
+#immagine_informativa img{
     border-radius: 50%;
-    width: 100%;
+}
+
+#articoli{
+    display: inline-block;
+    text-align: left;
+    font-size: 0.9rem;
+    padding-left: 25px;
 }
 
 /* quote */
@@ -93,12 +95,12 @@ article{
 }
 
 #box_quotes{
-    padding: 30px;
+    padding: 100px 30px;
 }
 
 #quote{
     font-style: italic;
-    font-size: 1.0rem;
+    font-size: 1.5rem;
 }
 
 #autore, #azienda{
@@ -115,9 +117,19 @@ article{
 }
 
 /* info_cards */
+
+#box_info_cards{
+    text-align: center;
+}
+
+#box_info_cards article{
+    display: inline-block;
+    width: 30%;
+}
+
 .card{
     border: 1px solid #dee1e3;
-    margin-bottom: 50px;
+    margin: 0px 30px 90px;
 }
 
 .card img{
@@ -126,7 +138,6 @@ article{
 
 .card p{
     font-size: 0.9rem;
-    padding: 0px 30px 30px;
 }
 
 .card h3{
@@ -154,17 +165,25 @@ footer a:link, a:visited{
 /* contatti */
 #box_contatti p{
     line-height: 0.8;
+    
 }
 
 /* credits */
 #credits{
     padding-top: 20px;
+    
 }
 
 #box_credits{
-    border-top: 1px solid #c8e7f0;
+    
     width: fit-content;
     margin: auto;
     padding-top: 20px;
     font-size: 0.8rem;
+}
+
+#elenco{
+    display: inline-block;
+    text-align: left;
+    border-bottom: 1px solid #c8e7f0;
 }
