@@ -1,0 +1,13 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* impostazioni generali */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.65;
+    color: #393d41;
+}

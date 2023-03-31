@@ -4,10 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assetts/img/EPICODE-pitto-color.png">
     <link rel="stylesheet" href="assetts/css/style.css">
     <title>Corso Web Developer - Epicode school</title>
 </head>
 <body>
-    
-</body>
+    <header>
+        <div id="logo">
+            <img src="assetts/img/logo.png" alt="logo_epicode_school">
+        </div>
+    </header>
+    <main>
+        <!-- il div "container" mi permette di lasciare intoccato il main 
+        I vari div "box_x" permettono lo stesso risultato: giocare con essi mantenendo intoccate le proporzioni delle varie section. Tradotto possiamo modificare e "sbagliare" con i singoli elementi senza intaccare la struttura generale della pagina
+        -->
+        <div id="contaier">
+            <section id="intro">
+                <div id="box_intro">
+                    <article id="descrizione">
+                        <h1>Corso Web Developer</h1>
+                        <p>Smetti di inseguire i titoli, inizia a lavorare. Mentre tutti vogliono arricchire il CV, tu pensa ad arricchire le tue competenze.</p>
+                    </article>
+                    <article id="partiamo">
+                        <a href="">PARTIAMO!</a>
+                    </article>
+                </div>                
+            </section>
+            <section id="informativa">
+                <div id="box_informativa">
+                    <article id="info1">
+                        <h2>Tutti ti cercheranno</h2>
+                        <p>Sono 30.000 in Italia le posizioni di developer scoperte, scegli quella che ti stimola di più.</p>
+                    </article>
+                    <article id="info2">
+                        <h2>Lavora dove vuoi</h2>
+                        <p>Lavora da casa, in riva al mare o in montagna.</p>
+                    </article>
+                    <!-- immagine -->
+                    <article id="info3">
+                        <h2>Scegli il tuo ruolo</h2>
+                        <p>Potrai scegliere se essere Azienda, Freelance o Startup.</p>
+                    </article>
+                    <article id="info4">
+                        <h2>Lavoro in libertà</h2>
+                        <p>Non serve lavorare in ufficio per essere creatori di prodotti digitali.</p>
+                    </article>
+                </div>
+            </section>
+            <section id="quotes">
+                <div id="box_quotes">
+                    <h2>Epicode garantisce</h2>
+                    <!-- utilizzo il tag p con id specifico, in quanto il tag q mette << >>, invece di " " -->
+                    <p id="quote">"3 mesi intensivi di corso che cambieranno radicalmente la tua vita"</p>
+                    <pre id="autore">Mario Rossi
+CEO, Epicode</pre>
+                </div>
+            </section>
+            <section id="info_cards">
+                <div id="box_info_cards">
+                    <article id="tuo_pc">
+                        <h3>Il tuo PC</h3>
+                        <p>Se vuoi diventare developer è l’unico strumento di cui hai bisogno.</p>
+                    </article>
+                    <article id="impara_ora">
+                        <h3>Impara ora</h3>
+                        <p>Impara da chi diventerai tra qualche anno, e diventa una rockstar come loro.</p>
+                    </article>
+                    <article id="lavora_subito">
+                        <h3>Lavora subito</h3>
+                        <p>Sappiamo cosa vogliono le aziende, perché lavoriamo con loro.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <section id="contatti">
+            <div id="box_contatti">
+                <h2>Contattaci</h2>
+                <p>(+39) 11223456</p>
+                <p>info@epicode.school</p>
+                <p>Via Appia 1 - 00100 Roma (RM)</p>
+            </div>
+        </section>
+        <section id="credits">
+            <div id="box_credits">
+                <p>&#169; 2021. Immagini di Pixabay</p>
+            </div>
+        </section>
+    </footer>
 </html>
