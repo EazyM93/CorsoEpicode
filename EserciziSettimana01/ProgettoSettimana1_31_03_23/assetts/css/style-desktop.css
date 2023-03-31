@@ -130,6 +130,8 @@ html, body {
 .card{
     border: 1px solid #dee1e3;
     margin: 0px 30px 90px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .card img{

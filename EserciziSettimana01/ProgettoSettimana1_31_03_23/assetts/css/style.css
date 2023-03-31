@@ -118,6 +118,8 @@ article{
 .card{
     border: 1px solid #dee1e3;
     margin-bottom: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .card img{
