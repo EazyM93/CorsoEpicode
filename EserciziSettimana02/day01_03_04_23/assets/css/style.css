@@ -29,7 +29,7 @@ header, #container_pagina1{
 }
 
 /* link */
-.link_alle_pagine{
+.link_alle_pagine:link, .link_alle_pagine:visited{
     text-decoration: none;
     color: white;
 }
