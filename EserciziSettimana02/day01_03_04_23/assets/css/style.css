@@ -12,7 +12,7 @@ body{
 
 /* MAIN */
 
-#titolo_pagina1, #container_pagina1{
+header, #container_pagina1{
     margin-left: 15%;
 }
 
