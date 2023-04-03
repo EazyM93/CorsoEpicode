@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* GENERALE */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #415fe1;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN */
+
+#titolo_pagina1, #container_pagina1{
+    margin-left: 15%;
+}
+
+#container_pagina2{
+    width: fit-content;
+}
+
+#paragrafo{
+    text-align: right;
+}
+
+#paragrafo p{
+    line-height: 0.3;
+}
+
+/* link */
+.link_alle_pagine{
+    text-decoration: none;
+    color: white;
+}
+
+.link_alle_pagine:hover{
+    color: black;
+}
+
+#logo_javascript{
+    width: 260px;
+}
