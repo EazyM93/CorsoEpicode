@@ -54,4 +54,4 @@ const nome1 = 'jhon';
 const nome2 = 'Jhon';
 
 console.log('Uguaglianza : ' + ((nome1 === nome2) ? 'True' : 'False'))
-console.log('Uguaglianza (lowercase) : ' + ((nome1 === nome2.toLocaleLowerCase()) ? 'True' : 'False'))
+console.log('Uguaglianza (lowercase) : ' + ((nome1 === nome2.toLowerCase()) ? 'True' : 'False'))
