@@ -35,14 +35,9 @@ if((n4 % 5) === 0) console.log('divisibile per 5')
 let n5 = 8
 let n6 = 0
 
-if(n5 === 8 || n6 === 8){
-    console.log('È presente un numero uguale a 8')
+if(n5 === 8 || n6 === 8 || (n5 - n6) === 8 || (n6 - n5) === 8){
+    console.log('Verificato')
 }
-
-if((n5 - n6) === 8 || (n6 - n5) === 8){
-    console.log('Addizione/sottraione uguale a 8')
-}
-
 
 /* ESERCIZIO 5
   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -84,9 +79,9 @@ let n7 = 10;
 let n8 = 20;
 let n9 = 30;
 
-if(n7 > n8){
-  if(n7 > n9){
-    if(n8 > n9){
+if(n7 >= n8){
+  if(n7 >= n9){
+    if(n8 >= n9){
       console.log(n7 + ' ' + n8 + ' ' + n9)
     }else{
       console.log(n7 + ' ' + n9 + ' ' + n8)
@@ -94,8 +89,8 @@ if(n7 > n8){
   }else{
     console.log(n9 + ' ' + n7 + ' ' + n8)
   }
-}else if(n8 > n9){
-        if(n9 > n7){
+}else if(n8 >= n9){
+        if(n9 >= n7){
           console.log(n8 + ' ' + n9 + ' ' + n7)
         }else{
           console.log(n8 + ' ' + n7 + ' ' + n8)
