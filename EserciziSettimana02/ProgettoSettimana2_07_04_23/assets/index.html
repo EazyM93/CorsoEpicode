@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="x-icon" type="image/x-icon" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>AMAZON Homepage</title>
+</head>
+<body>
+
+    <!-- container di tutto il contenuto della pagina -->
+    <div id="container">
+
+        <!-- header contenente logo e navbar -->
+        <header>
+
+            <!-- logo amazon cliccabile (in teoria, in un progetto reale, riporta alla homepage in quanto questa struttura verrebbe reiterata in tutte le pagine del progetto) -->
+            <div id="logo">
+                <!-- utilizzo javascript:void(0) per simulare la 'cliccabilità' di elementi interattivi -->
+                <a href="javascript:void(0)"><img id="logo_amazon" src="assets/img/logo.png" alt="logo_amazon"></a>
+            </div>
+
+            <div id="navbar">
+                <ul id="navbar_list">
+                    <!-- utilizzo javascript:void(0) per simulare la 'cliccabilità' degli elementi che ci permetterebbero di navigare tra le pagine del sito -->
+                    <a href="javascript:void(0)" class="navbar_element"><li id="all">All</li></a>
+                    <a href="javascript:void(0)" class="navbar_element"><li id="day_deal">Today's deals</li></a>
+                    <a href="javascript:void(0)" class="navbar_element"><li id="customer_service">Customer Service</li></a>
+                    <a href="javascript:void(0)" class="navbar_element"><li id="registry">Registry</li></a>
+                    <a href="javascript:void(0)" class="navbar_element"><li id="gift_cards">Gift Cards</li></a>
+                    <a href="javascript:void(0)" class="navbar_element"><li id="sell">Sell</li></a>
+                </ul>
+            </div>
+
+        </header>
+        
+        <main>
+
+            <!-- divido in section tematiche -->
+            <section id="holiday_bar">
+                <p id="holiday_info">Shop All Holiday Gift Cards</p>
+            </section>
+
+            <section id="holiday_banner">
+                <div id="inner_banner">
+                    <h1 id="holiday_banner_info">Holiday Gift Guides</h1>
+                    <p id="subtitle_banner">Be a go-gifter</p>
+                </div>
+            </section>
+
+            <!-- nelle sezioni successive tutti gli elementi inseriti riescono ad avere un comportamento responsive -->
+
+            <!-- scelgo di usare i background-image invece degli elementi img per avere un certo tipo di risultato "posizionale" utilizzando css -->
+            <section id="cards">
+                    <div id="title_cards">
+                        <h2 class="inner_title_cards">Find the perfect gift</h2>
+                        <a href="javascript:void(0)" class="blue_link"><p class="inner_title_cards">Shop now</p></a>
+                    </div>
+                    <div id="kindle" class="card"></div>
+                    <div id="tech_design" class="card"></div>
+                    <div id="smartwatch" class="card"></div>
+                    <div id="animals" class="card"></div>
+            </section>
+        
+            <section id="gaming" class="product_bar">
+                <img src="assets/img/img_9.png" alt="gaming">
+                <div id="inner_gaming">
+                    <h2 class="inline">Play the gifting game</h2>
+                    <a href="javascript:void(0)" class="blue_link
+                    "><p class="inline">Shop gaming</p></a>
+                </div>
+            </section>
+
+            <section id="audio" class="product_bar">
+                <img src="assets/img/img_10.png" alt="audio">
+                <div id="inner_audio">
+                    <h2 class="inline">The sound of cheer</h2>
+                    <a href="javascript:void(0)" class="blue_link"><p class="inline">Shop Audio & Accessories</p></a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+
+            <!-- semplice stringa per tornare a inizio pagina -->
+            <div id="back">
+                <a href="#"><p>Back to top</p></a>
+            </div>
+
+            <div id="logo_footer">
+                <img id="logo_footer_amazon" src="assets/img/logo.png" alt="logo_footer_amazon">
+            </div>
+
+        </footer>
+
+    </div>
+</body>
+</html>

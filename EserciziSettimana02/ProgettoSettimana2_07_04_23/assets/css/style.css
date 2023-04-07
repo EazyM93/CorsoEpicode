@@ -1,0 +1,170 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main, footer{
+    text-align: center;
+}
+
+.blue_link{
+    text-decoration: none;
+}
+
+.blue_link:link, .blue_link:visited{
+    color: #439974;
+}
+.blue_link:active, .navbar_element:active{
+    color: #F56600;
+}
+
+/* HEADER */
+
+/* Logo Amazon */
+#logo, #logo_footer{
+    background-color: #222E3F;
+}
+
+#logo_amazon{
+    width: 6em;
+    padding: 0.5em 0.5em 0.5em 2em;
+}
+
+/* navbar */
+#navbar, #back{
+    background-color: #364759;
+}
+
+#navbar_list{
+    margin: 0;
+    padding: 0 0 0 1.5em;
+    list-style: none;
+    display: block;
+}
+
+#navbar_list li{
+    display: inline-block;
+    margin: 0.3em 1em 0.3em 0em;
+}
+
+.navbar_element{
+    color: #F8FFFF;
+}
+
+/* MAIN */
+
+main{
+    background-color: #E9EDEE;
+    padding: 2em;
+}
+
+
+
+/* holyday bar */
+#holiday_bar{
+    background-color: #F56600;
+    color: #F8FFFF
+}
+
+#holiday_info{
+    margin: 0;
+    margin-bottom: 2em;
+    padding: 0.5em 0;
+}
+
+/* holiday banner */
+
+/* scelgo di non utilizzare deliberatamente back-ground repeat in quanto reputo visivamente gradevole l'effetto della moltiplicazione dei pacchi quando si restringe la pagina */
+#holiday_banner{
+    background-image: url(../img/bg-image.png);
+    background-size: contain;
+    color: #F8FFFF;
+    margin-bottom: 2em;
+}
+
+#inner_banner{
+    padding: 2.5em 0 1.5em;
+}
+
+/* cards */
+#title_cards h2{
+    margin: 0 1em 0 0;
+}
+
+.inner_title_cards{
+    display: inline-block;
+}
+
+#cards{
+    background-color: #FFFFFF;
+    margin-bottom: 2em;
+    padding: 0.3em 1.5em 1.5em 1.5em;
+}
+
+#title_cards{
+    text-align: left;
+}
+
+.card{
+    display: inline-block;
+    width: 18em;
+    height: 22em;
+    overflow: hidden;
+    box-shadow: 10px 10px 8px #cdced4;
+    border-radius: 8%;
+    background-size: cover;
+    background-position: 50%;
+}
+
+/* singole cards */
+#kindle{
+    background-image: url(../img/img_1.jpg);
+    margin: 1em 1.5em;
+}
+
+#tech_design{
+    background-image: url(../img/img_2.jpg);
+    margin: 1em 1.5em;
+}
+
+#smartwatch{
+    background-image: url(../img/img_3.jpg);
+    margin: 1em 1.5em;
+}
+
+#animals{
+    background-image: url(../img/img_4.jpg);
+    margin: 1em 1.5em;
+}
+
+/* prodotti */
+#gaming img, #audio img{
+    width: 100%;
+}
+
+.product_bar{
+    margin-bottom: 2em;
+}
+
+.product_bar h2{
+    margin: 0 1em 0 0;
+}
+
+.inline{
+    display: inline;
+}
+
+/* footer */
+#back p{
+    margin: 0;
+    padding: 1em;
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+#logo_footer_amazon{
+    width: 10em;
+    padding: 5em;
+}

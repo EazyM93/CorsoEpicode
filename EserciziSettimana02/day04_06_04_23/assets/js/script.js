@@ -101,14 +101,14 @@ const starWarsCharacters = [
   }
 ];
 
-console.log(starWarsCharacters)
+console.log(starWarsCharacters);
 
 /* ESERCIZIO 1
 Crea una variabile chiamata "characters" e inserisci un array vuoto
 */
 
-const characters = new Array()
-console.log(characters)
+const characters = new Array();
+console.log(characters);
 
 /* ESERCIZIO 2
 Usando un for loop, cicla l'array "starWarsCharacters" ed accedi alla proprietà "name". 
@@ -117,9 +117,9 @@ Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO",
 */
 for(i = 0; i < starWarsCharacters.length; i++){
   characters.push(starWarsCharacters[i].name)
-} 
+}
 
-console.log(characters)
+console.log(characters);
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un array chiamato "femaleCharacters" e inserisci un oggetto con questa struttura: 
@@ -143,9 +143,9 @@ console.log(femaleCharacters)
   ognuna di queste proprietà contiene un array vuoto
 */
 
-const eyeColor = new Object({blue: [], yellow: [], brown: [], red: [], blue_gray: []})
+const eyeColor = new Object({blue: [], yellow: [], brown: [], red: [], blue_gray: []});
 
-console.log(eyeColor)
+console.log(eyeColor);
 
 /* ESERCIZIO 5
   Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato
@@ -171,7 +171,7 @@ console.log(eyeColor)
     }
  }
 
- console.log(eyeColor)
+ console.log(eyeColor);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
