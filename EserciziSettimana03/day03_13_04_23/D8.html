@@ -263,10 +263,16 @@
     */
 
     const changeColorWithRandom = function () {
-
-
+      let randomHdue = document.getElementById('changeMyColor')
+      randomHdue.addEventListener('click', () => {
+        let rand1 = Math.floor(Math.random()*256)
+        let rand2 = Math.floor(Math.random()*256)
+        let rand3 = Math.floor(Math.random()*256)
+        randomHdue.style.color = `rgb(${rand1},${rand2},${rand3})`
+      })
     }
 
+    changeColorWithRandom()
     /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
