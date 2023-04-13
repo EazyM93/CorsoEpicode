@@ -214,7 +214,7 @@
 
     const generateTable = function () {
       let tabelSpace = document.getElementById('tableArea')
-      let arrayInfo = ['immagine', 'nome prodotto', 'quantità', 'prezzo']
+      let arrayInfo = ['immagine', 'prodotto', 'quantità', 'prezzo']
       let thead = document.createElement('thead')
       let tbody = document.createElement('tbody')
       let trow = document.createElement('tr')
@@ -242,12 +242,12 @@
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-    const addRow = function () {
+    const addRow = function (img, prod, quant, prz) {
 
-
+      
     }
 
-    addRow('https://m.media-amazon.com/images/I/81yJf4K+L1L._AC_SY450_.jpg')
+    addRow('https://m.media-amazon.com/images/I/81yJf4K+L1L._AC_SY450_.jpg', 'Smarthphone', 20, '200 €')
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
@@ -265,10 +265,7 @@
     const changeColorWithRandom = function () {
       let randomHdue = document.getElementById('changeMyColor')
       randomHdue.addEventListener('click', () => {
-        let rand1 = Math.floor(Math.random()*256)
-        let rand2 = Math.floor(Math.random()*256)
-        let rand3 = Math.floor(Math.random()*256)
-        randomHdue.style.color = `rgb(${rand1},${rand2},${rand3})`
+        randomHdue.style.color = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
       })
     }
 
