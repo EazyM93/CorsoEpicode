@@ -250,9 +250,9 @@ console.log('');
 
 console.log('- - - - - - - - - ESERCIZIO 10 - - - - - - - - -');
 
-let isTodayMyBirthday = (compleanno) => {
+let isTodayMyBirthday = (nascita) => {
   let confronto = new Date();
-  return (confronto.getMonth() + 1 === compleanno.getMonth() + 1 && confronto.getDate() === compleanno.getDate());
+  return (confronto.getMonth() + 1 === nascita.getMonth() + 1 && confronto.getDate() === nascita.getDate());
 }
 
 console.log(isTodayMyBirthday(new Date('1993-10-19')));
