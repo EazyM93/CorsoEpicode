@@ -5,4 +5,4 @@ const btnProceed = document.getElementById('proceedButton'); //bottone per proce
 // Prressione bottone per procedere
 btnProceed.addEventListener('click', () => {
     localStorage.setItem('diff', difficult.value);
-})
+});

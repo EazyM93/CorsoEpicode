@@ -1,4 +1,4 @@
-// ARRAY DOMANDE
+// ARRAY Questions
 const questions = [
     {
       category: "Science: Computers",
@@ -99,9 +99,34 @@ const questions = [
     },
   ];
 
-// Elementi del DOM
+//Quiz difficult
+let questionLength; //contiene la quantità di domande alla difficoltà
+
+function actualDifficult(){
+    questionLength = (localStorage.getItem('diff') === 'easy') ? 10 : 7;
+    document.getElementById('questionLength').innerHTML = questionLength;
+} //funzione che verifica la sceltà della difficoltà
+
+// Variable
+let punteggio = 0; //tiene il conto delle risposte corrette
+let actualQuestion = 1; //tiene il conto delle domande effettuate
+
+// DOM Elements
+const questionNumber = document.getElementById('number')
 const question = document.getElementById('question');
 
-localStorage.getItem('diff');
 
-// Seleziona domanda
+
+// StartQuiz
+function newQuestion(){
+    
+}
+
+// Question progress on html page
+questionNumber.innerHTML = actualQuestion;
+
+// Onload
+window.onload = () => {
+    actualDifficult();
+    newQuestion();
+}
