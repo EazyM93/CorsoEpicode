@@ -10,7 +10,45 @@
 </head>
 
 <body>
-    
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <img id="logoEpicode" alt="logo_epicode" src="assets/img/epicode_logo.png">
+        <!-- Timer -->
+        <div id="timer">
+            <div id="timerCircle">
+                <div id="innerCircle">
+                    <p>SECONDS</p>
+                    <p id="seconds">30</p>
+                    <p>REMAINING</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- Container -->
+        <div id="questionContainer" class="container">
+            <!-- Question -->
+            <h1 id="question">How can I create acheckbox in HTML?</h1>
+            <!-- Answers -->
+            <div id="answers">
+                <input type="button" name="answer" id="answer1"></input>
+                <input type="button" name="answer" id="answer2"></input>
+                <input type="button" name="answer" id="answer3"></input>
+                <input type="button" name="answer" id="answer4"></input>
+            </div>
+            <!-- Button Next -->
+            <div id="nextButton" class="blueButton">
+                <button type="button">NEXT</button>
+            </div>
+            <!-- Question Tracker -->
+            <div>
+                <h3 id="questionNumber" class="blueButton">QUESTION <span id="number">1</span><span class="purple"> / 10</span></h3> 
+            </div>
+        </div>
+    </main>
+
     <script src="assets/js/questionScript.js"></script>
 </body>
 

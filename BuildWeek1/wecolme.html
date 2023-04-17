@@ -12,11 +12,12 @@
 <body>
     <!-- Header -->
     <header>
-        <img id="logoEpicode" src="assets/img/epicode_logo.png">
+        <!-- Logo -->
+        <img id="logoEpicode" alt="logo_epicode" src="assets/img/epicode_logo.png">
     </header>
     <!-- Main -->
     <main>
-        <!-- COntainer -->
+        <!-- Container -->
         <div id="welcomeContainer" class="container">
             <!-- Istructions -->
             <h1>Welcome to<br><b>your exam</b></h1>
@@ -30,9 +31,10 @@
                     <li>This exam will take approx. <b>0-5 minutes.</b></li>
                 </ul>
             </section>
-            <!-- Bottom Box-->
+            <!-- Bottom Box -->
             <section id="bottomBox">
                 <div id="formCheck">
+                    <!-- Difficult Select -->
                     <select id="selectDifficult" name="difficult">
                         <option value=""></option>
                         <option value="easy">Easy</option>
@@ -40,6 +42,7 @@
                     </select>
                     <input type="checkbox" id="terms">I promise to answer myself without help from anyone
                 </div>
+                <!-- Button Proceed -->
                 <div id="boxButton">
                     <a href="question.html"><button id="proceedButton" type="button"
                             class="blueButton">Proceed</button></a>
@@ -47,6 +50,7 @@
             </section>
         </div>
     </main>
+
     <script src="assets/js/welcomeScript.js"></script>
 </body>
 
