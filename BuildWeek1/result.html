@@ -8,7 +8,45 @@
     <title>Result</title>
 </head>
 <body>
-    
+    <!-- Header -->
+    <header>
+        <img id="logoEpicode" alt="logo_epicode" src="assets/img/epicode_logo.png">
+    </header>
+    <!-- Main -->
+    <main>
+        <div id="resultsContainer" class="container">
+            <!-- Titolo result -->
+            <div id="resultTitle">
+                <h1>Results</h1>
+                <h2>The summary of your answers:</h2>
+            </div>
+            <!-- Result Container -->
+            <div id="resultContainer"> 
+                <!-- Correct Answers  -->
+                <div id="correctAnswers" class="glow">
+                    <h2>Correct</h2>
+                    <h2>66.7%</h2> 
+                    <p>4/6 questions</p>
+                </div>
+                <!-- Grafico del risultato -->
+                <div id="graphicResults">
+                    <p>Congratulations!<br><span class="blueText">You passed the exam.</span></p>
+                    <p>We'll send you the certficate in few minutes.<br>Check your email (including promotions / spamfolder)</p>
+                </div>
+                <!-- Wrong Answers  -->
+                <div id="wrongAnswers" class="glow">
+                    <h2>Wrong</h2>
+                    <h2>33.3%</h2> 
+                    <p>2/6 questions</p>
+                </div>
+            </div>
+            <!-- Bottom -->
+            <div>
+                <a href="javascript:void(0)"></a><button id="rateUs">RATE US</button></a>
+            </div>
+        </div>
+    </main>
+
     <script src="assets/js/resultScript.js"></script>
 </body>
 </html>
