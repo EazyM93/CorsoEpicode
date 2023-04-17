@@ -149,6 +149,27 @@ function showQuestion(){
 // Question progress on html page
 questionNumber.innerHTML = actualQuestion;
 
+//Timer BOZZA
+// TIMER SETTINGS
+// const boxTimer = document.getElementById('timer');
+// const visualCount = document.getElementById('countdown');
+// const btnTimer = document.getElementById('attivaTimer');
+
+// const tenSeconds = 5;
+
+// // SET TIMER
+// visualCount.innerHTML = tenSeconds;
+
+// // START TIMER
+// btnTimer.onclick = () => {
+//     setInterval(startTimer, 1000);
+// }
+
+// function startTimer(){
+//     visualCount.innerHTML = visualCount.innerHTML - 1;
+//     if(visualCount.innerHTML < 0) visualCount.innerHTML = 0;
+// }
+
 // Onload
 window.onload = () => {
     actualDifficult();
