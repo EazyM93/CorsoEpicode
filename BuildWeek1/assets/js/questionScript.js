@@ -100,25 +100,49 @@ const questions = [
   ];
 
 //Quiz difficult
+const diff = localStorage.getItem('diff');
 let questionLength; //contiene la quantità di domande alla difficoltà
 
+//Verifica la sceltà della difficoltà
 function actualDifficult(){
-    questionLength = (localStorage.getItem('diff') === 'easy') ? 10 : 7;
+    questionLength = (diff === 'easy') ? 7 : 10;
     document.getElementById('questionLength').innerHTML = questionLength;
-} //funzione che verifica la sceltà della difficoltà
+} 
 
 // Variable
 let punteggio = 0; //tiene il conto delle risposte corrette
 let actualQuestion = 1; //tiene il conto delle domande effettuate
+let arrayRand; //variabile che accoglie l'array randomizzato da randomizeArray
 
 // DOM Elements
 const questionNumber = document.getElementById('number')
 const question = document.getElementById('question');
 
+// Randomize questions array
+function randomizeArray(arr){
+    for (let i = arr.length - 1; i > 0; i--) { 
+        let j = Math.floor(Math.random() * (i + 1));
+  
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;
+}
 
 
 // StartQuiz
-function newQuestion(){
+function startQuiz(){
+    if(diff === 'easy'){
+        arrayRand = randomizeArray(questions.slice(3));
+    }else{
+        arrayRand = randomizeArray(questions);
+    }
+    showQuestion();
+}
+
+//Show question
+function showQuestion(){
     
 }
 
@@ -128,5 +152,5 @@ questionNumber.innerHTML = actualQuestion;
 // Onload
 window.onload = () => {
     actualDifficult();
-    newQuestion();
+    startQuiz();
 }
