@@ -12,7 +12,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-#welcomeContainer {
+.container {
     margin: 0 7%;
     margin-top: 3%;
 }

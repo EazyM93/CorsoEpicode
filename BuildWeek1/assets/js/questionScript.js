@@ -103,7 +103,8 @@ const questions = [
 const questionNumber = document.getElementById('number');
 const question = document.getElementById('question');
 const answers = document.getElementById('answers');
-const btnAnswer = document.getElementsByClassName('.')
+const btnAnswer = document.getElementsByClassName('.');
+const btnNext = document.getElementById('nextButton');
 
 // Variable
 let punteggio = 0; //tiene il conto delle risposte corrette
@@ -151,7 +152,6 @@ function quiz(){
 
 //Show question
 function showQuestion(){
-
     // reset delle domande
     resetAnswer();
 
@@ -177,6 +177,7 @@ function resetAnswer(){
   while(answers.firstChild){
     answers.removeChild(answers.firstChild);
   }
+  btnNext.disabled = true;
 }
 
 // Question progress on html page
