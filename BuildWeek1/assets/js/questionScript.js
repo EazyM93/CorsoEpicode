@@ -199,7 +199,6 @@ btnNext.addEventListener('click', () => {
   //controlla se la risposta è esatta
   if(submitAnswer === arrayRand[pickQuestion].correct_answer){
     punteggio++; //incremento punteggio
-    console.log(punteggio)
   }
 
   //avanzamento con controllo dell'andamento del quiz
