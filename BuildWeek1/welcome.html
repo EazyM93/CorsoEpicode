@@ -35,21 +35,24 @@
             <section id="bottomBox">
                 <div id="formCheck">
                     <!-- Difficult Select -->
-                    <select id="selectDifficult" name="difficult">
-                        <option value=""></option>
-                        <option value="easy">Easy</option>
-                        <option value="Hard">Hard</option>
-                    </select><br>
+                    <h3 id="titleDifficulSelect"> Choose difficulty </h3>
+                    <div class="select">
+                        <select id="selectDifficult" name="difficult">
+                            <option value=""></option>
+                            <option value="easy">Easy</option>
+                            <option value="Hard">Hard</option>
+                        </select><br>
+                    </div>
                     <!-- Checkbox terms -->
-                    <input type="checkbox" id="terms">I promise to answer myself without help from anyone
+                    <input type="checkbox" id="terms"> <label id="labelCheckbox" for="checkbox">I promise to answer myself
+                        without help from anyone</label>
                 </div>
                 <!-- Button Proceed -->
                 <div id="boxButton">
                     <a href="question.html"><button id="proceedButton" type="button"
-                            class="blueButton">Proceed</button></a>
+                            class="blueButton">PROCEED</button></a>
                 </div>
             </section>
-
         </main>
     </div>
     <script src="assets/js/welcomeScript.js"></script>

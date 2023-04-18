@@ -151,6 +151,10 @@ function quiz(){
 
 //Show question
 function showQuestion(){
+
+    // reset della domande
+    resetAnswer();
+
     // seleziona l'oggetto domanda
     question.innerHTML = arrayRand[pickQuestion].question; 
 
@@ -166,6 +170,10 @@ function showQuestion(){
       button.classList.add('btnAnswer');
       answers.appendChild(button);
     }
+}
+
+function resetAnswer(){
+  
 }
 
 // Question progress on html page
