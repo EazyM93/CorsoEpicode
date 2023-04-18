@@ -1,4 +1,4 @@
-// ARRAY Questions
+// ---------------------- ARRAY QUESTION ----------------------
 const questions = [
     {
       category: "Science: Computers",
@@ -98,6 +98,9 @@ const questions = [
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
   ];
+
+
+
 
 //Quiz difficult
 const diff = localStorage.getItem('diff');
