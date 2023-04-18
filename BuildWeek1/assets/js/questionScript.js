@@ -152,7 +152,7 @@ function quiz(){
 //Show question
 function showQuestion(){
 
-    // reset della domande
+    // reset delle domande
     resetAnswer();
 
     // seleziona l'oggetto domanda
@@ -175,7 +175,7 @@ function showQuestion(){
 // reset delle domande
 function resetAnswer(){
   while(answers.firstChild){
-    answers.removeChild(answers.firstChild)
+    answers.removeChild(answers.firstChild);
   }
 }
 
