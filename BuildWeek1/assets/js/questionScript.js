@@ -99,11 +99,18 @@ const questions = [
     },
   ];
 
+// DOM Elements
+const questionNumber = document.getElementById('number');
+const question = document.getElementById('question');
+const answers = document.getElementById('answers');
 
-
+// Variable
+let punteggio = 0; //tiene il conto delle risposte corrette
+let actualQuestion = 1; //tiene il conto delle domande effettuate
+let arrayRand; //variabile che accoglie l'array randomizzato da randomizeArray
 
 //Quiz difficult
-const diff = localStorage.getItem('diff');
+const diff = localStorage.getItem('diff'); // value scelta nella prima pagina
 let questionLength; //contiene la quantità di domande alla difficoltà
 
 //Verifica la sceltà della difficoltà
@@ -112,16 +119,7 @@ function actualDifficult(){
     document.getElementById('questionLength').innerHTML = questionLength;
 } 
 
-// Variable
-let punteggio = 0; //tiene il conto delle risposte corrette
-let actualQuestion = 1; //tiene il conto delle domande effettuate
-let arrayRand; //variabile che accoglie l'array randomizzato da randomizeArray
-
-// DOM Elements
-const questionNumber = document.getElementById('number')
-const question = document.getElementById('question');
-
-// Randomize questions array
+// Randomizzatore di array
 function randomizeArray(arr){
     for (let i = arr.length - 1; i > 0; i--) { 
         let j = Math.floor(Math.random() * (i + 1));
@@ -133,9 +131,9 @@ function randomizeArray(arr){
     return arr;
 }
 
-
 // StartQuiz
 function startQuiz(){
+    // controllo difficoltà e impostazione array in base ad essa
     if(diff === 'easy'){
         arrayRand = randomizeArray(questions.slice(3));
     }else{
@@ -146,7 +144,17 @@ function startQuiz(){
 
 //Show question
 function showQuestion(){
-    
+    question.innerHTML = arrayRand[0].question; // seleziona l'oggetto domanda
+
+    // Creazione array risposte da randomizzare
+    let randAnswer = arrayRand[0].incorrect_answers; // assegna le risposte sbagliate
+    randAnswer.push(arrayRand[0].correct_answer); // push di quella corretta
+    randAnswer = randomizeArray(randAnswer); // randomizzazione risposte
+
+    // domande mostrate a schermo
+    for(e of randAnswer){
+      answers.innerHTML += `<p class="answer">${e}</p>`
+    }
 }
 
 // Question progress on html page
