@@ -250,8 +250,6 @@ margin: 3em;
   padding: 45px 80px;
   margin: 30px;
   box-shadow: 0 -3.2px 0.4px white;
-  
-  
 }
 
 #answers {
@@ -260,4 +258,11 @@ margin: 3em;
 
 #questionNumber {
   font-size: 2em;
+}
+
+/* manuel stelline */
+
+#starBox svg path{
+  transition: .8s;
+  cursor: pointer;
 }
