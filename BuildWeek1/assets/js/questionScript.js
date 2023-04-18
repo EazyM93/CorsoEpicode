@@ -105,6 +105,7 @@ const question = document.getElementById('question');
 const answers = document.getElementById('answers');
 const textNext = document.getElementById('nextButton');
 const btnNext = document.getElementById('nextButtonBox');
+const secondsTimer = document.getElementById('seconds');
 
 
 // ---------------------- VARIABILI ----------------------
@@ -167,6 +168,9 @@ function showQuestion(){
 
   // reset delle domande
   resetAnswer();
+  
+  //avvia il timer
+  setTimer(arrayRand[pickQuestion]);
 
   // seleziona l'oggetto domanda
   question.innerHTML = arrayRand[pickQuestion].question; 
@@ -201,19 +205,8 @@ btnNext.addEventListener('click', () => {
     punteggio++; //incremento punteggio
   }
 
-  //avanzamento con controllo dell'andamento del quiz
-  //se il quiz è finito va alla pagina successiva
-  if(actualQuestion < questionLength){
-    actualQuestion++;
-    pickQuestion++;
-    //il bottone cambierà dicitura all'ultima domanda
-    if(actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
-    questionNumber.innerHTML = actualQuestion; //avanzamento visivo sul DOM
-    showQuestion();   
-  }else{
-    localStorage.setItem('punteggioFinale', punteggio); //creazione della local storage del punteggio finale
-    window.location.href = 'result.html'; //passaggio alla schermata del risultato
-  }
+  //avanzamento sul click
+  questionProgress();
 });
 
 // ---------------------- RESET SPAZIO DOMANDE ----------------------
@@ -228,28 +221,51 @@ function resetAnswer(){
   submitAnswer = '';
 }
 
+// ---------------------- AVANZAMENTO ----------------------
+function questionProgress(){
+  //avanzamento con controllo dell'andamento del quiz
+  //se il quiz è finito va alla pagina successiva
+  if(actualQuestion < questionLength){
+    actualQuestion++;
+    pickQuestion++;
+    //il bottone cambierà dicitura all'ultima domanda
+    if(actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
+    questionNumber.innerHTML = actualQuestion; //avanzamento visivo sul DOM
+    showQuestion();   
+  }else{
+    localStorage.setItem('punteggioFinale', punteggio); //creazione della local storage del punteggio finale
+    window.location.href = 'result.html'; //passaggio alla schermata del risultato
+  }
+}
 
 // ---------------------- TIMER ----------------------
-//Timer BOZZA
-// TIMER SETTINGS
-// const boxTimer = document.getElementById('timer');
-// const visualCount = document.getElementById('countdown');
-// const btnTimer = document.getElementById('attivaTimer');
+function setTimer(e){
 
-// const tenSeconds = 5;
+  //inizializzo il limite di tempo in base alla difficoltà
+  let countDown = (e.difficulty === 'easy') ? 30 : 60;
 
-// // SET TIMER
-// visualCount.innerHTML = tenSeconds;
+  //iniziallizzazione visiva del timer nel DOM
+  secondsTimer.innerHTML = countDown;
+  countDown--;
 
-// // START TIMER
-// btnTimer.onclick = () => {
-//     setInterval(startTimer, 1000);
-// }
+  // set dell'intervallo
+  var count = setInterval(() => {
 
-// function startTimer(){
-//     visualCount.innerHTML = visualCount.innerHTML - 1;
-//     if(visualCount.innerHTML < 0) visualCount.innerHTML = 0;
-// }
+    //decremento dei secondi
+    secondsTimer.innerHTML = countDown;
+    countDown--;
+    
+    //blocca il timer se premiamo il pulsante next
+    btnNext.addEventListener('click', () => clearInterval(count));
+
+    //blocca il timer se il countdown scende a zero e va alla domanda successiva / termina il quiz
+    if(countDown < 0){
+      clearInterval(count);
+      questionProgress();
+    }
+
+  }, 1000);
+}
 
 // Onload
 window.onload = () => {

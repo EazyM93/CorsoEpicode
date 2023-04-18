@@ -209,3 +209,55 @@ margin: 3em;
   font-size: 1.3em;
   border: solid 2px white;
 }
+
+/*****************LORRRR***********************/
+
+#timer {
+  margin: 0 150px;
+  text-align: center;
+  float: right;
+}
+
+#seconds {
+  font-size: 3.5em;
+  margin: 0;
+  line-height: 65px;
+}
+
+.innerP {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+#questionContainer {
+  text-align: center;
+}
+
+#headerQuestion {
+  text-align: left;
+}
+
+#question {
+  font-size: 5em;
+  margin-top: 200px;
+}
+
+.btnAnswer {
+  background: rgba(197, 154, 154, 0.1);
+  border-radius: 60px;
+  font-size: 1.5em;
+  color:white;
+  padding: 45px 80px;
+  margin: 30px;
+  box-shadow: 0 -3.2px 0.4px white;
+  
+  
+}
+
+#answers {
+  margin-bottom: 80px;
+}
+
+#questionNumber {
+  font-size: 2em;
+}
