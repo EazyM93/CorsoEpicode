@@ -172,8 +172,11 @@ function showQuestion(){
     }
 }
 
+// reset delle domande
 function resetAnswer(){
-  
+  while(answers.firstChild){
+    answers.removeChild(answers.firstChild)
+  }
 }
 
 // Question progress on html page
