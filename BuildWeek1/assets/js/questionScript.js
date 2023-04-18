@@ -103,10 +103,12 @@ const questions = [
 const questionNumber = document.getElementById('number');
 const question = document.getElementById('question');
 const answers = document.getElementById('answers');
+const btnAnswer = document.getElementsByClassName('.')
 
 // Variable
 let punteggio = 0; //tiene il conto delle risposte corrette
 let actualQuestion = 1; //tiene il conto delle domande effettuate
+let pickQuestion = 0;
 let arrayRand; //variabile che accoglie l'array randomizzato da randomizeArray
 
 //Quiz difficult
@@ -139,21 +141,30 @@ function startQuiz(){
     }else{
         arrayRand = randomizeArray(questions);
     }
-    showQuestion();
+    quiz();
+}
+
+function quiz(){
+  showQuestion();
+
 }
 
 //Show question
 function showQuestion(){
-    question.innerHTML = arrayRand[0].question; // seleziona l'oggetto domanda
+    // seleziona l'oggetto domanda
+    question.innerHTML = arrayRand[pickQuestion].question; 
 
     // Creazione array risposte da randomizzare
-    let randAnswer = arrayRand[0].incorrect_answers; // assegna le risposte sbagliate
-    randAnswer.push(arrayRand[0].correct_answer); // push di quella corretta
+    let randAnswer = arrayRand[pickQuestion].incorrect_answers; // assegna le risposte sbagliate
+    randAnswer.push(arrayRand[pickQuestion].correct_answer); // push di quella corretta
     randAnswer = randomizeArray(randAnswer); // randomizzazione risposte
 
     // domande mostrate a schermo
     for(e of randAnswer){
-      answers.innerHTML += `<p class="answer">${e}</p>`
+      const button = document.createElement('button');
+      button.innerHTML = e;
+      button.classList.add('btnAnswer');
+      answers.appendChild(button);
     }
 }
 
