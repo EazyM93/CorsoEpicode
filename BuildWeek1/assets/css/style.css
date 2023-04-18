@@ -209,3 +209,20 @@ margin: 3em;
   font-size: 1.3em;
   border: solid 2px white;
 }
+
+/* question */
+#answers{
+  height: 500px;
+}
+
+#questionContainer main{
+  text-align: center;
+}
+
+#nextButtonBox, #questionTracker{
+  display: inline-block;
+}
+
+#questionTracker{
+  margin-right: 20em;
+}

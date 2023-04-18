@@ -99,58 +99,60 @@ const questions = [
     },
   ];
 
-// DOM Elements
+// ---------------------- DOM ELEMENTS ----------------------
 const questionNumber = document.getElementById('number');
 const question = document.getElementById('question');
 const answers = document.getElementById('answers');
-const btnAnswer = document.getElementsByClassName('.');
-const btnNext = document.getElementById('nextButton');
+const textNext = document.getElementById('nextButton');
+const btnNext = document.getElementById('nextButtonBox');
 
-// Variable
+
+// ---------------------- VARIABILI ----------------------
 let punteggio = 0; //tiene il conto delle risposte corrette
 let actualQuestion = 1; //tiene il conto delle domande effettuate
-let pickQuestion = 0;
-let arrayRand; //variabile che accoglie l'array randomizzato da randomizeArray
+let pickQuestion = 0; //indice delle domande
+let arrayRand; //variabile che accoglie l'array domande randomizzato da randomizeArray
 
-//Quiz difficult
+
+// ---------------------- PROGRESSO DOMANDE NEL DOM ----------------------
+questionNumber.innerHTML = actualQuestion;
+
+
+// ---------------------- SET QUIZ DIFFICULT ----------------------
 const diff = localStorage.getItem('diff'); // value scelta nella prima pagina
 let questionLength; //contiene la quantità di domande alla difficoltà
 
-//Verifica la sceltà della difficoltà
 function actualDifficult(){
-    questionLength = (diff === 'easy') ? 7 : 10;
-    document.getElementById('questionLength').innerHTML = questionLength;
+    questionLength = (diff === 'easy') ? 7 : 10; //verifica e ritorna il numero di domande in base alla difficoltà
+    document.getElementById('questionLength').innerHTML = questionLength; //restituisce sul DOM la lunghezza del quiz
 } 
 
-// Randomizzatore di array
+
+// ---------------------- ARRAY RANDOMIZER ----------------------
 function randomizeArray(arr){
     for (let i = arr.length - 1; i > 0; i--) { 
-        let j = Math.floor(Math.random() * (i + 1));
-  
-        let temp = arr[i];
+        let j = Math.floor(Math.random() * (i + 1)); //indice casuale
+        let temp = arr[i]; //variabile temporanea
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    return arr;
+    return arr; //ritorna array randomizzato
 }
 
-// StartQuiz
+
+// ---------------------- INIZZIALIZZATORE ARRAY ----------------------
 function startQuiz(){
-    // controllo difficoltà e impostazione array in base ad essa
+    // controllo difficoltà e crea array randomizzato escludendo/includendo le domande difficili
     if(diff === 'easy'){
         arrayRand = randomizeArray(questions.slice(3));
     }else{
         arrayRand = randomizeArray(questions);
     }
-    quiz();
-}
+    showQuestion(); //inizzializzo la prima domanda
+  }
 
-function quiz(){
-  showQuestion();
 
-}
-
-//Show question
+// ---------------------- MOSTRA DOMANDA ----------------------
 function showQuestion(){
     // reset delle domande
     resetAnswer();
@@ -158,12 +160,12 @@ function showQuestion(){
     // seleziona l'oggetto domanda
     question.innerHTML = arrayRand[pickQuestion].question; 
 
-    // Creazione array risposte da randomizzare
+    // creazione array risposte randomizzate
     let randAnswer = arrayRand[pickQuestion].incorrect_answers; // assegna le risposte sbagliate
     randAnswer.push(arrayRand[pickQuestion].correct_answer); // push di quella corretta
     randAnswer = randomizeArray(randAnswer); // randomizzazione risposte
 
-    // domande mostrate a schermo
+    // mostra domande a schermo, aggiungendo la struttura HTML
     for(e of randAnswer){
       const button = document.createElement('button');
       button.innerHTML = e;
@@ -172,16 +174,29 @@ function showQuestion(){
     }
 }
 
-// reset delle domande
+
+// ---------------------- DOMANDA SUCCESSIVA E PASSAGIO AI RISULTATI ----------------------
+btnNext.addEventListener('click', () => {
+  if(actualQuestion < questionLength){
+    actualQuestion++;
+    pickQuestion++;
+    if(actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
+    questionNumber.innerHTML = actualQuestion;
+    showQuestion();   
+  }else{
+    window.location.href = 'result.html';
+  }
+});
+
+// ---------------------- RESET SPAZIO DOMANDE ----------------------
 function resetAnswer(){
-  while(answers.firstChild){
+  //rimuove i figli del box domnande finchè esistono
+  while(answers.firstChild){ 
     answers.removeChild(answers.firstChild);
   }
-  btnNext.disabled = true;
 }
 
-// Question progress on html page
-questionNumber.innerHTML = actualQuestion;
+
 
 //Timer BOZZA
 // TIMER SETTINGS
