@@ -213,7 +213,7 @@ select::-ms-expand {
   font-size: smaller;
 }
 
-canvas {
+#myCanvas {
   position: absolute;
   top: -110px;
   left: -110px;
