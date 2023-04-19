@@ -171,6 +171,15 @@ input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
+.offProceed {
+  color: white;
+  background-color: transparent;
+  padding: 0.7em 3em;
+  font-weight: bold;
+  font-size: 1.3em;
+  border: solid 2px white;
+}
+
 /**************************** RESULT PAGE **********************/
 #resultsContainer {
   text-align: center;

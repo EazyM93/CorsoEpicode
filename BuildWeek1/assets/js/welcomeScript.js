@@ -9,13 +9,26 @@ const terms = document.getElementById('terms'); // check dei termini per procede
 btnProceed.disabled = true; // bottone diabilitato
 
 // controlla selezione difficoltà
-difficult.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? (btnProceed.disabled = false, btnProceed.classList.add('blueButton')) : (btnProceed.disabled = true, btnProceed.classList.remove('blueButton')));
+difficult.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? unlock() : lock());
 
-// controlla checkbox e sblocco / blocco bottone
-terms.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? (btnProceed.disabled = false, btnProceed.classList.add('blueButton')) : (btnProceed.disabled = true, btnProceed.classList.remove('blueButton')));
+// eventListner sblocco / blocco bottone
+terms.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? unlock() : lock());
+
+// sblocco / blocco bottone
+function unlock(){
+    btnProceed.disabled = false;
+    btnProceed.classList.add('blueButton');
+    btnProceed.classList.remove('offProceed');
+}
+
+function lock(){
+    btnProceed.disabled = true;
+    btnProceed.classList.add('offProceed');
+    btnProceed.classList.remove('blueButton');
+}
+
 
 // ---------------------- EVENTO CLICK PROCEED ----------------------
 
 // immagazzina la difficoltà selezionata
 btnProceed.addEventListener('click', () => localStorage.setItem('diff', difficult.value ));
-
