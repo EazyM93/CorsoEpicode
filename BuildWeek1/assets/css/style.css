@@ -371,9 +371,9 @@ input[type="checkbox"]:checked::before {
   overflow: hidden;
   font-size: 1.1em;
   padding: 1em 2.5em;
+  font-family: "Inter", sans-serif;
 }
 
 #commentText::placeholder{
   font-family: "Inter", sans-serif;
-
 }
