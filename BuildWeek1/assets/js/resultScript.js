@@ -6,6 +6,7 @@ const wrongDom = document.getElementById('wrong');
 const numberCorrect = document.getElementById('numberCorrect');
 const numberWrong = document.getElementById('numberWrong');
 const totalQuestions = document.querySelectorAll('.totalQuestions');
+const innerResult = document.getElementById('innerResult');
 
 // ---------------------- PASSAGGIO RISULTATO ----------------------
 const risultatoQuiz = localStorage.getItem('punteggioFinale');
@@ -35,18 +36,31 @@ function percentageSet() {
 
     // assegnazione DOM domande giuste/sbagliate su domande totali
     numberCorrect.innerHTML = risultatoQuiz;
-    numberWrong.innerHTML = 7 - risultatoQuiz;
+    numberWrong.innerHTML = tempDiff - risultatoQuiz;
 
     // calcolo delle percentuali
-    percentCorrect = (risultatoQuiz * 100) / 7;
-    percentIncorrect = ((7 - risultatoQuiz) * 100) / 7;
+    percentCorrect = (risultatoQuiz * 100) / tempDiff;
+    percentIncorrect = ((tempDiff - risultatoQuiz) * 100) / tempDiff;
 
     // assegnazione DOM delle percentuali
     // to fixed prende solo le prime due cifre decimali
     correctDom.innerHTML = percentCorrect.toFixed(2);
     wrongDom.innerHTML = percentIncorrect.toFixed(2);
+
+    // manda in DOM l'esito dell'esame
+    checkQuiz();
 }
 
+// ---------------------- INSERIEMNTO ESITO QUIZ ----------------------
+
+// messaggio di promozione o bocciatura (esito esame)
+function checkQuiz(){
+    if(percentCorrect > 50){
+        innerResult.innerHTML = '<h4>Congratulations!<br /><span style="color: #00ffff">You passed the exam.</span></h4><p>We\'ll send you the certficate <br />in few minutes.<br />Check your email (including<br />promotions / spamfolder)</p>';
+    }else{
+        innerResult.innerHTML = '<h4>Congratulations!<br /><span style="color: #00ffff">You passed the exam.</span></h4><p>We\'ll send you the certficate <br />in few minutes.<br />Check your email (including<br />promotions / spamfolder)</p>';
+    }
+}
 
 // ---------------------- COSTRUZIONE GRAFICO ----------------------
 

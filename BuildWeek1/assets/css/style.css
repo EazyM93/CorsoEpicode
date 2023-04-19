@@ -326,15 +326,54 @@ input[type="checkbox"]:checked::before {
   color: white;
 }
 
-/* paky */
+/**************************** REVIEW PAGE **********************/
+
 #reviewContainer main{
   text-align: center;
+  padding: 6em 13em;
 }
 
-/* manuel stelline */
+#reviewContainer h1{
+  font-size: 3.4em;
+}
+
+#reviewContainer h2{
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 2em;
+}
+
+#starBox{
+  margin-bottom: 7em;
+}
+
+#starBox svg {
+  margin-right: 1em;
+}
+
+/* transizione stelle */
 #starBox svg path{
   transition: .8s;
   cursor: pointer;
 }
 
-/**************************** REVIEW PAGE **********************/
+#comment{
+  margin-bottom: 4em;
+}
+
+#commentText{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #B40089;
+  color: white;
+  resize: none;
+  overflow: hidden;
+  font-size: 1.1em;
+  padding: 1em 2.5em;
+}
+
+#commentText::placeholder{
+  font-family: "Inter", sans-serif;
+
+}
