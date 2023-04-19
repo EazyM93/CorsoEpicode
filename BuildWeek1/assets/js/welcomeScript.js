@@ -1,4 +1,4 @@
-// ---------------------- ELEMENTI DEL DOM ----------------------
+// ---------------------- DOM ELEMENTS ----------------------
 
 const difficult = document.getElementById('selectDifficult'); // difficoltà selezionata
 const btnProceed = document.getElementById('proceedButton'); // bottone per procedere

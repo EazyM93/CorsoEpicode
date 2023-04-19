@@ -1,51 +1,97 @@
-// PERCENT. RISPOSTE
-var percentCorrect = 50;
-var percentIncorrect = 50;
+// ---------------------- DOM ELEMENTS ----------------------
+const canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");
+const correctDom = document.getElementById('correct');
+const wrongDom = document.getElementById('wrong');
+const numberCorrect = document.getElementById('numberCorrect');
+const numberWrong = document.getElementById('numberWrong');
+const totalQuestions = document.querySelectorAll('.totalQuestions');
 
-// CANVAS HTML
-var canvas = document.getElementById("myCanvas");
-var context = canvas.getContext("2d");
+// ---------------------- PASSAGGIO RISULTATO ----------------------
+const risultatoQuiz = localStorage.getItem('punteggioFinale');
+const diff = localStorage.getItem('diff')
 
-// DIMENSIONI CERCHIO
-var centerX = canvas.width / 2;
-var centerY = canvas.height / 2;
-var radius = 150;
+// ---------------------- GRAFICO RISULTATI ----------------------
 
-// RIEMPIMENTO BARRA CERCHIO
-var degreesCorrect = (percentCorrect / 100) * 360;
-var degreesIncorrect = (percentIncorrect / 100) * 360;
-//COLORI RISPOSTE
-var strokeColorIncorrect = "#C2128D";
-var strokeColorCorrect = "#00FFFF";
+// percentuale risposte
+let percentCorrect = 0;
+let percentIncorrect = 0;
 
-//RIEMPIMENTO BORDI IN BASE ALLE DOMANDE GIUSTE/SBAGLIATE
-context.beginPath();
-context.arc(
-  centerX,
-  centerY,
-  radius,
-  ((90 + degreesCorrect) * Math.PI) / 180,
-  ((-90 - degreesIncorrect) * Math.PI) / 180,
-  true
-);
+function percentageSet() {
+    // variabile che immagazzina momentaneamente il numero di domande totali in base alla difficoltà
+    let tempDiff = 0;
 
-// BORDI RISPOSTE GIUSTE
-context.lineWidth = 50;
-context.strokeStyle = strokeColorIncorrect;
-context.stroke();
+    // check difficoltà per assegnazione
+    if (diff === 'easy') {
+        tempDiff = 7;
+    } else {
+        tempDiff = 10;
+    }
 
-//RIEMPIMENTO BORDI IN BASE ALLE DOMANDE GIUSTE/SBAGLIATE
-context.beginPath();
-context.arc(
-  centerX,
-  centerY,
-  radius,
-  (-(90 + degreesCorrect) * Math.PI) / 180,
-  (-90 * Math.PI) / 180,
-  false
-);
+    // assegnazione DOM delle domande totali
+    totalQuestions.forEach((e) => e.innerHTML = tempDiff);
 
-// BORDI RISPOSTE SBAGLIATE
-context.lineWidth = 50;
-context.strokeStyle = strokeColorCorrect;
-context.stroke();
+    // assegnazione DOM domande giuste/sbagliate su domande totali
+    percentCorrect = (risultatoQuiz * 100) / 7;
+    percentIncorrect = ((7 - risultatoQuiz) * 100) / 7;
+
+    
+    correctDom.innerHTML = percentCorrect;
+    wrongDom.innerHTML = percentIncorrect;
+
+    numberCorrect.innerHTML = risultatoQuiz;
+    numberWrong.innerHTML = 7 - risultatoQuiz;
+}
+
+function buildingGrap() {
+    // costruzione cerchio
+    let centerX = canvas.width / 2;
+    let centerY = canvas.height / 2;
+    let radius = 150;
+    let strokeColorIncorrect = "#C2128D";
+    let strokeColorCorrect = "#00FFFF";
+
+    // riempimento barra
+    let degreesCorrect = (percentCorrect / 100) * 360;
+    let degreesIncorrect = (percentIncorrect / 100) * 360;
+
+    // riempimento
+    context.beginPath();
+    context.arc(
+        centerX,
+        centerY,
+        radius,
+        ((90 + degreesCorrect) * Math.PI) / 180,
+        ((-90 - degreesIncorrect) * Math.PI) / 180,
+        true
+    );
+
+    // bordi risposte giuste
+    context.lineWidth = 50;
+    context.strokeStyle = strokeColorIncorrect;
+    context.stroke();
+
+    // riempimento 
+    context.beginPath();
+    context.arc(
+        centerX,
+        centerY,
+        radius,
+        (-(90 + degreesCorrect) * Math.PI) / 180,
+        (-90 * Math.PI) / 180,
+        false
+    );
+
+    // bordi risposte giuste
+    context.lineWidth = 50;
+    context.strokeStyle = strokeColorCorrect;
+    context.stroke();
+}
+
+
+
+//onload
+window.onload = () => {
+    percentageSet();
+    buildingGrap();
+}

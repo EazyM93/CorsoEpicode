@@ -1,4 +1,4 @@
-// ---------------------- ELEMENTI DEL DOM ----------------------
+// ---------------------- DOM ELEMENTS ----------------------
 const stars = document.querySelectorAll('#starBox svg path');
 
 // ---------------------- ANIMAZIONE STELLE ----------------------

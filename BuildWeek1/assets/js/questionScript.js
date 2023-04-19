@@ -169,7 +169,7 @@ function showQuestion(){
   // reset delle domande
   resetAnswer();
   
-  //avvia il timer
+  //avvia il timer della domanda corrente
   setTimer(arrayRand[pickQuestion]);
 
   // seleziona l'oggetto domanda
