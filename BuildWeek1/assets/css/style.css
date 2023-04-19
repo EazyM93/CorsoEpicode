@@ -334,6 +334,10 @@ input[type="checkbox"]:checked::before {
   cursor: pointer;
 }
 
+#rateUs:hover{
+  background-color: #00ffff15;
+}
+
 /**************************** REVIEW PAGE **********************/
 
 #reviewContainer main{
