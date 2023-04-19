@@ -9,12 +9,13 @@ const terms = document.getElementById('terms'); // check dei termini per procede
 btnProceed.disabled = true; // bottone diabilitato
 
 // controlla selezione difficoltà
-difficult.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? btnProceed.disabled = false : btnProceed.disabled = true);
+difficult.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? (btnProceed.disabled = false, btnProceed.classList.add('blueButton')) : (btnProceed.disabled = true, btnProceed.classList.remove('blueButton')));
 
 // controlla checkbox e sblocco / blocco bottone
-terms.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? btnProceed.disabled = false : btnProceed.disabled = true);
+terms.addEventListener('change', () => (terms.checked === true && difficult.value !== '') ? (btnProceed.disabled = false, btnProceed.classList.add('blueButton')) : (btnProceed.disabled = true, btnProceed.classList.remove('blueButton')));
 
 // ---------------------- EVENTO CLICK PROCEED ----------------------
 
 // immagazzina la difficoltà selezionata
 btnProceed.addEventListener('click', () => localStorage.setItem('diff', difficult.value ));
+
