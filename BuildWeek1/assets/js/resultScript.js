@@ -1,6 +1,6 @@
 // PERCENT. RISPOSTE
-var percentCorrect = 66;
-var percentIncorrect = 33;
+var percentCorrect = 50;
+var percentIncorrect = 50;
 
 // CANVAS HTML
 var canvas = document.getElementById("myCanvas");
@@ -24,7 +24,7 @@ context.arc(
   centerX,
   centerY,
   radius,
-  (-(90 + degreesCorrect) * Math.PI) / 180,
+  ((90 + degreesCorrect) * Math.PI) / 180,
   ((-90 - degreesIncorrect) * Math.PI) / 180,
   true
 );
