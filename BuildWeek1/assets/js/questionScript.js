@@ -197,10 +197,10 @@ function showQuestion(){
       submitAnswer = e.innerText;// assegnazione ultima risposta selezionata
 
       // se selezionata un altra risposta, deseleziona la precendente
-      document.querySelectorAll('.btnAnswer').forEach(element => element.classList.remove('btnAnswerBlue'));
+      document.querySelectorAll('.btnAnswer').forEach(element => element.classList.remove('btnAnswerPurple'));
 
       // lascia evidenziata la risposta selezionata
-      e.classList.add('btnAnswerBlue');
+      e.classList.add('btnAnswerPurple');
     })
   })
 }
