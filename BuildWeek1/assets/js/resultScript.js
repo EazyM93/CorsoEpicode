@@ -11,11 +11,13 @@ const totalQuestions = document.querySelectorAll('.totalQuestions');
 const risultatoQuiz = localStorage.getItem('punteggioFinale');
 const diff = localStorage.getItem('diff')
 
-// ---------------------- GRAFICO RISULTATI ----------------------
 
 // percentuale risposte
 let percentCorrect = 0;
 let percentIncorrect = 0;
+
+
+// ---------------------- SET PERCENTUALI E GRAFICA ----------------------
 
 function percentageSet() {
     // variabile che immagazzina momentaneamente il numero di domande totali in base alla difficoltà
@@ -32,16 +34,21 @@ function percentageSet() {
     totalQuestions.forEach((e) => e.innerHTML = tempDiff);
 
     // assegnazione DOM domande giuste/sbagliate su domande totali
+    numberCorrect.innerHTML = risultatoQuiz;
+    numberWrong.innerHTML = 7 - risultatoQuiz;
+
+    // calcolo delle percentuali
     percentCorrect = (risultatoQuiz * 100) / 7;
     percentIncorrect = ((7 - risultatoQuiz) * 100) / 7;
 
-    
-    correctDom.innerHTML = percentCorrect;
-    wrongDom.innerHTML = percentIncorrect;
-
-    numberCorrect.innerHTML = risultatoQuiz;
-    numberWrong.innerHTML = 7 - risultatoQuiz;
+    // assegnazione DOM delle percentuali
+    // to fixed prende solo le prime due cifre decimali
+    correctDom.innerHTML = percentCorrect.toFixed(2);
+    wrongDom.innerHTML = percentIncorrect.toFixed(2);
 }
+
+
+// ---------------------- COSTRUZIONE GRAFICO ----------------------
 
 function buildingGrap() {
     // costruzione cerchio
@@ -82,12 +89,11 @@ function buildingGrap() {
         false
     );
 
-    // bordi risposte giuste
+    // bordi risposte sbagliate
     context.lineWidth = 50;
     context.strokeStyle = strokeColorCorrect;
     context.stroke();
 }
-
 
 
 //onload
