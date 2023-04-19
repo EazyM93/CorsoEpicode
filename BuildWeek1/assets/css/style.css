@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/******************************* GLOBAL **************************/
+
 body {
   box-sizing: border-box;
   background-image: url(../img/bg.jpg);
@@ -16,60 +18,16 @@ body {
   margin-top: 3%;
 }
 
-/******************************* HEADER **************************/
-
 #logoEpicode {
   width: 20em;
 }
 
-/******************************** MAIN **************************/
-
-#welcomeContainer h1 {
-  font-family: "Outfit", sans-serif;
-  font-size: 8em;
-  line-height: 0.8em;
-  margin-top: 0.8em;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-}
-
-/************************ INSTRUCTIONS SECTION ******************/
-
-#istructionsTitle {
-  font-size: 2.5em;
-  font-weight: 700;
-  font-family: "Outfit", sans-serif;
-  margin: 0;
-}
-
+/* elementi di colore purple */
 .purple {
   color: #c2128d;
 }
 
-#welcomeContainer p {
-  font-size: 1.4em;
-}
-
-#welcomeContainer ul {
-  margin: 3em 0 7em 0;
-}
-
-#welcomeContainer li {
-  line-height: 1.8em;
-  font-size: 1.4em;
-}
-
-/************************* CHOOSE THE DIFFICULT ************************/
-
-#welcomeContainer h3 {
-  margin: 0;
-}
-
-#boxButton {
-  display: inline-block;
-  margin-left: 50%;
-}
-
+/* elementi bottone blu */
 .blueButton {
   color: #232b5e;
   background-color: #00ffff;
@@ -88,11 +46,55 @@ body {
   filter: drop-shadow(0 0 20px #d20094) contrast(2) brightness(2);
 }
 
+/******************************** WELCOME PAGE **************************/
+
+#welcomeContainer h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 8em;
+  line-height: 0.8em;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+
+/* INSTRUCTIONS SECTION */
+
+#instructionsTitle {
+  font-size: 2.5em;
+  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+}
+
+/* dimensione dei testi */
+#welcomeContainer p {
+  font-size: 1.4em;
+}
+
+#welcomeContainer ul {
+  margin: 3em 0 7em 0;
+}
+
+#welcomeContainer li {
+  line-height: 1.8em;
+  font-size: 1.4em;
+}
+
+/* CHOOSE THE DIFFICULT */
+
+#titleDifficulSelect {
+  margin: 0;
+}
+
+#boxButton {
+  display: inline-block;
+  margin-left: 50%;
+}
+
+
 select {
   /* Reset Select */
-  appearance: none;
   border: 0;
-  box-shadow: none;
   /* Personalize */
   flex: 1;
   background-color: white;
@@ -157,7 +159,7 @@ select::-ms-expand {
   font-size: 1.1em;
 }
 
-/*PAGINA HTML RESULT */
+/**************************** RESULT PAGE **********************/
 #resultsContainer {
   text-align: center;
 }
@@ -174,7 +176,7 @@ select::-ms-expand {
   font-size: 2em;
   line-height: 0.8em;
   margin-top: 0.8em;
-  margin-bottom: 0.5em;
+  margin-bottom: 3em;
   font-weight: 400;
   font-family: "Outfit", sans-serif;
 }
@@ -186,19 +188,49 @@ select::-ms-expand {
   margin: 0;
 }
 #resultTitle h1 {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.4em;
 }
 #graphicResults {
   text-align: center;
+  position: relative;
+  margin-bottom: 130px;
+}
+#correctAnswers,
+#wrongAnswers {
+  font-size: 1.8em;
+  font-weight: 100;
+  line-height: 0.3em;
+  text-align: left;
+  margin: 40px 90px;
+  font-family: "Outfit", sans-serif;
+}
+#correctAnswers h2:first-child,
+#wrongAnswers h2:first-child {
+  font-weight: normal;
+}
+
+#graphicResults p {
+  font-size: smaller;
+}
+
+canvas {
+  position: absolute;
+  top: -110px;
+  left: -110px;
 }
 
 .align {
   display: inline-block;
-margin: 3em;
+  margin: 4em;
 }
 
 #buttonRateUs {
   text-align: center;
+  margin: 15px;
+}
+#boxButton {
+  display: inline-block;
+  margin-left: 50%;
 }
 
 #rateUs {
@@ -238,7 +270,7 @@ margin: 3em;
 }
 
 #question {
-  font-size: 5em;
+  font-size: 3em;
   margin-top: 200px;
 }
 
@@ -247,12 +279,15 @@ margin: 3em;
   border-radius: 60px;
   font-size: 1.5em;
   color:white;
-  padding: 45px 80px;
   margin: 30px;
   box-shadow: 0 -3.2px 0.4px white;
+  box-sizing: border-box;
+  width: 570px;
+  height: 100px;
 }
 
 #answers {
+  padding: 5em;
   margin-bottom: 80px;
 }
 
@@ -260,9 +295,20 @@ margin: 3em;
   font-size: 2em;
 }
 
-/* manuel stelline */
+.btnAnswer:hover {
+background-color: #d20094;
+color:white;
+}
 
+/* paky */
+#reviewContainer main{
+  text-align: center;
+}
+
+/* manuel stelline */
 #starBox svg path{
   transition: .8s;
   cursor: pointer;
 }
+
+/**************************** REVIEW PAGE **********************/
