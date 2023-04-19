@@ -86,19 +86,21 @@ body {
   margin: 0;
 }
 
-#boxButton {
-  display: inline-block;
-  margin-left: 50%;
+select {
+  border: 0;
+  flex: 1;
+  cursor: pointer;
 }
 
+.alignDifficulty {
+  text-align: center;
+}
 
-select {
-  /* Reset Select */
-  border: 0;
-  /* Personalize */
-  flex: 1;
-  background-color: white;
-  cursor: pointer;
+#selectDifficult {
+  font-size: 1.2em;
+  background: linear-gradient(122deg, rgba(15, 12, 59, 1) 23%, rgba(108, 40, 117, 1) 50%, rgba(18, 23, 60, 1) 72%);
+  background-color: #0C113B;
+  color: white;
 }
 
 /* Remove IE arrow */
@@ -132,31 +134,41 @@ select::-ms-expand {
   color: #1234f3;
 }
 
-/**************************** CHECKBOX PROMISE **********************/
-
-#terms {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border: 2px solid white;
-  appearance: none;
-  margin: 8% 0 0 0;
-}
-
+/* checkbox promise */
 #labelCheckbox {
-  margin-left: 10px;
-  position: absolute;
-  margin: 13px 0 0 10px;
-}
-
-#terms:checked {
-  background-color: #d20094;
+  margin-left: 2.8em;
 }
 
 #formCheck {
   display: inline-block;
   font-weight: 500;
   font-size: 1.1em;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid white;
+  border-radius: 0.15em;
+  transform: translateY(2em ) translateX(-0.15em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1.1em;
+  height: 1em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color:  #d20094;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
 }
 
 /**************************** RESULT PAGE **********************/
