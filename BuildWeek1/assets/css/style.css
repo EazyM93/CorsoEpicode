@@ -317,8 +317,13 @@ input[type="checkbox"]:checked::before {
 }
 
 .btnAnswer:hover {
-background-color: #d20094;
-color:white;
+  cursor: pointer;
+  color:white;
+}
+
+.btnAnswerBlue{
+  background-color:  #B40089;
+  color: white;
 }
 
 /* paky */

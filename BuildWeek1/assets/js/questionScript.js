@@ -192,7 +192,16 @@ function showQuestion(){
     
   // quando selezioniamo una risposta la assegnamo a una variabile, può essere cambiata prima di fare il submit
   document.querySelectorAll('.btnAnswer').forEach(e => {
-    e.addEventListener('click', () => submitAnswer = e.innerText)
+    e.addEventListener('click', () => {
+
+      submitAnswer = e.innerText;// assegnazione ultima risposta selezionata
+
+      // se selezionata un altra risposta, deseleziona la precendente
+      document.querySelectorAll('.btnAnswer').forEach(element => element.classList.remove('btnAnswerBlue'));
+
+      // lascia evidenziata la risposta selezionata
+      e.classList.add('btnAnswerBlue');
+    })
   })
 }
 
