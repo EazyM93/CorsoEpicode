@@ -191,10 +191,20 @@ input[type="checkbox"]:checked::before {
 
 /***************** QUESTION PAGE ***********************/
 
+#timerCanvas{
+  position: relative;
+  top: -145px;
+}
+
+#innerCircle{
+   position: absolute;
+}
+
 #timer {
   margin: 0 150px;
   text-align: center;
   float: right;
+  position: relative;
 }
 
 #seconds {
@@ -340,6 +350,10 @@ input[type="checkbox"]:checked::before {
 
 #rateUs:hover{
   background-color: #00ffff15;
+}
+
+.noGlow{
+  opacity: 0.5;
 }
 
 /**************************** REVIEW PAGE **********************/

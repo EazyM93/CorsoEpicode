@@ -8,6 +8,9 @@ const numberWrong = document.getElementById('numberWrong');
 const totalQuestions = document.querySelectorAll('.totalQuestions');
 const innerResult = document.getElementById('innerResult');
 
+const wrongAnswers = document.getElementById('wrongAnswers');
+const correctAnswers = document.getElementById('correctAnswers');
+
 // ---------------------- PASSAGGIO RISULTATO ----------------------
 const risultatoQuiz = localStorage.getItem('punteggioFinale');
 const diff = localStorage.getItem('diff')
@@ -54,11 +57,20 @@ function percentageSet() {
 // ---------------------- INSERIEMNTO ESITO QUIZ ----------------------
 
 // messaggio di promozione o bocciatura (esito esame)
+//evidenzia la percentuale maggiore di risposte tra corrette e sbagliate
 function checkQuiz(){
-    if(percentCorrect > 50){
+    if(percentCorrect > 60){
+
         innerResult.innerHTML = '<h4>Congratulations!<br /><span style="color: #00ffff">You passed the exam.</span></h4><p>We\'ll send you the certficate <br />in few minutes.<br />Check your email (including<br />promotions / spamfolder)</p>';
+
+        correctAnswers.classList.remove('noGlow');
+        
     }else{
-        innerResult.innerHTML = '<h4>Congratulations!<br /><span style="color: #00ffff">You passed the exam.</span></h4><p>We\'ll send you the certficate <br />in few minutes.<br />Check your email (including<br />promotions / spamfolder)</p>';
+
+        innerResult.innerHTML = '<h4>We\'re sorry<br /><span style="color: red">You didn\'t pass the exam.</span></h4>';
+
+        wrongAnswers.classList.remove('noGlow');
+
     }
 }
 
