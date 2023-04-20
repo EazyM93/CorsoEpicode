@@ -154,7 +154,7 @@ function startQuiz() {
 
   // controllo difficoltà e crea array randomizzato escludendo/includendo le domande difficili
   if (diff === 'easy') {
-    arrayRand = randomizeArray(questions.slice(3));
+    arrayRand = randomizeArray(questions.filter(e => e.difficulty === 'easy'));
   } else {
     arrayRand = randomizeArray(questions);
   }
