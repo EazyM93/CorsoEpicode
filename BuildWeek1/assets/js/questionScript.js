@@ -232,18 +232,26 @@ function resetAnswer() {
 
 // ---------------------- AVANZAMENTO ----------------------
 function questionProgress() {
+  
   //avanzamento con controllo dell'andamento del quiz
   //se il quiz è finito va alla pagina successiva
   if (actualQuestion < questionLength) {
     actualQuestion++;
     pickQuestion++;
+
     //il bottone cambierà dicitura all'ultima domanda
     if (actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
+
     questionNumber.innerHTML = actualQuestion; //avanzamento visivo sul DOM
+
     showQuestion();
+
   } else {
+
     localStorage.setItem('punteggioFinale', punteggio); //creazione della local storage del punteggio finale
+
     window.location.href = 'result.html'; //passaggio alla schermata del risultato
+
   }
 }
 
@@ -254,12 +262,11 @@ function setTimer(e) {
   let countDown = (e.difficulty === 'easy') ? 30 : 60;
   let baseCount = countDown;
 
-  graphTimer(countDown, baseCount)
-
+  
   //iniziallizzazione visiva del timer nel DOM
+  graphTimer(countDown, baseCount)
   secondsTimer.innerHTML = countDown;
   countDown--;
-  
   
 
   // set dell'intervallo

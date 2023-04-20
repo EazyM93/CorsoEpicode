@@ -81,7 +81,6 @@ function checkQuiz(){
 
 function buildingGrap() {
     
-
     // costruzione cerchio
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
