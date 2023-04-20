@@ -122,7 +122,7 @@ questionNumber.innerHTML = actualQuestion;
 
 // ---------------------- SET QUIZ DIFFICULT ----------------------
 const diff = localStorage.getItem('diff'); // value scelta nella prima pagina
-let questionLength; //contiene la quantità di domande alla difficoltà
+let questionLength; //contiene la quantità di domande in base alla difficoltà
 
 function actualDifficult() {
 
@@ -141,7 +141,7 @@ function randomizeArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); //indice casuale
     let temp = arr[i]; //variabile temporanea
-    arr[i] = arr[j];
+    arr[i] = arr[j];//scambio posizioni
     arr[j] = temp;
   }
 
@@ -154,9 +154,9 @@ function startQuiz() {
 
   // controllo difficoltà e crea array randomizzato escludendo/includendo le domande difficili
   if (diff === 'easy') {
-    arrayRand = randomizeArray(questions.filter(e => e.difficulty === 'easy'));
+    arrayRand = randomizeArray(questions.filter(e => e.difficulty === 'easy')); //randomizza filtrando solo quelle facili
   } else {
-    arrayRand = randomizeArray(questions);
+    arrayRand = randomizeArray(questions);//randomizza tutte le domande
   }
 
   showQuestion(); //inizzializza la prima domanda
@@ -169,18 +169,17 @@ function showQuestion() {
   // reset delle domande
   resetAnswer();
 
-  //avvia il timer della domanda corrente
+  // avvia il timer della domanda corrente
   setTimer(arrayRand[pickQuestion]);
 
   // seleziona l'oggetto domanda
   question.innerHTML = arrayRand[pickQuestion].question;
 
-  // creazione array risposte randomizzate
-  let randAnswer = arrayRand[pickQuestion].incorrect_answers; // assegna le risposte sbagliate
+  // creazione array conente tutte le risposte della domanda corrente
+  let randAnswer = [...arrayRand[pickQuestion].incorrect_answers, arrayRand[pickQuestion].correct_answer];
 
-  randAnswer.push(arrayRand[pickQuestion].correct_answer); // push di quella corretta
-
-  randAnswer = randomizeArray(randAnswer); // randomizzazione risposte
+  // randomizzazione risposte
+  randAnswer = randomizeArray(randAnswer); 
 
   // mostra domande a schermo, aggiungendo la struttura HTML
   for (e of randAnswer) {
