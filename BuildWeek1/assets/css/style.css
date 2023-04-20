@@ -98,7 +98,7 @@ select {
 
 #selectDifficult {
   font-size: 1.2em;
-  background: linear-gradient(122deg, rgba(15, 12, 59, 1) 23%, rgba(108, 40, 117, 1) 50%, rgba(18, 23, 60, 1) 72%);
+  background: linear-gradient(122deg, rgb(27, 22, 92) 23%, rgba(108, 40, 117, 1) 50%, rgb(24, 31, 82) 72%);
   background-color: #0C113B;
   color: white;
 }
@@ -376,7 +376,7 @@ input[type="checkbox"]:checked::before {
 
 #reviewContainer main{
   text-align: center;
-  padding: 6em 13em;
+  padding: 3em 13em 6em;
 }
 
 #reviewContainer h1{
