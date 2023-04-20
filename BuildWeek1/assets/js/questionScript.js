@@ -154,9 +154,15 @@ function startQuiz() {
 
   // controllo difficoltà e crea array randomizzato escludendo/includendo le domande difficili
   if (diff === 'easy') {
-    arrayRand = randomizeArray(questions.filter(e => e.difficulty === 'easy')); //randomizza filtrando solo quelle facili
+
+    //randomizza filtrando solo quelle facili
+    arrayRand = randomizeArray(questions.filter(e => e.difficulty === 'easy'));
+
   } else {
-    arrayRand = randomizeArray(questions);//randomizza tutte le domande
+
+    //randomizza tutte le domande
+    arrayRand = randomizeArray(questions);
+
   }
 
   showQuestion(); //inizzializza la prima domanda
@@ -186,11 +192,12 @@ function showQuestion() {
     const button = document.createElement('button');
     button.innerHTML = e;
     button.classList.add('btnAnswer'); //assegna una classe per getire la selezione utente
-    answers.appendChild(button);
+    answers.appendChild(button); // genera la singola domanda come elemento figlio
   }
 
   // quando selezioniamo una risposta la assegnamo a una variabile, può essere cambiata prima di fare il submit
   document.querySelectorAll('.btnAnswer').forEach(e => {
+    // ascolta l'evento click di tutti i bottoni di classe bntAswer
     e.addEventListener('click', () => {
 
       submitAnswer = e.innerText;// assegnazione ultima risposta selezionata
@@ -200,6 +207,7 @@ function showQuestion() {
 
       // lascia evidenziata la risposta selezionata
       e.classList.add('btnAnswerPurple');
+
     })
   })
 }
@@ -208,7 +216,9 @@ function showQuestion() {
 // ---------------------- DOMANDA SUCCESSIVA E PASSAGIO AI RISULTATI ----------------------
 btnNext.addEventListener('click', () => {
 
-  //controlla se la risposta è esatta
+  // controlla se la risposta è esatta
+  // avviene solo se premiamo il pulsante, per questo si trova fuori question progress.
+  // nel momento in cui question progress parte alla fine del timer, deve necessariamente essere sbagliata (evitiamo possibili bug)
   if (submitAnswer === arrayRand[pickQuestion].correct_answer) {
     punteggio++; //incremento punteggio
   }
@@ -220,7 +230,7 @@ btnNext.addEventListener('click', () => {
 // ---------------------- RESET SPAZIO DOMANDE ----------------------
 function resetAnswer() {
 
-  //rimuove i figli del box domnande finchè esistono
+  //rimuove i figli del box domande finchè esistono
   while (answers.firstChild) {
     answers.removeChild(answers.firstChild);
   }
@@ -238,7 +248,7 @@ function questionProgress() {
     actualQuestion++;
     pickQuestion++;
 
-    //il bottone cambierà dicitura all'ultima domanda
+  //il bottone cambierà dicitura all'ultima domanda
     if (actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
 
     questionNumber.innerHTML = actualQuestion; //avanzamento visivo sul DOM
@@ -271,6 +281,7 @@ function setTimer(e) {
   // set dell'intervallo
   var count = setInterval(() => {
     
+    // mostra graficamente con il cerchio il passare dei secondi
     graphTimer(countDown, baseCount)
     
     //decremento dei secondi
