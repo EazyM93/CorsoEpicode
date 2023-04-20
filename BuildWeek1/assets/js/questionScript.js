@@ -252,13 +252,20 @@ function setTimer(e) {
 
   //inizializzo il limite di tempo in base alla difficoltà
   let countDown = (e.difficulty === 'easy') ? 30 : 60;
+  let baseCount = countDown;
+
+  graphTimer(countDown, baseCount)
 
   //iniziallizzazione visiva del timer nel DOM
   secondsTimer.innerHTML = countDown;
   countDown--;
+  
+  
 
   // set dell'intervallo
   var count = setInterval(() => {
+    
+    graphTimer(countDown, baseCount)
     
     //decremento dei secondi
     secondsTimer.innerHTML = countDown;
@@ -277,7 +284,7 @@ function setTimer(e) {
 }
 
 //cerchio grafico timer
-function graphTimer() {
+function graphTimer(countDown, baseCount) {
   // cerchio progressivo timer
   var canvas = document.getElementById('timerCanvas');
   var ctx = canvas.getContext('2d');
@@ -285,7 +292,7 @@ function graphTimer() {
   var y = canvas.height / 2;
   var radius = 70;
   var startAngle = 1.5 * Math.PI;
-  var endAngle = startAngle + ((countDown / (e.difficulty === 'easy' ? 30 : 60)) * 2 * Math.PI);
+  var endAngle = startAngle + ((countDown / baseCount) * 2 * Math.PI);
 
   // cerchio fisso
   ctx.beginPath();

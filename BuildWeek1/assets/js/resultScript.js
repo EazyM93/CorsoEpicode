@@ -64,19 +64,24 @@ function checkQuiz(){
         innerResult.innerHTML = '<h4>Congratulations!<br /><span style="color: #00ffff">You passed the exam.</span></h4><p>We\'ll send you the certficate <br />in few minutes.<br />Check your email (including<br />promotions / spamfolder)</p>';
 
         correctAnswers.classList.remove('noGlow');
+        canvas.classList.add('myCanvasCorrect')
         
     }else{
 
         innerResult.innerHTML = '<h4>We\'re sorry<br /><span style="color: red">You didn\'t pass the exam.</span></h4>';
 
-        wrongAnswers.classList.remove('noGlow');
+        innerResult.classList.add('innerResultWrong')
 
+        wrongAnswers.classList.remove('noGlow');
+        canvas.classList.add('myCanvasWrong')
     }
 }
 
 // ---------------------- COSTRUZIONE GRAFICO ----------------------
 
 function buildingGrap() {
+    
+
     // costruzione cerchio
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
