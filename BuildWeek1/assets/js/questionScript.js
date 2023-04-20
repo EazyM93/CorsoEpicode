@@ -221,10 +221,35 @@ btnNext.addEventListener('click', () => {
   // nel momento in cui question progress parte alla fine del timer, deve necessariamente essere sbagliata (evitiamo possibili bug)
   if (submitAnswer === arrayRand[pickQuestion].correct_answer) {
     punteggio++; //incremento punteggio
+
+    // cambia colore se la risposta è esatta
+    document.querySelector('.btnAnswerPurple').classList.add('btnAnswerGreen');
+    document.querySelector('.btnAnswerPurple').classList.remove('btnAnswerPurple');
+
+  }else{
+
+    document.querySelector('.btnAnswerPurple').classList.add('btnAnswerRed');
+    document.querySelector('.btnAnswerPurple').classList.remove('btnAnswerPurple');
+    document.querySelectorAll('.btnAnswer').forEach(e => {
+      if(e.innerText === arrayRand[pickQuestion].correct_answer){
+        e.classList.add('btnAnswerGreen');
+      }
+    })
   }
 
-  //avanzamento sul click
-  questionProgress();
+  let countDown = 1;
+
+  const waitNext = setInterval(() => {
+
+    countDown--;
+
+    if (countDown < 0) {
+      clearInterval(waitNext);
+      questionProgress();
+    }
+
+  }, 1000)
+  
 });
 
 // ---------------------- RESET SPAZIO DOMANDE ----------------------

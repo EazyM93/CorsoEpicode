@@ -66,7 +66,6 @@ body {
   margin: 0;
 }
 
-/* dimensione dei testi */
 #welcomeContainer p {
   font-size: 1.4em;
 }
@@ -103,12 +102,12 @@ select {
   color: white;
 }
 
-/* Remove IE arrow */
+/* Rimuove impostazioni predefinite */
 select::-ms-expand {
   display: none;
 }
 
-/* Custom Select wrapper */
+/* Personalizzazione della select */
 .select {
   position: relative;
   display: flex;
@@ -118,7 +117,7 @@ select::-ms-expand {
   overflow: hidden;
 }
 
-/* Arrow */
+/* Freccia della select stilizzata */
 .select::after {
   content: "\25BC";
   position: absolute;
@@ -129,12 +128,12 @@ select::-ms-expand {
   pointer-events: none;
 }
 
-/* Transition */
+/* Transizione freccia */
 .select:hover::after {
   color: #1234f3;
 }
 
-/* checkbox promise */
+/* Checkbox dei termini */
 #labelCheckbox {
   margin-left: 2.8em;
 }
@@ -192,6 +191,7 @@ input[type="checkbox"]:checked::before {
 
 /***************** QUESTION PAGE ***********************/
 
+/* Timer e grafico*/
 #timerCanvas{
   position: relative;
   top: -145px;
@@ -232,6 +232,7 @@ input[type="checkbox"]:checked::before {
   margin-top: 5em;
 }
 
+/* Button per risposte */
 .btnAnswer {
   background: rgba(197, 154, 154, 0.1);
   border-radius: 60px;
@@ -266,6 +267,18 @@ input[type="checkbox"]:checked::before {
 
 .btnAnswerPurple{
   background-color:  #B40089;
+  color: white;
+}
+
+.btnAnswerRed{
+  transition: 0.2s;
+  background-color:  red;
+  color: white;
+}
+
+.btnAnswerGreen{
+  transition: 0.2s;
+  background-color:  green;
   color: white;
 }
 
@@ -327,6 +340,7 @@ input[type="checkbox"]:checked::before {
   font-size: smaller;
 }
 
+/* Canvas */
 .myCanvasCorrect {
   position: absolute;
   top: -110px;
@@ -349,6 +363,7 @@ input[type="checkbox"]:checked::before {
   margin: 4em;
 }
 
+/* Button 'RATE US' */
 #buttonRateUs {
   text-align: center;
   margin: 15px;
@@ -389,6 +404,7 @@ input[type="checkbox"]:checked::before {
   margin-bottom: 2em;
 }
 
+/* Stilizzazione stelle */
 #starBox{
   margin-bottom: 7em;
 }
@@ -397,7 +413,7 @@ input[type="checkbox"]:checked::before {
   margin-right: 1em;
 }
 
-/* transizione stelle */
+/* Transizione stelle */
 #starBox svg path{
   transition: .8s;
   cursor: pointer;
