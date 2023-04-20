@@ -103,8 +103,7 @@ const questions = [
 const questionNumber = document.getElementById('number');
 const question = document.getElementById('question');
 const answers = document.getElementById('answers');
-const textNext = document.getElementById('nextButton');
-const btnNext = document.getElementById('nextButtonBox');
+const btnNext = document.getElementById('nextButton');
 const secondsTimer = document.getElementById('seconds');
 
 
@@ -113,7 +112,7 @@ let punteggio = 0; //tiene il conto delle risposte corrette
 let actualQuestion = 1; //tiene il conto delle domande effettuate
 let pickQuestion = 0; //indice delle domande
 let arrayRand; //variabile che accoglie l'array domande randomizzato da randomizeArray
-let submitAnswer; //contiene di volta in volta la risposta inserita dall'utente
+let submitAnswer = ''; //contiene di volta in volta la risposta inserita dall'utente
 
 
 // ---------------------- PROGRESSO DOMANDE NEL DOM ----------------------
@@ -219,12 +218,19 @@ btnNext.addEventListener('click', () => {
   // controlla se la risposta è esatta
   // avviene solo se premiamo il pulsante, per questo si trova fuori question progress.
   // nel momento in cui question progress parte alla fine del timer, deve necessariamente essere sbagliata (evitiamo possibili bug)
-  if (submitAnswer === arrayRand[pickQuestion].correct_answer) {
+  if(submitAnswer === ''){
+
+    questionProgress();
+
+  }else if (submitAnswer === arrayRand[pickQuestion].correct_answer) {
     punteggio++; //incremento punteggio
 
     // cambia colore se la risposta è esatta
     document.querySelector('.btnAnswerPurple').classList.add('btnAnswerGreen');
     document.querySelector('.btnAnswerPurple').classList.remove('btnAnswerPurple');
+
+    // piccolo delay per mostrare all'utente il risultato reale
+    loadShowResult();
 
   }else{
 
@@ -238,7 +244,17 @@ btnNext.addEventListener('click', () => {
         e.classList.add('btnAnswerGreen');
       }
     })
+
+    // piccolo delay per mostrare all'utente il risultato reale
+    loadShowResult();
   }
+
+  
+
+});
+
+// ---------------------- TEMPO DI ATTESA DOPO IL CLICK BUTTON ----------------------
+function loadShowResult(){
 
   // piccola attesa per dare il tempo all'utente di vedere la risposta corretta
   let countDown2 = 1;
@@ -254,7 +270,7 @@ btnNext.addEventListener('click', () => {
 
   }, 1000)
 
-});
+}
 
 // ---------------------- RESET SPAZIO DOMANDE ----------------------
 function resetAnswer() {
@@ -278,7 +294,7 @@ function questionProgress() {
     pickQuestion++;
 
   //il bottone cambierà dicitura all'ultima domanda
-    if (actualQuestion === questionLength) textNext.innerText = 'END QUIZ';
+    if (actualQuestion === questionLength) btnNext.innerText = 'END QUIZ';
 
     questionNumber.innerHTML = actualQuestion; //avanzamento visivo sul DOM
 
