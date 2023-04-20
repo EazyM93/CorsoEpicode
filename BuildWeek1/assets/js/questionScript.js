@@ -228,8 +228,11 @@ btnNext.addEventListener('click', () => {
 
   }else{
 
+    // cambia colore se la risposta è errata
     document.querySelector('.btnAnswerPurple').classList.add('btnAnswerRed');
     document.querySelector('.btnAnswerPurple').classList.remove('btnAnswerPurple');
+
+    // evidenzia quella corretta
     document.querySelectorAll('.btnAnswer').forEach(e => {
       if(e.innerText === arrayRand[pickQuestion].correct_answer){
         e.classList.add('btnAnswerGreen');
@@ -237,19 +240,20 @@ btnNext.addEventListener('click', () => {
     })
   }
 
-  let countDown = 1;
+  // piccola attesa per dare il tempo all'utente di vedere la risposta corretta
+  let countDown2 = 1;
 
   const waitNext = setInterval(() => {
 
-    countDown--;
+    countDown2--;
 
-    if (countDown < 0) {
+    if (countDown2 < 0) {
       clearInterval(waitNext);
       questionProgress();
     }
 
   }, 1000)
-  
+
 });
 
 // ---------------------- RESET SPAZIO DOMANDE ----------------------
