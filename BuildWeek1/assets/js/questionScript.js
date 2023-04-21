@@ -126,7 +126,7 @@ let questionLength; //contiene la quantità di domande in base alla difficoltà
 function actualDifficult() {
 
   //verifica e ritorna il numero di domande in base alla difficoltà
-  questionLength = (diff === 'easy') ? 7 : 10;
+  questionLength = (diff === 'easy') ? 7 : 10; 
 
   //restituisce sul DOM la lunghezza del quiz
   document.getElementById('questionLength').innerHTML = questionLength;
@@ -140,7 +140,7 @@ function randomizeArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); //indice casuale
     let temp = arr[i]; //variabile temporanea
-    arr[i] = arr[j];//scambio posizioni
+    arr[i] = arr[j]; //scambio posizioni
     arr[j] = temp;
   }
 
@@ -220,7 +220,10 @@ btnNext.addEventListener('click', () => {
   // nel momento in cui question progress parte alla fine del timer, deve necessariamente essere sbagliata (evitiamo possibili bug)
   if(submitAnswer === ''){
 
-    questionProgress();
+    // evidenzia quella corretta
+    showCorrect(arrayRand, pickQuestion);
+
+    loadShowResult();
 
   }else if (submitAnswer === arrayRand[pickQuestion].correct_answer) {
     punteggio++; //incremento punteggio
@@ -239,19 +242,24 @@ btnNext.addEventListener('click', () => {
     document.querySelector('.btnAnswerPurple').classList.remove('btnAnswerPurple');
 
     // evidenzia quella corretta
-    document.querySelectorAll('.btnAnswer').forEach(e => {
-      if(e.innerText === arrayRand[pickQuestion].correct_answer){
-        e.classList.add('btnAnswerGreen');
-      }
-    })
+    showCorrect(arrayRand, pickQuestion);
 
     // piccolo delay per mostrare all'utente il risultato reale
     loadShowResult();
   }
 
-  
-
 });
+
+// evidenzia la domanda corretta
+function showCorrect(arr, i){
+
+  document.querySelectorAll('.btnAnswer').forEach(e => {
+    if(e.innerText === arr[i].correct_answer){
+      e.classList.add('btnAnswerGreen');
+    }
+  })
+
+}
 
 // ---------------------- TEMPO DI ATTESA DOPO IL CLICK BUTTON ----------------------
 function loadShowResult(){
@@ -263,10 +271,7 @@ function loadShowResult(){
 
     countDown2--;
 
-    if (countDown2 < 0) {
-      clearInterval(waitNext);
-      questionProgress();
-    }
+    blockCountDown(waitNext, countDown2);
 
   }, 1000)
 
@@ -337,10 +342,7 @@ function setTimer(e) {
     btnNext.addEventListener('click', () => clearInterval(count));
 
     //blocca il timer se il countdown scende a zero e va alla domanda successiva / termina il quiz
-    if (countDown < 0) {
-      clearInterval(count);
-      questionProgress();
-    }
+    blockCountDown(count, countDown);
 
   }, 1000);
 }
@@ -369,6 +371,16 @@ function graphTimer(countDown, baseCount) {
   ctx.lineWidth = 20;
   ctx.strokeStyle = '#01FBFC';
   ctx.stroke();
+}
+
+// blocco dei countdown
+function blockCountDown(interval, count){
+
+  if (count < 0) {
+    clearInterval(interval);
+    questionProgress();
+  }
+
 }
 
 // Onload
