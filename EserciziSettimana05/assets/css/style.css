@@ -298,10 +298,11 @@ footer a {
 @media print {
 
     body {
+        text-decoration: initial;
         background-color: initial;
     }
 
-    iframe{
+    iframe, header img, header ul{
         display: none;
     }
 
@@ -320,7 +321,7 @@ footer a {
     }
 
     tbody tr:last-of-type {
-        border-bottom: 2px solid initial;
+        border-bottom: none;
     }
     
 
