@@ -249,4 +249,7 @@ footer a {
         height: 10em;
     }
 
+    body{
+        max-width: 1200px
+    }
 }
