@@ -180,20 +180,41 @@ footer a {
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 576px){
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
 
     header nav li {
         display: inline-block;
         margin-right: 1em;
     }
-    
-    h1 {
-        font-size: 3.5rem;
-        font-weight: bold;
+
+    section{
+        border-radius: 20px;
     }
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px){
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+
+    header nav li {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    section{
+        border-radius: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
     
     header nav li {
         display: inline-block;
@@ -209,25 +230,40 @@ footer a {
         margin: 5em auto;
     }
 
+    table {
+        width: 80%;
+    }
+
+    section{
+        border-radius: 20px;
+    }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1200px){
 
     header{
         padding: 1em;
         text-align: left;
+        vertical-align: middle;
+        
     }
 
     header div, header div img, header div p, header nav, header nav li{
         display: inline-block;
         margin: 0;
+        vertical-align: middle;
+    }
+
+    header div{
+        margin-right: 30em;
     }
 
     
     main iframe, main section{
         display: inline-block;
-        width: 25em;
+        width: 49%;
         height: 20em;
+        vertical-align: middle;
     }
 
 
@@ -252,6 +288,10 @@ footer a {
     body{
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    section{
+        border-radius: 20px;
     }
 }
 
@@ -283,4 +323,5 @@ footer a {
         border-bottom: 2px solid initial;
     }
     
+
 }
