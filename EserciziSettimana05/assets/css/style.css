@@ -250,6 +250,37 @@ footer a {
     }
 
     body{
-        max-width: 1200px
+        max-width: 1200px;
+        margin: 0 auto;
     }
+}
+
+@media print {
+
+    body {
+        background-color: initial;
+    }
+
+    iframe{
+        display: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: initial;
+    }
+
+    footer a {
+        color: initial;
+    }
+
+    strong {
+        color: initial;
+        font-weight: bold;
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 2px solid initial;
+    }
+    
 }
