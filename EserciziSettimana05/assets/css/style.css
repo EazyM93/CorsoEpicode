@@ -302,7 +302,7 @@ footer a {
         background-color: initial;
     }
 
-    iframe, header img, header ul{
+    iframe, header img, header ul, section, aside{
         display: none;
     }
 
