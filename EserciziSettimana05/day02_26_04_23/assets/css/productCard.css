@@ -1,0 +1,53 @@
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+    color: #612506;
+}
+
+.containerCard{
+    background-color: #FBF7E3;
+    width: 25em;
+    border-radius: 25%;
+    overflow: hidden;
+}
+
+.img{
+    background-image: url(../img/honey.jpg);
+    background-repeat: no-repeat;
+    width: inherit;
+    height: 25em;
+    background-position: 50%;
+}
+
+.subInfo{
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.price{
+    font-size: 1.5em;
+}
+
+.textInfo{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2em 0;
+}
+
+.addToCart{
+    text-align: center;
+    margin: 1em;
+}
+
+.addText{
+    background-color: #F3DF85;
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 0.5em 2em;
+    font-size: 1.5em;
+    border-radius: 50px;
+}
