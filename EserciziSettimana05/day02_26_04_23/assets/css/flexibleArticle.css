@@ -15,6 +15,7 @@
     width: 100%;
     flex-wrap: wrap-reverse;
     justify-content: space-between;
+    border-radius: 45px;
 }
 
 .imgHoney{
