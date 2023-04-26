@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+    color: #612506;
+}
+
+.containerFlexible{
+    display: flex;
+    background-color: #FBF7E3;
+    padding: 2em;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+}
+
+.imgHoney{
+    width: 100%;
+}
+
+.element{
+    flex: 1 0 50%;
+}
