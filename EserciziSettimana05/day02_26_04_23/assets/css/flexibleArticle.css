@@ -7,18 +7,3 @@
     font-family: 'open sans', sans-serif;
     color: #612506;
 }
-
-.containerFlexible{
-    display: flex;
-    background-color: #FBF7E3;
-    padding: 2em;
-    width: 100%;
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
-    border-radius: 5px;
-}
-
-
-.element{
-    flex: 1 0 50%;
-}
