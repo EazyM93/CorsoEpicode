@@ -76,22 +76,6 @@ body{
     z-index: 1;
 }
 
-#uno{
-    animation-delay: 0s;
-}
-
-#uno{
-    animation-delay: 0s;
-}
-
-#uno{
-    animation-delay: 0s;
-}
-
-#uno{
-    animation-delay: 0s;
-}
-
 @keyframes fall {
     0% {
         transform: translate(0, -500%);
