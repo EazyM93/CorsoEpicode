@@ -23,7 +23,7 @@ body{
     width: 20em;
     height: 15em;
     transition: 1s;
-    animation: .7s fall linear;
+    animation: .7s fall linear backwards;
 }
 
 .left{
@@ -58,7 +58,37 @@ body{
     background: linear-gradient(#C2C3EC, 60%, #52524e);
 }
 
+#uno{
+    animation-delay: 0s;
+}
 
+#due{
+    animation-delay: 0.2s;
+}
+
+#tre{
+    animation-delay: 0.4s;
+}
+
+#quattro{
+    animation-delay: 0.6s;
+}
+
+#cinque{
+    animation-delay: 0.8s;
+}
+
+#sei{
+    animation-delay: 1s;
+}
+
+#sette{
+    animation-delay: 1.2s;
+}
+
+#otto{
+    animation-delay: 1.4s;
+}
 
 .postIt h2{
     font-weight: bold;
