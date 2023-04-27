@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+body{
+    background-color: #666666;
+    font-family: 'Caveat', sans-serif;
+}
+
+.container{
+    padding: 5em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.postIt{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px rgb(52, 52, 52);
+    margin: 2em;
+    width: 20em;
+    height: 15em;
+    transition: 1s;
+    animation: .7s fall linear;
+}
+
+.left{
+    transform: rotate(-8deg);
+}
+
+.leftRight{
+    transform: rotate(8deg) translate(-20%);
+}
+
+.leftUp{
+    transform: rotate(-8deg) translate(0, -20%);
+}
+
+.right{
+    transform: rotate(7deg);
+}
+
+.rightRight{
+    transform: rotate(-8deg) translate(-20%);
+}
+
+.yellow{
+    background: linear-gradient(#f4f7ab, 90%, #52524e);
+}
+
+.green{
+    background: linear-gradient(#CBFDCD, 60%, #52524e);
+}
+
+.purple{
+    background: linear-gradient(#C2C3EC, 60%, #52524e);
+}
+
+
+
+.postIt h2{
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+.postIt p{
+    font-size: 2em;
+}
+
+.postIt:hover{
+    transform: rotate(0) scale(1.5);
+    box-shadow: 10px 10px 5px rgb(52, 52, 52);
+    z-index: 1;
+}
+
+#uno{
+    animation-delay: 0s;
+}
+
+#uno{
+    animation-delay: 0s;
+}
+
+#uno{
+    animation-delay: 0s;
+}
+
+#uno{
+    animation-delay: 0s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, -500%);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
