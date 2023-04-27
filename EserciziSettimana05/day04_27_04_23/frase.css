@@ -39,7 +39,7 @@ i{
 
 @keyframes fade-in {
     0%{
-        transform: translate(0, -50%);
+        transform: translate(0, -50%) rotate(90deg);
     }
 
     30%{
@@ -49,7 +49,7 @@ i{
 
     60%{
         opacity: 0;
-        transform: translate(0, 50%);
+        transform: translate(0, 50%) rotate(-90deg);
     }
 
     100%{
