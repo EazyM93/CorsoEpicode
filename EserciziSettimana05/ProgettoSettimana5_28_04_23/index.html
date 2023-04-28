@@ -19,7 +19,7 @@
         <!-- HEADER - logo e navbar -->
         <header >
 
-            <div id="containerNav">
+            <div id="containerNav" class="baseContainerNav">
 
                 <div id="fixedBar" class="marginPage">
 
@@ -584,7 +584,33 @@
 
     </div>
 
+    <script>
+        const scrollElement = document.getElementById('startReading');
+        const containerNav = document.getElementById('containerNav');
+        const getStarted = document.getElementById('getStarted');
 
+        window.addEventListener('scroll', () => {
+
+            if(window.scrollY >= 400){
+
+                containerNav.classList.remove('baseContainerNav');
+                containerNav.classList.add('whiteContainerNav');
+
+                getStarted.classList.remove('blackBtn');
+                getStarted.classList.add('greenBtn'); 
+
+            }else if(window.scrollY < 400){
+
+                containerNav.classList.add('baseContainerNav');
+                containerNav.classList.remove('whiteContainerNav');
+
+                getStarted.classList.add('blackBtn');
+                getStarted.classList.remove('greenBtn');
+
+            }
+            
+        });
+    </script>
 
 
 </body>

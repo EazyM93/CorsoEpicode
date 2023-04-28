@@ -20,6 +20,13 @@ a{
 .blackBtn{
     background-color: #191919;
     color: white;
+    transition: 0.5s;
+}
+
+.greenBtn{
+    background-color: #1a8917;
+    color: white;
+    transition: 0.5s;
 }
 
 /* HEADER */
@@ -30,11 +37,20 @@ header{
 
 /* NAVBAR */
 #containerNav{
-    background-color: #ffc017;
     border-bottom: 1px solid #191919;
     position: fixed;
     width: 100%;
     z-index: 1;
+}
+
+.baseContainerNav{
+    background-color: #ffc017;
+    transition: 0.5s;
+}
+
+.whiteContainerNav{
+    background-color: white;
+    transition: 0.5s;
 }
 
 #fixedBar{
