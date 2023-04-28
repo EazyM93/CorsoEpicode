@@ -30,7 +30,11 @@ header{
 
 /* NAVBAR */
 #containerNav{
+    background-color: #ffc017;
     border-bottom: 1px solid #191919;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 #fixedBar{
@@ -96,6 +100,7 @@ header{
 
 #containerWelcome{
     border-bottom: 1px solid #191919;
+    padding-top: 4em;
 }
 
 #m{
