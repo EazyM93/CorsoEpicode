@@ -14,7 +14,7 @@ a{
 }
 
 .marginPage{
-    margin: 0 35em;
+    margin: 0 5%;
 }
 
 .blackBtn{
@@ -74,13 +74,13 @@ header{
 
 #stayCurious h1{
     font-family: 'Spectral', serif;
-    font-size: 7em;
+    font-size: 5em;
     font-weight: 300;
     margin-bottom: 0.3em;
 }
 
 #stayCurious h2{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 400;
     width: 65%;
     margin-bottom: 2em;
@@ -96,6 +96,16 @@ header{
 
 #containerWelcome{
     border-bottom: 1px solid #191919;
+}
+
+#m{
+    position: absolute;
+    right: 0px;
+}
+
+.underDate{
+    display: flex;
+    align-items: center;
 }
 
 /* TRENDING */
@@ -172,7 +182,7 @@ header{
 
 .card{
     display: flex;
-    width: 50em;
+    width: 45em;
     margin-bottom: 4em;
 }
 
