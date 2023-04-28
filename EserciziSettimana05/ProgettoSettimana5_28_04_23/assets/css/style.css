@@ -14,7 +14,7 @@ a{
 }
 
 .marginPage{
-    margin: 0 15em;
+    margin: 0 35em;
 }
 
 .blackBtn{
@@ -161,11 +161,13 @@ header{
 /* ARTICLE */
 #articleContainer{
     display: flex;
+    justify-content: space-between;   
 }
 
 #articleColumn{
     display: flex;
     flex-direction: column;
+    margin-right: 2em;
 }
 
 .card{
@@ -202,7 +204,7 @@ header{
 }
 
 .sideImg{
-    width: 12em;
+    width: 15em;
 }
 
 .dateSpace{
@@ -211,3 +213,43 @@ header{
 }
 
 /* discover more */
+#discoverMore{
+    width: 25em;
+}
+
+#titleAside{
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+#containerAside{
+    margin-bottom: 1em;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+#tags{
+    padding: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tag{
+    background-color: #efefef;
+    width: fit-content;
+    font-size: 0.9em;
+    border-radius: 45px;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+#help{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.helpTag{
+    margin-right: 1em;
+    margin-bottom: 1em;
+    color: rgb(176, 176, 176);
+}
