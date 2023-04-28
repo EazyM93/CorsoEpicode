@@ -29,6 +29,10 @@ a{
     transition: 0.5s;
 }
 
+.invisible{
+    opacity: 0;
+}
+
 /* HEADER */
 header{
     background-color: #ffc017;
