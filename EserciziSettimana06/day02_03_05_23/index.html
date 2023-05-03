@@ -184,8 +184,29 @@
     <div class="footer bg-dark p-5">
         <div class="row row-cols-1 text-center">
             <div class="col mb-4">
-                <button type="button" class="btn btn-outline-secondary">Contattaci</button>
+                <!-- BTN MODAL -->
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">Contattaci</button>
+
+                <!-- MODAL -->
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Contattaci</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Premi invio per inviare una mail a travelagency@gmail.com
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                          <button type="button" class="btn btn-primary">Invia Mail</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
+            
             <div class="col text-white">
                 <p>© 2023 TravelAgency LTD. All right reserved.</p>
             </div>
