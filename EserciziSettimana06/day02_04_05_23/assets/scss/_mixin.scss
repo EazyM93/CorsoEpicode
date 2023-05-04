@@ -1,0 +1,10 @@
+@mixin back($back){
+    @if($back == #3A505E){
+        background-color: #3A505E;
+        a{
+          color: white;  
+        } 
+    }@else{
+        background-color: $back;
+    }
+}

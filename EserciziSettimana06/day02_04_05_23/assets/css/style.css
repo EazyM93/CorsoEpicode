@@ -1,0 +1,42 @@
+.navbar {
+  background-color: #3A505E;
+}
+.navbar a {
+  color: white;
+}
+
+.hero {
+  background-color: #04BFA6;
+}
+
+.griglia {
+  background-color: #F9B44C;
+}
+
+.shad {
+  box-shadow: 6px 6px 10px black;
+}
+
+.btnOne {
+  background-color: #0e6cff;
+  color: white;
+}
+.btnOne:hover {
+  background-color: #0e6cff;
+}
+
+.btnTwo {
+  background-color: #ff8700;
+  color: white;
+}
+.btnTwo:hover {
+  background-color: #ff8700;
+}
+
+.btnThree {
+  background-color: #4caf50;
+  color: white;
+}
+.btnThree:hover {
+  background-color: #4caf50;
+}/*# sourceMappingURL=style.css.map */
