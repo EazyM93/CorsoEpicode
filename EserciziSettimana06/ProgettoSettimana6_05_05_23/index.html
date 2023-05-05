@@ -18,7 +18,7 @@
         <header>
 
             <!-- NAVBAR -->
-            <nav class="navbar mainBack navbar-expand-lg">
+            <nav class="navbar mainBack navbar-expand-lg position-relative">
                 <div class="container-fluid">
                     <!-- logo -->
                     <a class="navbar-brand" href="#">
@@ -59,6 +59,12 @@
                         </svg>
                     </a>
 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></s>
+                    </button>
+
                     <div class="collapse navbar-collapse" id="navbarContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
@@ -78,7 +84,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Dropdown
+                                    Landings
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -92,7 +98,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Dropdown
+                                    Pages
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -106,7 +112,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Dropdown
+                                    Accounts
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -119,20 +125,24 @@
                             </li>
                         </ul>
                     </div>
+                    
+                    <div class="d-flex position-absolute end-0 top-0 mt-1 me-lg-3 me-6">
+                       <!-- LOGO CAMPANELLA -->
+                        <div id="bell" class="rounded-circle text-center">
+                            <i class="bi bi-bell"></i>
+                            <span id="purpleDot" class="position-absolute translate-middle p-6 border border-3 border-light rounded-circle"></span>
+                        </div>
 
-                    <!-- LOGO CAMPANELLA -->
-                    <div id="bell" class="rounded-circle text-center">
-                        <i class="bi bi-bell"></i>
+                        <!-- IMG UTENTE -->
+                        <div>
+                            <img class="rounded-circle" style="width: 3em" src="assets/img/avatar-1.jpg" alt="">
+                            <span id="greenDot" class="position-absolute translate-middle p-6 border border-3 border-light rounded-circle"></span>
+                        </div>
+                        
                     </div>
+                    
 
-                    <!-- IMG UTENTE -->
-                    <img class="rounded-circle" style="width: 3em" src="assets/img/avatar-1.jpg" alt="">
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    
                 </div>
             </nav>
 
@@ -144,7 +154,7 @@
             <div class="hero container-fluid">
                 <div class="container">
                     <!-- ROW HERO -->
-                    <div class="row align-items-center">
+                    <div class="row row-cols-sm-2 row-cols-1 align-items-center">
 
                         <!-- BLOCCO HERO -->
                         <div class="col my-5">
@@ -164,8 +174,8 @@
                         </div>
 
                         <!-- IMMAGINE HERO -->
-                        <div class="col">
-                            <img src="assets/img/hero-img.png" alt="hero_img">
+                        <div class="col text-center">
+                            <img class="img-fluid" src="assets/img/hero-img.png" alt="hero_img">
                         </div>
                     </div>
                 </div>
@@ -173,8 +183,8 @@
 
             <!-- ROW UNDER HERO -->
             <div class="mainBack container">
-                <div class="row py-4">
-                    <div class="col d-flex justify-content-start">
+                <div class="row row-cols-md-3 row-cols-1 py-4">
+                    <div class="col d-flex justify-content-start mb-4">
                         <div class="underCircle rounded-circle">
                             <i class="bi bi-camera-video"></i>
                         </div>
@@ -183,7 +193,7 @@
                             <p class="m-0">Enjoy a variety of fresh topics</p>
                         </div>
                     </div>
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-md-center justify-content-start mb-4">
                         <div class="underCircle rounded-circle">
                             <i class="bi bi-people"></i>
                         </div>
@@ -192,7 +202,7 @@
                             <p class="m-0">Find the right instructor for you</p>
                         </div>
                     </div>
-                    <div class="col d-flex justify-content-end">
+                    <div class="col d-flex justify-content-md-end justify-content-start mb-4">
                         <div class="underCircle rounded-circle">
                             <i class="bi bi-clock"></i>
                         </div>
@@ -210,9 +220,9 @@
                     <div id="recommendedTitle" class="row">
                         <div class="col h4">Recommended to you</div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                    <div class="row row-cols-sm-4 row-cols-2">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-graphql.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">GraphoL: Introduction to graphQL for beginners</h5>
@@ -248,8 +258,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-javascript.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">A Complete Beginner's Guide to JavaScript</h5>
@@ -285,8 +295,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-node.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Beginning Node.js, Express & MongoDB Development</h5>
@@ -322,8 +332,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-laravel.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Laravel: The Ultimate Beginner's Guide to Lear</h5>
@@ -369,9 +379,9 @@
                     <div id="recommendedTitle" class="row">
                         <div class="col h4">Most Popular</div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                    <div class="row row-cols-sm-4 row-cols-2">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-html.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">HTML FUll Course - Build a Website Tutorial</h5>
@@ -407,8 +417,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-javascript.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">A Complete Beginner's Guide to JavaScript</h5>
@@ -444,8 +454,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-node.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Beginning Node.js, Express & MongoDB Development</h5>
@@ -481,8 +491,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-react.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">How to easiv create a WeOSITe wITa Reac</h5>
@@ -528,9 +538,9 @@
                     <div id="recommendedTitle" class="row">
                         <div class="col h4">Most Popular</div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                    <div class="row  row-cols-sm-4 row-cols-2">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-gatsby.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">ReVolutIonize how you build the wel</h5>
@@ -566,8 +576,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-html.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">HTML FUll Course - Build a Website Tutorial</h5>
@@ -603,8 +613,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-node.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Beginning Node.js, Express & MongoDB Development</h5>
@@ -640,8 +650,8 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="col">
-                            <div class="card border-0 shadow-lg" style="width: 18rem;">
+                        <div class="col mb-2 d-none d-md-block">
+                            <div class="card border-0 shadow-lg">
                                 <img src="assets/img/course-laravel.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Laravel: The Ultimate Beginner's Guide to Lear</h5>
@@ -683,20 +693,19 @@
 
         </main>
 
+        <!-- FOOTER -->
         <footer>
             <div class="container-fluid side">
                 <div class="container border-top pt-3">
-                    <div class="row grey">
-                        <div class="col">
+                    <div class="row  row-cols-sm-2 row-cols-1 grey">
+                        <div class="col-sm-8 col text-sm-start text-center">
                             <p>© 2023 Geeks. All Right Reserved.</p>
                         </div>
-                        <div class="col text-end">
-                            <ul id="terms" class=""">
-                                <li>Privacy</li>
-                                <li>Terms</li>
-                                <li>Feedback</li>
-                                <li>Support</li>
-                            </ul>
+                        <div class="col d-flex justify-content-between text-end">
+                            <p>Privacy</p>
+                            <p>Terms</p>
+                            <p>Feedback</p>
+                            <p>Support</p>
                         </div>
                     </div>
                 </div>

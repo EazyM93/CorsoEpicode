@@ -21,7 +21,6 @@ $colorYellow: orange;
 .purpleText{
     color: #BCA8FF;
     font-size: 1.2em;
-    width: 23em;
 }
 
 .hero{
@@ -87,5 +86,26 @@ $colorYellow: orange;
     list-style-type: none;
     li{
         display: inline;
+        margin-right: 5em;
     }
+}
+
+.me-6{
+    margin-right: 5em;
+}
+
+#greenDot{
+    background-color: #1ACB98;
+    bottom: -20%;
+    right: -12%;
+}
+
+#purpleDot{
+    background-color: #7550fe;
+    top: 20%;
+    right: 50%;
+}
+
+.p-6{
+    padding: 0.4em;
 }
