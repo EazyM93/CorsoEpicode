@@ -1,0 +1,91 @@
+$colorGrey: #F5F4F8;
+$colorBlue: #7550FE;
+$colorWhite: white;
+$secondaryWhite: #f8f8f8;
+$colorInfo: #BCA8FF;
+$greenBtn: #1ACB98;
+$colorYellow: orange;
+
+.mainBack{
+    background-color: $colorWhite;
+}
+
+#bell{
+    background-color: $colorGrey;
+    width: 45px;
+    height: 45px;
+    margin-right: 1em;
+    padding: 0.6em;
+}
+
+.purpleText{
+    color: #BCA8FF;
+    font-size: 1.2em;
+    width: 23em;
+}
+
+.hero{
+    background-color: $colorBlue;
+}
+
+.h1{
+    color: $colorWhite;
+}
+
+.btn{
+    padding: 0.8em 1.5em;
+}
+
+#coursesBtn{
+    color: $colorWhite;
+    font-size: 0.9em;
+    background-color: $greenBtn;
+    &:hover{
+       background-color: $greenBtn; 
+    }
+}
+
+#instructorBtn{
+    background-color: $colorWhite;
+    font-size: 0.9em;
+    &:hover{
+       background-color: $colorWhite; 
+    }
+}
+
+.underCircle{
+    background-color: #FFEEDA;
+    color: #C28A52;
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    padding: 0.8em 1.1em;
+}
+
+.side{
+    background-color: $secondaryWhite;
+}
+
+.date, .grey{
+    color: grey;
+}
+
+.deleted{
+    color: grey;
+    font-size: 0.8em;
+}
+
+.star{
+    color: $colorYellow;
+}
+
+.tutor{
+    width: 2.5em;
+}
+
+#terms{
+    list-style-type: none;
+    li{
+        display: inline;
+    }
+}
