@@ -94,7 +94,7 @@ $colorYellow: orange;
     margin-right: 5em;
 }
 
-#greenDot{
+#greenDotOne{
     background-color: #1ACB98;
     bottom: -20%;
     right: -12%;
@@ -108,4 +108,8 @@ $colorYellow: orange;
 
 .p-6{
     padding: 0.4em;
+}
+
+#dropUser{
+    transform: translateX(-55%);
 }

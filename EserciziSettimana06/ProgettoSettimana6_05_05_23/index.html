@@ -135,8 +135,27 @@
 
                         <!-- IMG UTENTE -->
                         <div>
-                            <img class="rounded-circle" style="width: 3em" src="assets/img/avatar-1.jpg" alt="">
-                            <span id="greenDot" class="position-absolute translate-middle p-6 border border-3 border-light rounded-circle"></span>
+                            
+                            <img type="button" data-bs-toggle="dropdown" class="rounded-circle" style="width: 3em" src="assets/img/avatar-1.jpg" alt="">
+                            <span id="greenDotOne" class="position-absolute translate-middle p-6 border border-3 border-light rounded-circle"></span>
+
+                            <ul id="dropUser" class="dropdown-menu mt-2">
+                                <li class="d-flex">
+                                    <img type="button" class="rounded-circle mx-3" style="width: 3em" src="assets/img/avatar-1.jpg" alt="">
+                                    <span id="greenDotTwo" class="position-absolute translate-middle p-6 border border-3 border-light rounded-circle"></span>
+                                    <div class="me-3">
+                                        <p class="m-0">Annette Black</p>
+                                        <p class="m-0 grey">annette@geeksui.com</p>
+                                    </div>
+                                    
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i>Subscription</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-power me-2"></i>Sing Out</a></li>
+                            </ul>
                         </div>
                         
                     </div>

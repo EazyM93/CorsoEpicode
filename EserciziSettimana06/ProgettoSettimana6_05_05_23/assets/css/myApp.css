@@ -86,7 +86,7 @@
   margin-right: 5em;
 }
 
-#greenDot {
+#greenDotOne {
   background-color: #1ACB98;
   bottom: -20%;
   right: -12%;
@@ -100,4 +100,8 @@
 
 .p-6 {
   padding: 0.4em;
+}
+
+#dropUser {
+  transform: translateX(-55%);
 }/*# sourceMappingURL=myApp.css.map */
