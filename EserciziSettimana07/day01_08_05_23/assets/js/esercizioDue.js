@@ -4,7 +4,10 @@
 const list = document.getElementById('list');
 const animalForm = document.getElementById('animalForm');
 const btnAdd = document.getElementById('btnAdd');
-const datiForm = document.querySelectorAll('#animalForm input');
+const nome = document.getElementById('nome');
+const padrone = document.getElementById('padrone');
+const specie = document.getElementById('specie');
+const razza = document.getElementById('razza');
 const ownerAlert = document.getElementById('ownerAlert');
 
 // ---------- ARRAY ARCHIVIAZIONE LISTA ----------
@@ -17,7 +20,7 @@ btnAdd.addEventListener('click',(e) => {
     e.preventDefault();
 
     // genera un nuovo oggetto PET e lo inserisce in fondo al nostro array di archiviazione
-    animalList.push(new Pet(datiForm));
+    animalList.push(new Pet(nome.value, padrone.value, specie.value, razza.value));
     
     // generazione nuova card
     const newCard = document.createElement('div');
