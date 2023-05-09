@@ -59,14 +59,14 @@ function renderList(){
 // ---------- check for timer ----------
 if(sessionStorage.getItem('c') !== null){
 
-    count = sessionStorage.getItem('c');
-    sessionTime.innerHTML = sessionStorage.getItem('c');
+    count = Number(sessionStorage.getItem('c'));
+    sessionTime.innerHTML = Number(sessionStorage.getItem('c'));
 
 }else{
 
     count = 0;
-    sessionStorage.setItem('c', count)
-    sessionTime.innerHTML = sessionStorage.getItem('c');
+    sessionStorage.setItem('c', count);
+    sessionTime.innerHTML = Number(sessionStorage.getItem('c'));
 
 }
 
@@ -75,7 +75,7 @@ setInterval(() => {
 
     count++;  
     sessionStorage.setItem('c', count);
-    sessionTime.innerHTML = sessionStorage.getItem('c');  
+    sessionTime.innerHTML = Number(sessionStorage.getItem('c'));  
 
 }, 1000)
 
