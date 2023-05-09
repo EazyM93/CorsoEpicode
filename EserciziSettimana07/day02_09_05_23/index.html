@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 09/05/23</title>
+</head>
+
+<style>
+    #container{
+        width: 30em;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #nome{
+        margin-bottom: 0.5em;
+    }
+
+    #btnSubmit, #btnCanc{
+        padding: 0.5em;
+    }
+
+</style>
+
+<body>
+    
+    <div id="container">
+
+        <h1>ESERCIZIO FORM REGISTRAZIONE</h1>
+
+        <p>Durata sessione: <span id="sessionTime"></span></p>
+
+        <fieldset style="width: fit-content; margin: 0 auto;">
+            <form action="" id="myForm">
+                <label for="nome">Nome</label><br>
+                <input type="text" id="nome" autocomplete="off"><br>
+                <input type="submit" id="btnSubmit">
+                <button type="button" id="btnCanc">Cancella ultimo</button>
+            </form>
+        </fieldset>
+
+        <div style="width: fit-content; margin: 0 auto;">
+            <h2>Nomi Salvati</h2>
+            <ul id="nameList" style="width: fit-content; padding-left: 0; text-align: left;"></ul>
+        </div>
+
+    </div>
+
+    <script src="assets/js/myApp.js"></script>
+</body>
+</html>
