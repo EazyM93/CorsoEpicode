@@ -4,10 +4,6 @@
 const list = document.getElementById('list');
 const animalForm = document.getElementById('animalForm');
 const btnAdd = document.getElementById('btnAdd');
-const nome = document.getElementById('nome');
-const padrone = document.getElementById('padrone');
-const specie = document.getElementById('specie');
-const razza = document.getElementById('razza');
 const ownerAlert = document.getElementById('ownerAlert');
 
 // ---------- ARRAY ARCHIVIAZIONE LISTA ----------
@@ -19,8 +15,21 @@ btnAdd.addEventListener('click',(e) => {
     // impedisce alla pagina di resettarsi al click del bottone
     e.preventDefault();
 
+    // gestione dei dati inseriti nel form
+    const singleObject = [];
+
+    const elements = animalForm.children;
+
+    for(let i = 0; i < elements.length; i++){
+        const singleField = elements[i];
+
+        if(singleField.name !== 'btnAdd'){
+            singleObject.push(singleField.value);
+        }
+    }
+
     // genera un nuovo oggetto PET e lo inserisce in fondo al nostro array di archiviazione
-    animalList.push(new Pet(nome.value, padrone.value, specie.value, razza.value));
+    animalList.push(new Pet(...singleObject));
     
     // generazione nuova card
     const newCard = document.createElement('div');
