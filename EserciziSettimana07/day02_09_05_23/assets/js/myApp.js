@@ -18,32 +18,27 @@ btnSubmit.addEventListener('click', (e) => {
 
     e.preventDefault();
 
-    nameArr.push(nome.value);
-
-    localStorage.setItem('savedArr', JSON.stringify(nameArr));
-    
-    nameList.innerHTML = '';
-
-    renderList();
+    arrModify('add');
 
     myForm.reset(); 
 
 })
 
 // ---------- click on cancella ----------
-btnCanc.addEventListener('click', () => {
+btnCanc.addEventListener('click', () => arrModify('canc'))
 
-    const arr = JSON.parse(localStorage.getItem('savedArr'));
+// ---------- INVIA / CANCELLA ----------
+function arrModify(event){
 
-    arr.pop();
+    (event === 'add') ? nameArr.push(nome.value) : nameArr.pop();
 
-    localStorage.setItem('savedArr', JSON.stringify(arr));
+    localStorage.setItem('savedArr', JSON.stringify(nameArr));
 
     nameList.innerHTML = '';
 
     renderList();
 
-})
+}
 
 // ---------- render list ----------
 function renderList(){
