@@ -19,7 +19,7 @@ btnAdd.addEventListener('click',(e) => {
     const singleObject = [];
 
     const elements = animalForm.children;
-
+     
     for(let i = 0; i < elements.length; i++){
         const singleField = elements[i];
 
