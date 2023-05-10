@@ -1,0 +1,34 @@
+header {
+  color: white;
+  background-color: #003049;
+}
+
+.btn {
+  background-color: #fcbf49;
+}
+.btn:hover {
+  background-color: #f77f00;
+}
+
+.deleteBook {
+  background-color: rgb(252, 152, 152);
+}
+
+body {
+  background-color: #eae2b7;
+}
+
+h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#btnReset {
+  color: white;
+  font-weight: bold;
+  background-color: #f77f00;
+}
+#btnReset:active {
+  background-color: #fcbf49;
+}/*# sourceMappingURL=myApp.css.map */

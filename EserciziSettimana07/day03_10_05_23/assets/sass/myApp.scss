@@ -1,0 +1,20 @@
+@import 'header', 'main';
+
+body{
+    background-color: #eae2b7;
+}
+
+h5{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#btnReset{
+    color: white;
+    font-weight: bold;
+    background-color: #f77f00;
+    &:active{
+       background-color: #fcbf49; 
+    }
+}
