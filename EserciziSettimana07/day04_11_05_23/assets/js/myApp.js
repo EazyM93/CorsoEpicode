@@ -52,9 +52,9 @@ function checkLoadImg(par){
     if(par === 'oringin'){
         return '<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">'
     }else if(par === 'main'){
-        return `<img src="${(JSON.parse(localStorage.getItem('photo')))[Math.floor(Math.random()*15)]['photo']}" width="100%" height="225 style="aspect-ratio: 1/1.7; object-fit: fit;">`
+        return `<img src="${(JSON.parse(localStorage.getItem('photo')))[Math.floor(Math.random()*15)]['src']['large']}" width="100%" height="225 style="aspect-ratio: 1/1.7; object-fit: fit;">`
     }else if(par === 'secondary'){
-        return `<img src="${(JSON.parse(localStorage.getItem('secondaryPhoto')))[Math.floor(Math.random()*15)]['photo']}" width="100%" height="225 style="aspect-ratio: 1/1.7; object-fit: fit;">`
+        return `<img src="${(JSON.parse(localStorage.getItem('secondaryPhoto')))[Math.floor(Math.random()*15)]['src']['large']}" width="100%" height="225 style="aspect-ratio: 1/1.7; object-fit: fit;">`
     }
 
 }
@@ -97,7 +97,7 @@ async function caricaUno(){
 
         const arr = [];
 
-        objPhoto['photos'].forEach(e => arr.push({id: e['id'], photo: e['src']['large']}));
+        objPhoto['photos'].forEach(e => arr.push(e));
 
         localStorage.setItem('photo', JSON.stringify(arr));
         console.log(JSON.parse(localStorage.getItem('photo')))
@@ -119,7 +119,7 @@ async function caricaDue(){
 
         const arr = [];
 
-        objPhoto['photos'].forEach(e => arr.push({id: e['id'], photo: e['src']['large']}));
+        objPhoto['photos'].forEach(e => arr.push(e));
 
         localStorage.setItem('secondaryPhoto', JSON.stringify(arr));
         console.log(JSON.parse(localStorage.getItem('secondaryPhoto')))
