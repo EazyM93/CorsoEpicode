@@ -1,0 +1,16 @@
+@import 'palette';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $sand;
+}
+
+header{
+    color: white;
+    background-color: $blue;
+}
