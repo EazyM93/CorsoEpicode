@@ -21,28 +21,23 @@ function populateHeader(){
     // logo & site append on header
     headerContainer.appendChild(logo);
 
-    //check for page
-    if(fileName === 'homepage.html'){
+    // check for page, populate with a different button
+    if(fileName === 'homepage.html') btnPage('Back Office', 'backOffice.html')
 
-        const backBtn = document.createElement('div');
+    if(fileName === 'backOffice.html' || fileName === 'details.html') btnPage('Home', 'homepage.html')
 
-        backBtn.classList.add('col', 'd-flex', 'align-items-center', 'justify-content-end');
+}
 
-        backBtn.innerHTML = `<a id="backOffice" href="backOffice.html" class="btn">Back Office</a>`;
+// pages button creation
+const btnPage = (par, link) => {
+   
+    const backBtn = document.createElement('div');
 
-        headerContainer.appendChild(backBtn);
-    }
+    backBtn.classList.add('col', 'd-flex', 'align-items-center', 'justify-content-end');
 
-    if(fileName === 'backOffice.html'){
+    backBtn.innerHTML = `<a id="btnPage" href="${link}" class="btn">${par}</a>`;
 
-        const backBtn = document.createElement('div');
-
-        backBtn.classList.add('col', 'd-flex', 'align-items-center', 'justify-content-end');
-
-        backBtn.innerHTML = `<a id="backOffice" href="homepage.html" class="btn">Home</a>`;
-
-        headerContainer.appendChild(backBtn);
-    }
+    headerContainer.appendChild(backBtn);
 
 }
 

@@ -15,10 +15,10 @@ header a {
   color: white;
 }
 
-#backOffice {
+#btnPage {
   color: white;
   background-color: #FF7F00;
 }
-#backOffice:hover {
+#btnPage:hover {
   background-color: #e67200;
 }/*# sourceMappingURL=main.css.map */
