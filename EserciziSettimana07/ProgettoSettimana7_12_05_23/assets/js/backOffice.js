@@ -46,3 +46,18 @@ async function upload(){
     }
 
 }
+// async function deletee(){
+//     try{
+//        fetch(url + '645e5dac88f74000142879f1', {
+//     method:'DELETE',
+//     headers: {
+//         Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDkxNzg4Zjc0MDAwMTQyODc0YTkiLCJpYXQiOjE2ODM4ODQzMTEsImV4cCI6MTY4NTA5MzkxMX0.uDShzOAu_0AX09N1terK94djRl-cDK4GcAMlNCSwKoQ',
+//         'Content-Type': 'application/json'
+//     }
+//     }) 
+//     }catch(err){
+//         console.log('Attenzione errore');
+//     }
+    
+// }
+// deletee()
