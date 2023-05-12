@@ -19,28 +19,36 @@
     <main>
 
         <div id="mainContainer" class="container mt-5 d-flex justify-content-center">
-            <form method="post" class="w-50">
+            <form method="post" class="w-50 shadow-lg rounded-2 p-3">
                 <div class="mb-3">
                     <label for="nameProduct" class="form-label">Nome prodotto</label>
-                    <input type="text" class="form-control" id="nameProduct">
+                    <input type="text" class="form-control" id="nameProduct" required>
                 </div>
                 <div class="mb-3">
                     <label for="descriptionProduct" class="form-label">Descrizione prodotto</label>
-                    <input type="text" class="form-control" id="descriptionProduct">
+                    <input type="text" class="form-control" id="descriptionProduct" required>
                 </div>
                 <div class="mb-3">
                     <label for="brandProduct" class="form-label">Brand prodotto</label>
-                    <input type="text" class="form-control" id="brandProduct">
+                    <input type="text" class="form-control" id="brandProduct" required>
                 </div>
                 <div class="mb-3">
                     <label for="imgProduct" class="form-label">Immagine prodotto</label>
-                    <input type="text" class="form-control" id="imgProduct">
+                    <input type="text" class="form-control" id="imgProduct" required>
                 </div>
                 <div class="mb-3">
-                    <label for="priceProduct" class="form-label">Prezzo prodotto</label>
-                    <input type="text" class="form-control" id="priceProduct">
-                </div> 
-                <button id="formButton" type="submit" class="btn">Aggiungi prodotto</button>              
+                    <label for="priceProduct" class="form-label">Prezzo prodotto<span style="font-size: 0.8em;"> (inserire valore numerico)</span></label>
+                    <input type="text" class="form-control" id="priceProduct" required>
+                </div>
+                <div class="mb-3 d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                       <button id="formButton" type="submit" class="btn me-2">Aggiungi prodotto</button>
+                       <p id="esito" class="m-0"></p> 
+                    </div>
+                    <button id="modifyButton" type="button" class="btn" onclick="modifyMod()">Modalità Modifica</button>
+                </div>
+                <button id="resetButton" type="reset" class="btn">Reset Form</button>
+                             
             </form>
         </div>
 

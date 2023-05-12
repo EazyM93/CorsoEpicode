@@ -1,26 +1,28 @@
-const url = 'https://striveschool-api.herokuapp.com/api/product/';
+// --------------- FETCH ELEMENTS ---------------
+const urlBack = 'https://striveschool-api.herokuapp.com/api/product/';
 
+// --------------- FORM VALUES ---------------
 const formButton = document.getElementById('formButton');
-
 const nameProduct = document.getElementById('nameProduct');
 const descriptionProduct = document.getElementById('descriptionProduct');
 const brandProduct = document.getElementById('brandProduct');
 const imgProduct = document.getElementById('imgProduct');
 const priceProduct = document.getElementById('priceProduct');
+const esito = document.getElementById('esito');
 
 
-// pressing submit button
+// --------------- FORM SUBMIT  ---------------
 formButton.addEventListener('click', (e) => {
 
     e.preventDefault();
 
     upload();
 
-    e.target.parentNode.reset();
+    e.target.closest('form').reset();
 
 })
 
-// async upload
+// --------------- ASYNC UPLOAD ---------------
 async function upload(){
 
     const data = {
@@ -32,7 +34,7 @@ async function upload(){
     }
     
     try{
-        await fetch(url, {
+        const raw = await fetch(urlBack, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -40,10 +42,24 @@ async function upload(){
                 'Content-Type': 'application/json'
             }
         });
+
+        if(raw.ok){
+            esito.innerHTML = 'Caricamento riuscito.';
+            esito.classList.add('greenSucceded');
+            console.log('Upload Completed!');
+        }
+
+        if(!raw.ok){
+            esito.innerHTML = 'Errore di caricamento!';
+            esito.classList.add('redError');
+        }
+
+        setTimeout(() => {
+            esito.innerHTML = '';
+            esito.classList.remove('greenSucceded,redError');
+        }, 2000);
        
-    } catch(err){
-        console.log('Attenzione errore');
-    }
+    } catch(err){console.log(err)}
 
 }
 // async function deletee(){

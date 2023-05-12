@@ -4,3 +4,27 @@
         background-color: darken($color: $yellow, $amount: 15);
     }
 }
+
+#modifyButton{
+    background-color: $blue;
+    color: white;
+    &:hover{
+        background-color: lighten($color: $blue, $amount: 15);
+    }
+}
+
+#resetButton{
+    background-color: grey;
+    color: white;
+    &:hover{
+        background-color: darken($color: grey, $amount: 15);
+    }
+}
+
+.redError{
+    color: $red;
+}
+
+.greenSucceded{
+    color: green;
+}

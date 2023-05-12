@@ -27,7 +27,7 @@ function populateHeader(fileName){
 
 }
 
-// pages button creation (header)
+//// --------------- PAGES BUTTON CREATION (HEADER) ---------------
 const btnPage = (par, link) => {
    
     const backBtn = document.createElement('div');
@@ -40,15 +40,25 @@ const btnPage = (par, link) => {
 
 }
 
+// --------------- FETCH ELEMENTS ---------------
+const url = 'https://striveschool-api.herokuapp.com/api/product/';
+
 // --------------- FETCH ---------------
 async function carica(){
-    fetch('https://striveschool-api.herokuapp.com/api/product/', {
+    
+    try{
+        const raw = await fetch(url, {
         
         headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDkxNzg4Zjc0MDAwMTQyODc0YTkiLCJpYXQiOjE2ODM4ODQzMTEsImV4cCI6MTY4NTA5MzkxMX0.uDShzOAu_0AX09N1terK94djRl-cDK4GcAMlNCSwKoQ"}
 
-    })
+        })
 
-    .then(response => response.json())
+        if(raw.ok){
+            const response = raw.json();
+            localStorage.setItem('products', JSON.stringify(response));
+        }
+    }catch(err){console.log(err)}
+ 
 }
 
 // --------------- ONLOAD POPULATE ---------------

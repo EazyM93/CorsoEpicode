@@ -5,6 +5,30 @@
   background-color: #f4a304;
 }
 
+#modifyButton {
+  background-color: #003049;
+  color: white;
+}
+#modifyButton:hover {
+  background-color: #006296;
+}
+
+#resetButton {
+  background-color: grey;
+  color: white;
+}
+#resetButton:hover {
+  background-color: #5a5a5a;
+}
+
+.redError {
+  color: #d62828;
+}
+
+.greenSucceded {
+  color: green;
+}
+
 * {
   margin: 0;
   padding: 0;
