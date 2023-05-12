@@ -12,9 +12,16 @@ body{
 
 // ----- HEADER -----
 header{
-    color: white;
     background-color: $blue;
     a{
         color: white;
+    }
+}
+
+#backOffice{
+    color: white;
+    background-color: $orange;
+    &:hover{
+        background-color:darken($color: $orange, $amount: 5)
     }
 }
