@@ -1,13 +1,12 @@
 // --------------- BASE PAGE BUILD ---------------
+function populateStructure(fileName){
+    populateHeader(fileName);
+}
 
-// ----- POPULATE HEADER -----
-const headerContainer = document.getElementById('headerContainer');
+// --------------- POPULATE HEADER ---------------
+function populateHeader(fileName){
 
-// html file name
-const pageUrl = window.location.pathname;
-const fileName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
-
-function populateHeader(){
+    const headerContainer = document.getElementById('headerContainer');
 
     // logo & site name creation
     const logo = document.createElement('div');
@@ -16,19 +15,19 @@ function populateHeader(){
 
     // populate logo & site name
     logo.innerHTML = `<a href="./homepage.html"><img src="assets/img/shopping-cart-304843_640.png" width="50px" class="me-0 me-lg-2" alt=""></a>
-    <div class="w-100 text-start"><a href="./homepage.html" class="text-decoration-none d-sm-block"><h2 class="mb-0">CRUDAZON</h2></a></div>`
+    <div class="w-100 text-start"><a href="./homepage.html" class="text-decoration-none d-sm-block"><h2 class="mb-0">CRUDAZON</h2></a></div>`;
 
     // logo & site append on header
     headerContainer.appendChild(logo);
 
     // check for page, populate with a different button
-    if(fileName === 'homepage.html') btnPage('Back Office', 'backOffice.html')
+    if(fileName === 'homepage.html') btnPage('Back Office', 'backOffice.html');
 
-    if(fileName === 'backOffice.html' || fileName === 'details.html') btnPage('Home', 'homepage.html')
+    if(fileName === 'backOffice.html' || fileName === 'details.html') btnPage('Home', 'homepage.html');
 
 }
 
-// pages button creation
+// pages button creation (header)
 const btnPage = (par, link) => {
    
     const backBtn = document.createElement('div');
@@ -41,9 +40,13 @@ const btnPage = (par, link) => {
 
 }
 
-// ----- ONLOAD POPULATE -----
+// --------------- ONLOAD POPULATE ---------------
 window.onload = () => {
 
-    populateHeader();
+    // html file name
+    const pageUrl = window.location.pathname;
+    const fileName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
+
+    populateStructure(fileName);
 
 }

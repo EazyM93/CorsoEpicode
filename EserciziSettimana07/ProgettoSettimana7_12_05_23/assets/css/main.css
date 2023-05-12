@@ -1,3 +1,10 @@
+#formButton {
+  background-color: #fcbf49;
+}
+#formButton:hover {
+  background-color: #f4a304;
+}
+
 * {
   margin: 0;
   padding: 0;

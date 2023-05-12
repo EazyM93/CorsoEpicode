@@ -16,10 +16,43 @@
         <div id="headerContainer" class="cantainer-fluid row p-4"></div>
     </header>
 
+    <main>
+
+        <div id="mainContainer" class="container mt-5 d-flex justify-content-center">
+            <form method="post" class="w-50">
+                <div class="mb-3">
+                    <label for="nameProduct" class="form-label">Nome prodotto</label>
+                    <input type="text" class="form-control" id="nameProduct">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionProduct" class="form-label">Descrizione prodotto</label>
+                    <input type="text" class="form-control" id="descriptionProduct">
+                </div>
+                <div class="mb-3">
+                    <label for="brandProduct" class="form-label">Brand prodotto</label>
+                    <input type="text" class="form-control" id="brandProduct">
+                </div>
+                <div class="mb-3">
+                    <label for="imgProduct" class="form-label">Immagine prodotto</label>
+                    <input type="text" class="form-control" id="imgProduct">
+                </div>
+                <div class="mb-3">
+                    <label for="priceProduct" class="form-label">Prezzo prodotto</label>
+                    <input type="text" class="form-control" id="priceProduct">
+                </div> 
+                <button id="formButton" type="submit" class="btn">Aggiungi prodotto</button>              
+            </form>
+        </div>
+
+    </main>
+
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     <!-- PAGE STRUCTURE LOAD -->
     <script src="./assets/js/pageStructure.js"></script>
+
+    <!-- BACK OFFICE LOGIC -->
+    <script src="./assets/js/backOffice.js"></script>
 </body>
 </html>
