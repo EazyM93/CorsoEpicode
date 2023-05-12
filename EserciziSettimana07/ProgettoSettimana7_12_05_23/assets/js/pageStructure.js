@@ -45,7 +45,7 @@ const url = 'https://striveschool-api.herokuapp.com/api/product/';
 
 // --------------- FETCH ---------------
 async function carica(){
-    
+
     try{
         const raw = await fetch(url, {
         
@@ -56,7 +56,11 @@ async function carica(){
         if(raw.ok){
             const response = raw.json();
             localStorage.setItem('products', JSON.stringify(response));
+
+            // populate with cards
+            
         }
+
     }catch(err){console.log(err)}
  
 }
@@ -65,11 +69,13 @@ async function carica(){
 window.onload = () => {
     
     carica();
-
+    
     // html file name
     const pageUrl = window.location.pathname;
     const fileName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
 
     populateStructure(fileName);
+    
+    
 
 }

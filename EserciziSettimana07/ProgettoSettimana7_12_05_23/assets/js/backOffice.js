@@ -59,7 +59,7 @@ async function upload(){
             esito.classList.remove('greenSucceded,redError');
         }, 2000);
        
-    } catch(err){console.log(err)}
+    }catch(err){console.log(err)}
 
 }
 // async function deletee(){
