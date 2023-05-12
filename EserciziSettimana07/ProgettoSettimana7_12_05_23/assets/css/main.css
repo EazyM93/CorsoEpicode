@@ -11,4 +11,7 @@ body {
 header {
   color: white;
   background-color: #003049;
+}
+header a {
+  color: white;
 }/*# sourceMappingURL=main.css.map */
