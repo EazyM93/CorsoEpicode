@@ -47,8 +47,6 @@ function populateBody(){
     console.log(arrProduct)
     const productList = document.getElementById('productList');
 
-    
-
     arrProduct.forEach(product => {
 
         const card = document.createElement('div');
@@ -61,7 +59,7 @@ function populateBody(){
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.price} €</p>
     </div>
-    <div class="card-body text-center"> <a href="./homepage.html?id=${product._id}" type="button" class="btn btnBlue">Scopri di più</a>
+    <div class="card-body text-center"> <a href="./homepage.html?id=${product._id}" type="button" class="btn btnBlue findMore" onclick="findMore()">Scopri di più</a>
     </div>
     </div>`
 
@@ -69,7 +67,11 @@ function populateBody(){
         
     });
 
+    
 }
+
+// --------------- FIND MORE ---------------
+
 
 // --------------- FETCH ---------------
 async function carica(){
