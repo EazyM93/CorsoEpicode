@@ -1,3 +1,4 @@
+
 // --------------- BASE PAGE BUILD ---------------
 function populateStructure(fileName){
     populateHeader(fileName);
@@ -59,7 +60,7 @@ function populateBody(){
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.price} €</p>
     </div>
-    <div class="card-body text-center"> <a href="./homepage.html?id=${product._id}" type="button" class="btn btnBlue findMore" onclick="findMore()">Scopri di più</a>
+    <div class="card-body text-center"> <a href="./details.html?id=${product._id}" type="button" class="btn btnBlue findMore" onclick="findMore()">Scopri di più</a>
     </div>
     </div>`
 
@@ -70,8 +71,42 @@ function populateBody(){
     
 }
 
-// --------------- FIND MORE ---------------
+// --------------- FIND MORE - POPULATE DETAILS ---------------
+function populateDetails(id){
 
+    const productsArr = JSON.parse(localStorage.getItem('products'));
+
+    console.log(productsArr)
+    console.log(id)
+    let currentProduct = '';
+    
+    productsArr.forEach(product => {
+
+        if(product._id === id) currentProduct = product;
+
+    });
+console.log(currentProduct)
+
+    const containerDetails = document.getElementById('containerDetails');
+
+    const details = document.createElement('div');
+
+    details.classList.add('row', 'd-flex');
+
+    details.innerHTML = `<div class="col text-end">
+    <img src="${currentProduct.imageUrl}" alt="">
+</div>
+<div class="col">
+    <h1 class="mb-3"><span>${currentProduct.brand}</span> - ${currentProduct.name}</h1>
+    <p><b>ID: </b>${currentProduct._id}</p>
+    <p class="m-0"><b>Descrizione</b></p>
+    <p>${currentProduct.description}</p>
+    <p><b>Prezzo: </b>${currentProduct.price} €</p>
+</div>`
+
+    containerDetails.appendChild(details);
+
+}
 
 // --------------- FETCH ---------------
 async function carica(){
@@ -108,6 +143,16 @@ window.onload = () => {
     const fileName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
 
     if(fileName === 'homepage.html') carica();
+
+    if(fileName === 'details.html'){
+
+        const param = new URLSearchParams(location.search);
+
+        const id = param.get('id');
+
+        populateDetails(id);
+
+    }
     
     populateStructure(fileName);
     
