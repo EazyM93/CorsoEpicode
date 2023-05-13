@@ -2,16 +2,19 @@
 const urlBack = 'https://striveschool-api.herokuapp.com/api/product/';
 
 // --------------- FORM VALUES ---------------
-const formButton = document.getElementById('formButton');
 const nameProduct = document.getElementById('nameProduct');
 const descriptionProduct = document.getElementById('descriptionProduct');
 const brandProduct = document.getElementById('brandProduct');
 const imgProduct = document.getElementById('imgProduct');
 const priceProduct = document.getElementById('priceProduct');
+
 const esito = document.getElementById('esito');
+
+const mainContainer = document.getElementById('mainContainer');
 
 
 // --------------- FORM SUBMIT  ---------------
+const formButton = document.getElementById('formButton');
 formButton.addEventListener('click', (e) => {
 
     e.preventDefault();
@@ -62,6 +65,28 @@ async function upload(){
     }catch(err){console.log(err)}
 
 }
+
+// --------------- MODIFY BUTTON  ---------------
+const modifyButton = document.getElementById('modifyButton');
+
+
+modifyButton.addEventListener('click', (e) => {
+
+    const btnPage = document.getElementById('btnPage');
+
+    btnPage.innerHTML = 'Back Office';
+
+    btnPage.setAttribute('href', 'backOffice.html');
+
+    mainContainer.innerHTML = '';
+
+    const searchBar = document.createElement('div');
+
+    
+
+})
+
+
 // async function deletee(){
 //     try{
 //        fetch(url + '645e5dac88f74000142879f1', {

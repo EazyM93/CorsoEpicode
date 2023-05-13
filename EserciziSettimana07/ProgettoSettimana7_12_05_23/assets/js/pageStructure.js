@@ -55,12 +55,12 @@ function populateBody(){
         card.classList.add('col');
 
         card.innerHTML = `<div class="card h-100 shadow-lg">
-    <img src="${product.imageUrl}" class="card-img-top" alt="...">
+    <img src="${product.imageUrl}" class="card-img-top p-2" style="aspect-ratio: 1/1; object-fit: contain;" alt="...">
     <div class="card-body">
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.price} €</p>
     </div>
-    <div class="card-body text-center"> <a href="./details.html?id=${product._id}" type="button" class="btn btnBlue findMore" onclick="findMore()">Scopri di più</a>
+    <div class="card-body text-center"> <a href="./details.html?id=${product._id}" type="button" class="btn btnBlue findMore" onclick="findMore()">scopri di più</a>
     </div>
     </div>`
 
@@ -76,8 +76,6 @@ function populateDetails(id){
 
     const productsArr = JSON.parse(localStorage.getItem('products'));
 
-    console.log(productsArr)
-    console.log(id)
     let currentProduct = '';
     
     productsArr.forEach(product => {
@@ -85,8 +83,7 @@ function populateDetails(id){
         if(product._id === id) currentProduct = product;
 
     });
-console.log(currentProduct)
-
+    
     const containerDetails = document.getElementById('containerDetails');
 
     const details = document.createElement('div');

@@ -28,3 +28,12 @@
 .greenSucceded{
     color: green;
 }
+
+.orangeBtn{
+    color: white;
+    background-color: $orange;
+    &:hover{
+        background-color:darken($color: $orange, $amount: 5);
+        color: white;
+    }
+}

@@ -7,6 +7,10 @@
   color: white;
 }
 
+.findMore {
+  text-transform: uppercase;
+}
+
 #formButton {
   background-color: #fcbf49;
 }
@@ -36,6 +40,15 @@
 
 .greenSucceded {
   color: green;
+}
+
+.orangeBtn {
+  color: white;
+  background-color: #FF7F00;
+}
+.orangeBtn:hover {
+  background-color: #e67200;
+  color: white;
 }
 
 * {
