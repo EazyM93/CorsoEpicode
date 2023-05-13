@@ -1,0 +1,8 @@
+.btnBlue{
+    background-color: $blue;
+    color: white;
+    &:hover{
+        background-color: lighten($color: $blue, $amount: 15);
+        color: white;
+    }
+}

@@ -27,7 +27,7 @@ function populateHeader(fileName){
 
 }
 
-//// --------------- PAGES BUTTON CREATION (HEADER) ---------------
+// --------------- PAGES BUTTON CREATION (HEADER) ---------------
 const btnPage = (par, link) => {
    
     const backBtn = document.createElement('div');
@@ -40,12 +40,44 @@ const btnPage = (par, link) => {
 
 }
 
-// --------------- FETCH ELEMENTS ---------------
-const url = 'https://striveschool-api.herokuapp.com/api/product/';
+// --------------- POPULATE BODY ---------------
+function populateBody(){
+
+    const arrProduct = (JSON.parse(localStorage.getItem('products')));
+    console.log(arrProduct)
+    const productList = document.getElementById('productList');
+
+    
+
+    arrProduct.forEach(product => {
+
+        const card = document.createElement('div');
+
+        card.classList.add('col');
+
+        card.innerHTML = `<div class="card h-100 shadow-lg">
+    <img src="${product.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">${product.price} €</p>
+    </div>
+    <div class="card-body text-center"> <a href="./homepage.html?id=${product._id}" type="button" class="btn btnBlue">Scopri di più</a>
+    </div>
+    </div>`
+
+        productList.appendChild(card);
+        
+    });
+    
+    
+
+}
 
 // --------------- FETCH ---------------
 async function carica(){
-
+    
+    const url = 'https://striveschool-api.herokuapp.com/api/product/';
+    
     try{
         const raw = await fetch(url, {
         
@@ -54,11 +86,14 @@ async function carica(){
         })
 
         if(raw.ok){
-            const response = raw.json();
+            const response = await raw.json();
+            
+            
             localStorage.setItem('products', JSON.stringify(response));
 
             // populate with cards
-            
+            populateBody();
+              
         }
 
     }catch(err){console.log(err)}
@@ -68,14 +103,12 @@ async function carica(){
 // --------------- ONLOAD POPULATE ---------------
 window.onload = () => {
     
-    carica();
-    
     // html file name
     const pageUrl = window.location.pathname;
     const fileName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
 
+    if(fileName === 'homepage.html') carica();
+    
     populateStructure(fileName);
     
-    
-
 }
