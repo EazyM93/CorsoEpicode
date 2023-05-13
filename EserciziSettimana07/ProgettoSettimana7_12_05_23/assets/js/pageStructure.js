@@ -68,8 +68,6 @@ function populateBody(){
         productList.appendChild(card);
         
     });
-    
-    
 
 }
 
