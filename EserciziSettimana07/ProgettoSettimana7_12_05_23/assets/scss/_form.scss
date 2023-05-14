@@ -21,6 +21,14 @@
     }
 }
 
+#deleteButton{
+    background-color: $red;
+    color: white;
+    &:hover{
+        background-color: darken($color: $red, $amount: 10);
+    }
+}
+
 .redError{
     color: $red;
 }

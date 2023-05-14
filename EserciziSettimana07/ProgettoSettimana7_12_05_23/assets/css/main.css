@@ -34,6 +34,14 @@
   background-color: #5a5a5a;
 }
 
+#deleteButton {
+  background-color: #d62828;
+  color: white;
+}
+#deleteButton:hover {
+  background-color: #ab2020;
+}
+
 .redError {
   color: #d62828;
 }
