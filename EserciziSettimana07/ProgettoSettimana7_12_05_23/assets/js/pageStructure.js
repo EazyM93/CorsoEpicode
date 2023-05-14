@@ -91,7 +91,7 @@ function populateDetails(id){
     details.classList.add('row', 'd-flex');
 
     details.innerHTML = `<div class="col text-end">
-    <img src="${currentProduct.imageUrl}" alt="">
+    <img src="${currentProduct.imageUrl}" class="w-100" alt="">
 </div>
 <div class="col">
     <h1 class="mb-3"><span>${currentProduct.brand}</span> - ${currentProduct.name}</h1>

@@ -8,11 +8,18 @@ const mainContainer = document.getElementById('mainContainer');
 const formButton = document.getElementById('formButton');
 formButton.addEventListener('click', (e) => {
 
-    e.preventDefault();
+    const confirmSubmit = confirm('Confermare per aggiungere prodotto.')
 
-    upload();
+    if(confirmSubmit){
 
-    e.target.closest('form').reset();
+        e.preventDefault();
+
+        upload();
+
+        e.target.closest('form').reset();
+
+    }
+    
 
 })
 
