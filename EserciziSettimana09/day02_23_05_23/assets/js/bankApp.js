@@ -1,8 +1,10 @@
 "use strict";
 // Clienti
-class FiglioAccount {
+class Utente {
+    nomeCliente;
+    cognomeCliente;
+    balanceInit = 0;
     constructor(nome, cognome) {
-        this.balanceInit = 0;
         this.nomeCliente = nome;
         this.cognomeCliente = cognome;
     }
@@ -16,7 +18,12 @@ class FiglioAccount {
         return this.balanceInit -= prelievo;
     }
 }
-class MadreAccount extends FiglioAccount {
+class Minorenne extends Utente {
+    constructor(nome, cognome) {
+        super(nome, cognome);
+    }
+}
+class Maggiorenne extends Utente {
     constructor(nome, cognome) {
         super(nome, cognome);
     }
@@ -24,8 +31,8 @@ class MadreAccount extends FiglioAccount {
         return this.balanceInit += (versamento + (versamento * 0.1));
     }
 }
-const figlio = new FiglioAccount('Manuel', 'Centini');
-const madre = new MadreAccount('Dua', 'Lipa');
+const figlio = new Minorenne('Manuel', 'Centini');
+const madre = new Maggiorenne('Dua', 'Lipa');
 // elementi dom figlio
 const sonDeposit = document.getElementById('sonDeposit');
 const sd = document.getElementById('sd');

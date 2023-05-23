@@ -1,11 +1,8 @@
 // Clienti
+abstract class Utente{
 
-class FiglioAccount{
-
-    // dati intestatario conto corrente
     nomeCliente:string;
     cognomeCliente:string;
-
 
     balanceInit:number = 0;
 
@@ -31,8 +28,15 @@ class FiglioAccount{
     }
 
 }
+class Minorenne extends Utente{
 
-class MadreAccount extends FiglioAccount{
+    constructor(nome:string, cognome:string){
+        super(nome, cognome)
+    }
+
+}
+
+class Maggiorenne extends Utente{
 
     constructor(nome:string, cognome:string){
         super(nome, cognome)
@@ -46,9 +50,9 @@ class MadreAccount extends FiglioAccount{
 
 }
 
-const figlio = new FiglioAccount('Manuel', 'Centini');
+const figlio = new Minorenne('Manuel', 'Centini');
 
-const madre = new MadreAccount('Dua', 'Lipa');
+const madre = new Maggiorenne('Dua', 'Lipa');
 
 
 

@@ -1,7 +1,10 @@
 "use strict";
 class SonAccount {
+    // dati intestatario conto corrente
+    nomeCliente;
+    cognomeCliente;
+    balanceInit = 0;
     constructor(nome, cognome) {
-        this.balanceInit = 0;
         this.nomeCliente = nome;
         this.cognomeCliente = cognome;
     }
