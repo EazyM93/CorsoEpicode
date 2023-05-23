@@ -1,3 +1,4 @@
+"use strict";
 // Clienti
 class FiglioAccount {
     constructor(nome, cognome) {
