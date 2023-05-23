@@ -1,12 +1,13 @@
 "use strict";
 // Clienti
 class Utente {
-    nomeCliente;
-    cognomeCliente;
-    balanceInit = 0;
-    constructor(nome, cognome) {
-        this.nomeCliente = nome;
-        this.cognomeCliente = cognome;
+    nome;
+    cognome;
+    balanceInit;
+    constructor(nome, cognome, balanceInit = 0) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.balanceInit = balanceInit;
     }
     displaySaldo() {
         return this.balanceInit;

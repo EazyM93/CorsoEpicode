@@ -1,15 +1,7 @@
 // Clienti
 abstract class Utente{
 
-    nomeCliente:string;
-    cognomeCliente:string;
-
-    balanceInit:number = 0;
-
-    constructor(nome:string, cognome:string){
-        this.nomeCliente = nome;
-        this.cognomeCliente = cognome;
-    }
+    constructor(public nome:string, public cognome:string, public balanceInit:number = 0){}
 
     displaySaldo():number{
         return this.balanceInit;
