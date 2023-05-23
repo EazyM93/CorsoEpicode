@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking</title>
+</head>
+<body>
+
+    <div class="son">
+        <h1>FIGLIO</h1>
+        <h3>Saldo : <span id="viewSonSaldo">0</span><span> €</span></h3>
+        <form id="sonDeposit">
+            <input type="number" id="sd">
+            <button type="submit" id="btnsd">Versamento</button>
+        </form><br>
+        <form id="sonWithDraw">
+            <input type="number" id="swd">
+            <button type="submit" id="btnswd">Prelievo</button>
+        </form>
+    </div>
+
+    <div class="mother">
+        <h1>MADRE <span style="font-size: 0.5em;">(10% interessi)</span></h1>
+        <h3>Saldo : <span id="viewMotherSaldo">0</span><span> €</span></h3>
+        <form id="motherDeposit">
+            <input type="number" id="md">
+            <button type="submit" id="btnmd">Versamento</button>
+        </form><br>
+        <form id="motherWithDraw">
+            <input type="number" id="mwd">
+            <button type="submit" id="btnmwd">Prelievo</button>
+        </form>
+    </div>
+    
+    <script src="./assets/script/bankApp.js"></script>
+</body>
+</html>
