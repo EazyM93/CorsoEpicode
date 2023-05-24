@@ -1,44 +1,66 @@
-// ---------- QUARANTA ----------
-import { Quaranta } from "./quaranta%";
+// aliquota inps attuale : 26,23%
+// aliquote irpef : 15%
+abstract class PartitaIva {
 
-const ral1:number = 3000;
-const utente1 = new Quaranta(ral1);
+    // dichiarazione valori fissi della super classe
+    public tasseInps:number;
+    public tasseIrpef:number;
 
-console.log('---------- UTENTE AL 40% ----------');
-console.log('');
-console.log(`Ral: ${utente1.redditoAnnuoLordo.toFixed(2)} €`);
-console.log(`L'imponibile: ${utente1.getUtile().toFixed(2)} €`);
-console.log(`Tasse Inps: ${utente1.getTasseInps().toFixed(2)} €`);
-console.log(`Tasse Irpef: ${utente1.getTasseIrpef().toFixed(2)} €`);
-console.log(`Reddito Netto: ${utente1.getRedditoAnnuoNetto().toFixed(2)} €`);
-console.log('');
+    // variabili del costruttore
+    constructor(public redditoAnnuoLordo:number,public codRedd:number){
 
-// ---------- CINQUANTA ----------
-import { Cinquanta } from "./cinquanta%";
+        // assegnazione valori fissi della super classe
+        this.tasseInps = 0.2623,
+        this.tasseIrpef = 0.15
 
-const ral2:number = 3000;
-const utente2 = new Cinquanta(ral2);
+    }
 
-console.log('---------- UTENTE AL 54% ----------');
-console.log('');
-console.log(`Ral: ${utente2.redditoAnnuoLordo.toFixed(2)} €`);
-console.log(`L'imponibile: ${utente2.getUtile().toFixed(2)} €`);
-console.log(`Tasse Inps: ${utente2.getTasseInps().toFixed(2)} €`);
-console.log(`Tasse Irpef: ${utente2.getTasseIrpef().toFixed(2)} €`);
-console.log(`Reddito Netto: ${utente2.getRedditoAnnuoNetto().toFixed(2)} €`);
-console.log('');
+    // metodi 
+    getUtile():number {return this.redditoAnnuoLordo * this.codRedd};
 
-// ---------- SESSANTA ----------
-import { Sessanta } from "./sessanta%";
+    getTasseInps():number {return this.getUtile() * this.tasseInps};
 
-const ral3:number = 3000;
-const utente3 = new Sessanta(ral3);
+    getTasseIrpef():number {return this.getUtile() * this.tasseIrpef};
+    
+    getRedditoAnnuoNetto():number {return this.redditoAnnuoLordo - (this.getTasseInps() + this.getTasseIrpef())};
 
-console.log('---------- UTENTE AL 62% ----------');
-console.log('');
-console.log(`Ral: ${utente3.redditoAnnuoLordo.toFixed(2)} €`);
-console.log(`L'imponibile: ${utente3.getUtile().toFixed(2)} €`);
-console.log(`Tasse Inps: ${utente3.getTasseInps().toFixed(2)} €`);
-console.log(`Tasse Irpef: ${utente3.getTasseIrpef().toFixed(2)} €`);
-console.log(`Reddito Netto: ${utente3.getRedditoAnnuoNetto().toFixed(2)} €`);
-console.log('');
+}
+
+class Utente extends PartitaIva{
+
+    constructor(public redditoAnnuoLordo:number,public codRedd:number){ 
+        
+        super(redditoAnnuoLordo, codRedd)
+    
+    }
+
+}
+
+const redditoLordo = document.getElementById('redditoLordo') as HTMLInputElement | null;
+const selectCdr = document.getElementById('selectCdr') as HTMLSelectElement | null;
+const dataInput = document.getElementById('dataInput') as HTMLFormElement;
+
+const ral = document.getElementById('ral') as HTMLParagraphElement;
+const cdr = document.getElementById('cdr') as HTMLParagraphElement;
+const imponibile = document.getElementById('imponibile') as HTMLParagraphElement;
+const inps = document.getElementById('inps') as HTMLParagraphElement;
+const irpef = document.getElementById('irpef') as HTMLParagraphElement;
+const netto = document.getElementById('netto') as HTMLParagraphElement;
+
+
+dataInput.addEventListener('submit', e => {
+
+    e.preventDefault();
+
+    const utente = new Utente(Number(redditoLordo!.value), Number(selectCdr!.value))
+
+    ral.innerHTML = utente.redditoAnnuoLordo.toFixed(2).toString();
+    cdr.innerHTML = (Number(selectCdr!.value) * 100).toString();
+    imponibile.innerHTML = utente.getUtile().toFixed(2).toString();
+    inps.innerHTML = utente.getTasseInps().toFixed(2).toString();
+    irpef.innerHTML = utente.getTasseIrpef().toFixed(2).toString();
+    netto.innerHTML = utente.getRedditoAnnuoNetto().toFixed(2).toString();
+
+    dataInput.reset()
+
+})

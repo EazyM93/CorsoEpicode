@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+</head>
+<body>
+
+    <h1>TAX CALCULATOR</h1>
+    
+    <form id="dataInput">
+
+        <fieldset style="width: fit-content;">
+
+            <label for="redditoLordo">Reddito Lordo</label><br>
+            <input type="number" id="redditoLordo"><br><br>
+
+            <label for="selectCdr">Il tuo Coefficente Di Redditività</label>
+            <select name="selectCdr" id="selectCdr">
+                <option value=""></option>
+                <option value="0.4">40%</option>
+                <option value="0.54">54%</option>
+                <option value="0.62">62%</option>
+                <option value="0.67">67%</option>
+                <option value="0.78">78%</option>
+                <option value="0.86">86%</option>
+            </select><br><br>
+
+            <input type="submit" style="padding: 0.5em;">
+
+        </fieldset>
+
+    </form>
+
+    <div style="margin-left: 1em;">
+        <p>Ral: <span id="ral">0</span> €</p>
+        <p>CDR: <span id="cdr">0</span> %</p>
+        <p>Imponibile: <span id="imponibile">0</span> €</p>
+        <p>Tassa Inps: <span id="inps">0</span> €</p>
+        <p>Tassa Irpef: <span id="irpef">0</span> €</p>
+        <strong><p>Reddito Netto: <span id="netto">0</span> €</p></strong> 
+    </div>
+    
+    <script src="./assets/js/tax.js"></script>
+</body>
+</html>
