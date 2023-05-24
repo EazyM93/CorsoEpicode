@@ -1,19 +1,19 @@
 // aliquota inps attuale : 26,23%
 // aliquote irpef : 15%
-abstract class PartitaIva {
 
-    // dichiarazione valori fissi della super classe
-    public tasseInps:number;
-    public tasseIrpef:number;
+interface Data{
+    
+    redditoAnnuoLordo:number
+    codRedd:number
+    tasseInps:number
+    tasseIrpef:number
+
+}
+
+abstract class PartitaIva implements Data {
 
     // variabili del costruttore
-    constructor(public redditoAnnuoLordo:number,public codRedd:number){
-
-        // assegnazione valori fissi della super classe
-        this.tasseInps = 0.2623,
-        this.tasseIrpef = 0.15
-
-    }
+    constructor(public redditoAnnuoLordo:number,public codRedd:number, public tasseInps:number = 0.2623, public tasseIrpef:number = 0.15){}
 
     // metodi 
     getUtile():number {return this.redditoAnnuoLordo * this.codRedd};
@@ -26,15 +26,7 @@ abstract class PartitaIva {
 
 }
 
-class Utente extends PartitaIva{
-
-    constructor(public redditoAnnuoLordo:number,public codRedd:number){ 
-        
-        super(redditoAnnuoLordo, codRedd)
-    
-    }
-
-}
+class Utente extends PartitaIva{}
 
 const redditoLordo = document.getElementById('redditoLordo') as HTMLInputElement | null;
 const selectCdr = document.getElementById('selectCdr') as HTMLSelectElement | null;
