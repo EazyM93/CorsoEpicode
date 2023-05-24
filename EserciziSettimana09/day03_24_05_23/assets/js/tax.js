@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // ---------- QUARANTA ----------
-const quaranta_1 = require("./modules/quaranta%");
+const quaranta_1 = require("./quaranta%");
 const ral1 = 3000;
 const utente1 = new quaranta_1.Quaranta(ral1);
 console.log('---------- UTENTE AL 40% ----------');
@@ -13,7 +13,7 @@ console.log(`Tasse Irpef: ${utente1.getTasseIrpef().toFixed(2)} €`);
 console.log(`Reddito Netto: ${utente1.getRedditoAnnuoNetto().toFixed(2)} €`);
 console.log('');
 // ---------- CINQUANTA ----------
-const cinquanta_1 = require("./modules/cinquanta%");
+const cinquanta_1 = require("./cinquanta%");
 const ral2 = 3000;
 const utente2 = new cinquanta_1.Cinquanta(ral2);
 console.log('---------- UTENTE AL 54% ----------');
@@ -25,7 +25,7 @@ console.log(`Tasse Irpef: ${utente2.getTasseIrpef().toFixed(2)} €`);
 console.log(`Reddito Netto: ${utente2.getRedditoAnnuoNetto().toFixed(2)} €`);
 console.log('');
 // ---------- SESSANTA ----------
-const sessanta_1 = require("./modules/sessanta%");
+const sessanta_1 = require("./sessanta%");
 const ral3 = 3000;
 const utente3 = new sessanta_1.Sessanta(ral3);
 console.log('---------- UTENTE AL 62% ----------');

@@ -1,5 +1,5 @@
 // ---------- QUARANTA ----------
-import { Quaranta } from "./modules/quaranta%";
+import { Quaranta } from "./quaranta%";
 
 const ral1:number = 3000;
 const utente1 = new Quaranta(ral1);
@@ -14,7 +14,7 @@ console.log(`Reddito Netto: ${utente1.getRedditoAnnuoNetto().toFixed(2)} €`);
 console.log('');
 
 // ---------- CINQUANTA ----------
-import { Cinquanta } from "./modules/cinquanta%";
+import { Cinquanta } from "./cinquanta%";
 
 const ral2:number = 3000;
 const utente2 = new Cinquanta(ral2);
@@ -29,7 +29,7 @@ console.log(`Reddito Netto: ${utente2.getRedditoAnnuoNetto().toFixed(2)} €`);
 console.log('');
 
 // ---------- SESSANTA ----------
-import { Sessanta } from "./modules/sessanta%";
+import { Sessanta } from "./sessanta%";
 
 const ral3:number = 3000;
 const utente3 = new Sessanta(ral3);
