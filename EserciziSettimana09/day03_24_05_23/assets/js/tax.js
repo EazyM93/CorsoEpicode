@@ -39,11 +39,11 @@ const netto = document.getElementById('netto');
 dataInput.addEventListener('submit', e => {
     e.preventDefault();
     const utente = new Utente(Number(redditoLordo.value), Number(selectCdr.value));
-    ral.innerHTML = utente.redditoAnnuoLordo.toFixed(2).toString();
+    ral.innerHTML = utente.redditoAnnuoLordo.toFixed(2);
     cdr.innerHTML = (Number(selectCdr.value) * 100).toString();
-    imponibile.innerHTML = utente.getUtile().toFixed(2).toString();
-    inps.innerHTML = utente.getTasseInps().toFixed(2).toString();
-    irpef.innerHTML = utente.getTasseIrpef().toFixed(2).toString();
-    netto.innerHTML = utente.getRedditoAnnuoNetto().toFixed(2).toString();
+    imponibile.innerHTML = utente.getUtile().toFixed(2);
+    inps.innerHTML = utente.getTasseInps().toFixed(2);
+    irpef.innerHTML = utente.getTasseIrpef().toFixed(2);
+    netto.innerHTML = utente.getRedditoAnnuoNetto().toFixed(2);
     dataInput.reset();
 });
