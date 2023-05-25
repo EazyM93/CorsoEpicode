@@ -72,7 +72,7 @@ async function fetchProdotti() {
     
     try{
 
-        const response = await fetch('./assets/database/abbigliamento.json');     
+        const response = await fetch('https://646f6c1109ff19b120873b10.mockapi.io/abbigliamento');     
 
         if(response.ok) {
 

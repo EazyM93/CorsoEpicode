@@ -63,7 +63,7 @@ function loadProdotti() {
 function fetchProdotti() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('./assets/database/abbigliamento.json');
+            const response = yield fetch('https://646f6c1109ff19b120873b10.mockapi.io/abbigliamento');
             if (response.ok) {
                 const prodotti = yield response.json();
                 return prodotti;
