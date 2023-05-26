@@ -46,6 +46,7 @@ function loadHome() {
         displayUsers.innerHTML += '<div class="col text-center"><a href="./newUser.html" class="btn m-0"><i class="bi bi-person-fill-add text-white" style="font-size: 3em;"></i></a><p>Aggiungi</p><p>Utente</p></div>';
     });
 }
+// SELECT USER
 // FECTH DEI DATI
 function fecthUsers() {
     return __awaiter(this, void 0, void 0, function* () {

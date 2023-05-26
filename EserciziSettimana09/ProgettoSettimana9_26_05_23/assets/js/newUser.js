@@ -20,7 +20,7 @@ nuovoUtenteData.addEventListener('submit', (e) => {
     e.preventDefault();
     // POST DEI DATI
     uploadUser(url);
-    mainZone.innerHTML = `<h4 class="text-center text-white">PROFILO DI ${nome.value.toUpperCase()} CREATO CON SUCCESSO!</h4>`;
+    mainZone.innerHTML = `<h4 class="text-center text-white">PROFILO DI ${nome.value.toUpperCase()} CREATO CON SUCCESSO!</h4><h5 class="text-center text-white">PUOI TORNARE ALLA <a href="./home.html" style="text-decoration: none">HOME</a> </h5>`;
 });
 // FETCH POST
 function uploadUser(url) {
