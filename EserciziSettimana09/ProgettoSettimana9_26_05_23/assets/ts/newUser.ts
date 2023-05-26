@@ -1,39 +1,25 @@
-interface infosim{carica:number;numeroChiamate:number}
-
-class User implements infosim{
-
-    carica:number = 0;
-    numeroChiamate: number = 0;
-
-    constructor(public nome:string, public cellulare:string, public imgProfilo:string){}
-
-    public ricarica(unaRicarica:number):void{this.carica += unaRicarica};
-
-    public chiamata(minutiDurata:number):void{this.carica -= minutiDurata * 0.20;this.numeroChiamate++};
-
-    public numero404():number{return this.carica};
-
-    public getNumeroChiamate():number{return this.numeroChiamate};
-
-    public azzeraChiamate():void{this.numeroChiamate = 0};
-
-}
-
+// URL API MOCKAPI
 const url = 'https://646f6c1109ff19b120873b10.mockapi.io/users';
 
+// ELEMENTI DEL FORM
 const nuovoUtenteData = document.getElementById("nuovoUtenteData") as HTMLFormElement;
 const nome = document.getElementById("nome") as HTMLInputElement | null;
 const cellulare = document.getElementById("cellulare") as HTMLInputElement | null;
 const imgProfilo = document.getElementById("imgProfilo") as HTMLInputElement | null;
 
-
+// SUBMIT DEL FORM
 nuovoUtenteData.addEventListener('submit', (e) => {
+
     e.preventDefault();
 
+    // POST DEI DATI
     uploadUser(url);
+
+    mainZone.innerHTML = `<h4 class="text-center text-white">PROFILO DI ${nome!.value.toUpperCase()} CREATO CON SUCCESSO!</h4>`
+
 })
 
-//fetch post
+// FETCH POST
 async function uploadUser(url:string){
 
     try{

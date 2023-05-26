@@ -8,45 +8,36 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-class User {
-    constructor(nome, cellulare, imgProfilo) {
-        this.nome = nome;
-        this.cellulare = cellulare;
-        this.imgProfilo = imgProfilo;
-        this.carica = 0;
-        this.numeroChiamate = 0;
-    }
-    ricarica(unaRicarica) { this.carica += unaRicarica; }
-    ;
-    chiamata(minutiDurata) { this.carica -= minutiDurata * 0.20; this.numeroChiamate++; }
-    ;
-    numero404() { return this.carica; }
-    ;
-    getNumeroChiamate() { return this.numeroChiamate; }
-    ;
-    azzeraChiamate() { this.numeroChiamate = 0; }
-    ;
-}
+// URL API MOCKAPI
+const url = 'https://646f6c1109ff19b120873b10.mockapi.io/users';
+// ELEMENTI DEL FORM
 const nuovoUtenteData = document.getElementById("nuovoUtenteData");
 const nome = document.getElementById("nome");
 const cellulare = document.getElementById("cellulare");
 const imgProfilo = document.getElementById("imgProfilo");
+// SUBMIT DEL FORM
 nuovoUtenteData.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nuovoUtente = new User(nome.value, cellulare.value, imgProfilo.value);
-    uploadUser(nuovoUtente);
+    // POST DEI DATI
+    uploadUser(url);
+    mainZone.innerHTML = `<h4 class="text-center text-white">PROFILO DI ${nome.value.toUpperCase()} CREATO CON SUCCESSO!</h4>`;
 });
-//fetch post
-function uploadUser(utente) {
+// FETCH POST
+function uploadUser(url) {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = 'https://646f6c1109ff19b120873b10.mockapi.io/users';
         try {
             const response = yield fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(utente)
+                body: JSON.stringify({
+                    nome: nome.value,
+                    cellulare: cellulare.value,
+                    imgProfilo: imgProfilo.value,
+                    carica: 0,
+                    numeroChiamate: 0
+                })
             });
             const data = yield response.json();
             console.log(data);
