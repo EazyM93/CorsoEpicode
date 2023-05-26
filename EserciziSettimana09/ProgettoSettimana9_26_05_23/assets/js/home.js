@@ -35,6 +35,7 @@ function loadHome() {
     return __awaiter(this, void 0, void 0, function* () {
         const usersDati = yield fecthUsers();
         console.log(usersDati);
+        // inserimento lista users
         if (usersDati.length !== 0) {
             usersDati.forEach((user) => {
                 const userCard = document.createElement("div");
@@ -43,7 +44,6 @@ function loadHome() {
                 displayUsers.appendChild(userCard);
             });
         }
-        displayUsers.innerHTML += '<div class="col text-center"><a href="./newUser.html" class="btn m-0"><i class="bi bi-person-fill-add text-white" style="font-size: 3em;"></i></a><p>Aggiungi</p><p>Utente</p></div>';
     });
 }
 // SELECT USER

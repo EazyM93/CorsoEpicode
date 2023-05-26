@@ -30,6 +30,7 @@ async function loadHome(): Promise<void>{
     
     console.log(usersDati);
 
+    // inserimento lista users
     if(usersDati.length !== 0){
         usersDati.forEach((user:any) => {
 
@@ -43,8 +44,6 @@ async function loadHome(): Promise<void>{
                     
         });
     }
-
-    displayUsers.innerHTML += '<div class="col text-center"><a href="./newUser.html" class="btn m-0"><i class="bi bi-person-fill-add text-white" style="font-size: 3em;"></i></a><p>Aggiungi</p><p>Utente</p></div>';
 
 }
 
