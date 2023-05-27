@@ -1,23 +1,4 @@
-interface infosim{carica:number;numeroChiamate:number}
 
-class User implements infosim{
-
-    carica:number = 0;
-    numeroChiamate: number = 0;
-
-    constructor(public nome:string, public cellulare:string, public imgProfilo:string){}
-
-    public ricarica(unaRicarica:number):void{this.carica += unaRicarica};
-
-    public chiamata(minutiDurata:number):void{this.carica -= minutiDurata * 0.20;this.numeroChiamate++};
-
-    public numero404():number{return this.carica};
-
-    public getNumeroChiamate():number{return this.numeroChiamate};
-
-    public azzeraChiamate():void{this.numeroChiamate = 0};
-
-}
 
 // MANIPOLAZIONE DOM
 const mainZone = document.getElementById("mainZone") as HTMLElement;

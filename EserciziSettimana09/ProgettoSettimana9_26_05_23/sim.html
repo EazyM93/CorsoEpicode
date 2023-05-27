@@ -31,21 +31,32 @@
 
                 <div id="mainZone">
                    
-                    <div id="utenteAttuale" class="text-white text-center mb-3 border-bottom">
-                        <p>CURRENT USER</p>
-                        <i class="bi bi-person-fill text-white" style="font-size: 3em;"></i>
-                        <p>Nessun Utente Selezionato</p>
-                    </div> 
-                    
-                    <div id="users" class="overflow-y-scroll" style="height: 300px">
-
-                        <div class="text-white pt-3">
-
-                            <div id="displayUsers" class="row mx-3"></div>                            
-
+                   <div class="text-white text-center">
+                        <h2>CREDITO RESIDUO</h2>
+                        <p class="fs-4" id="utenteNome"></p>
+                        <p class="fs-1 mb-4 border-bottom"><span id="credito">0</span> €</p>
+                        <h5 class="mb-3">EFFETTUA RICARICA</h5>
+                        <div class="row row-cols-3 px-4">
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(10)">10€</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(20)">20€</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(30)">30€</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(50)">50€</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(70)">70€</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn bg-secondary text-white mb-4" onclick="ricaricaUpdate(90)">90€</button>
+                            </div>
                         </div>
-
-                    </div>
+                   </div>
                     
                 </div>
                 
@@ -55,9 +66,9 @@
 
                     <div class="rounded-pill d-flex justify-content-between px-4" style="background: rgba(0, 0, 0, 0.4); width: 300px; height: 50px;">
                     
-                        <a href="./home.html" id="home" class="rounded-circle px-2" style="background-color: grey;"><i class="bi bi-house-door-fill text-white"></i></a>
+                        <a href="./home.html" id="home" class="rounded-circle px-2"><i class="bi bi-house-door-fill text-white"></i></a>
 
-                        <a href="./sim.html" id="sim" class="rounded-circle px-2"><i class="bi bi-sim text-white"></i></a>
+                        <a href="./sim.html" id="sim" class="rounded-circle px-2" style="background-color: grey;"><i class="bi bi-sim text-white"></i></a>
 
                         <a href="./rubrica.html" id="numbers" class="rounded-circle px-2"><i class="bi bi-person-circle text-white"></i></a>
                         
@@ -76,6 +87,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/sim.js"></script>
 </body>
 </html>
