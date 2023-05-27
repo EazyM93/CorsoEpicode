@@ -30,25 +30,34 @@ class User {
 // MANIPOLAZIONE DOM
 const mainZone = document.getElementById("mainZone");
 const displayUsers = document.getElementById("displayUsers");
+const utenteAttuale = document.getElementById("utenteAttuale");
 // POPOLA HOME
 function loadHome() {
     return __awaiter(this, void 0, void 0, function* () {
-        const usersDati = yield fecthUsers();
+        const usersDati = yield fetchUsers();
         console.log(usersDati);
         // inserimento lista users
         if (usersDati.length !== 0) {
             usersDati.forEach((user) => {
                 const userCard = document.createElement("div");
                 userCard.classList.add('col', 'text-center', 'mb-2');
-                userCard.innerHTML = `<button type="button" class="btn m-0" style="border: none;" onclick="selectedUser(${user.id})"><img src="${user.imgProfilo}" alt="" class="rounded-circle" width="75px"></button><p>${user.nome}</p>`;
+                userCard.innerHTML = `<button type="button" class="btn m-0" style="border: none;" onclick="selectedUser(${user.id})"><img src="${user.imgProfilo}" alt="" class="rounded-circle shad" width="75px"></button><p>${user.nome}</p>`;
                 displayUsers.appendChild(userCard);
             });
         }
     });
 }
+// SELECTED USER
+function selectedUser(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const user = yield fetchSelectedUser(id);
+        localStorage.setItem('user', JSON.stringify(id));
+        utenteAttuale.innerHTML = `<p>CURRENT USER</p><img src="${user.imgProfilo}" alt="" class="rounded-circle" width="75px"><p>${user.nome}</p>`;
+    });
+}
 // SELECT USER
 // FECTH DEI DATI
-function fecthUsers() {
+function fetchUsers() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield fetch('https://646f6c1109ff19b120873b10.mockapi.io/users');
@@ -61,6 +70,22 @@ function fecthUsers() {
         }
     });
 }
+function fetchSelectedUser(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch(`https://646f6c1109ff19b120873b10.mockapi.io/users/${id}`);
+            const data = yield response.json();
+            console.log(data);
+            return data;
+        }
+        catch (_a) {
+            (err) => alert(err);
+        }
+    });
+}
 window.onload = () => {
     loadHome();
+    if (localStorage.getItem('user')) {
+        selectedUser(JSON.parse(localStorage.getItem('user')));
+    }
 };
