@@ -1,10 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-tertiary bg-body-tertiary mb-5">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" [routerLink]="['/']"><h5>Home</h5></a>
-        <a class="nav-link" [routerLink]="['/attivi']"><h5>Post Attivi</h5></a>
-        <a class="nav-link" [routerLink]="['/non-attivi']"><h5>Post Non-Attivi</h5></a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+        <a class="nav-link" [routerLink]="['attivi']">Post Attivi</a>
+        <a class="nav-link" [routerLink]="['non-attivi']">Post Non-Attivi</a>
       </div>
     </div>
   </div>
