@@ -1,0 +1,20 @@
+<div *ngFor="let item of datipost" class="d-flex justify-content-center">
+
+  <div *ngIf="item.active">
+
+    <div class="card m-3" style="width: 30rem;">
+
+      <div class="card-body p-0">
+        <h5 class="card-header bg-tertiary">Post</h5>
+        <div class="p-2">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.body}}</p>
+          <p class="card-text">ID: {{item.id}}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
