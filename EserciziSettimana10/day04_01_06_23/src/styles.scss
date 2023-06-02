@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(211, 162, 170);
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

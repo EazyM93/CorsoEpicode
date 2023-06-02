@@ -1,0 +1,38 @@
+<div class="container text-center" style="width: 30em">
+
+  <ng-container *ngIf="loading; else taskIsPresent">
+    <p class="mb-3">Recuperando i task...</p>
+  </ng-container>
+
+  <ng-template #taskIsPresent>
+
+    <ng-container *ngIf="todoList.length === 0; else elseBlock">
+      <p class="mb-3">OPS...NON CI SONO TASK</p>
+    </ng-container>
+
+    <ng-template #elseBlock>
+
+      <div *ngFor="let item of todoList" class="mb-3">
+
+        <div *ngIf="!item.completed">
+
+          <p class="bg-primary p-2 rounded-pill">{{item.title}} <i class="bi bi-check-square-fill p-0" (click)="done(item.id)"></i></p>
+
+        </div>
+
+      </div>
+
+    </ng-template>
+
+  </ng-template>
+
+
+
+  <div class="input-group">
+
+    <input type="text" class="form-control" [(ngModel)]="newTask">
+    <button type="button" class="btn" style="background-color: bisque;" (click)="addTask(newTask)">AddTask</button>
+
+  </div>
+
+</div>
