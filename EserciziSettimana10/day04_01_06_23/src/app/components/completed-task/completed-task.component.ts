@@ -25,4 +25,19 @@ export class CompletedTaskComponent implements OnInit {
 
   }
 
+  checkDeleted():boolean{
+
+    return this.completedTasks.every(e => e.completed === false);
+
+  }
+
+  deleteCompletedTask() {
+
+    setTimeout(() => {
+      this.todoSrv.deleteCompleted();
+      this.completedTasks = this.todoSrv.getList();
+    }, 2000)
+
+  }
+
 }

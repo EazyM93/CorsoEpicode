@@ -15,10 +15,13 @@ export class TodoListService {
   //metodo che ha come parametro un title, sul quale costruisce un oggetto e poi lo inserisce nell'array
   addTodo(title: string):void { this.taskList.push({id: this.taskList.length + 1, title, completed: false}) }
 
-  // metodo ceh ritorna l'array
+  // metodo che ritorna l'array
   getList():Todo[] { return this.taskList }
 
   // metdo che rimuove tutti gli oggetti dell'array
   clearList():void { this.taskList = []; }
+
+  // metodo che rimuove solo i task completati
+  deleteCompleted():void { this.taskList = this.taskList.filter(task =>!task.completed) }
 
 }

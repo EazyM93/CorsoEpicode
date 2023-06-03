@@ -1,18 +1,18 @@
 <div class="container text-center text-white" style="width: 30em">
 
   <ng-container *ngIf="loading; else elseBlock">
-    <p class="mb-3">Recuperando i task completati...</p>
+    <p class="mb-3" style="font-size: 1.5em;">Recuperando i task completati...</p>
   </ng-container>
 
   <ng-template #elseBlock>
 
-    <ng-container *ngIf="completedTasks.length !== 0; else empty">
+    <ng-container *ngIf="completedTasks.length !== 0 && !checkDeleted(); else empty">
 
-      <div>
-        <p>COMPLETED TASKS <button class="rounded-pill">Clear list</button></p>
+      <div class="mb-3">
+        <p style="font-size: 1.5em;">COMPLETED TASKS <button class="rounded-pill" (click)="deleteCompletedTask()">Delete completed task list</button></p>
       </div>
 
-      <div class="text-start d-flex">
+      <div class="text-start d-flex flex-wrap">
         <div *ngFor="let item of completedTasks" class="mb-3">
 
           <div *ngIf="item.completed">
@@ -26,7 +26,7 @@
 
     <ng-template #empty>
 
-      <p class="mb-3">NON SONO PRESENTI TASK RISOLTI</p>
+      <p class="mb-3" style="font-size: 1.5em;">NON SONO PRESENTI TASK RISOLTI</p>
 
     </ng-template>
 
