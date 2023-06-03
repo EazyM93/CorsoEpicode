@@ -43,7 +43,7 @@
   </div>
 
   <div>
-    <button type="button" class="btn bg-danger text-white" (click)="clearList()">RESET LIST</button>
+    <button type="button" class="btn bg-danger text-white" (click)="clearList()" [disabled]="todoList.length === 0 ? true : false">RESET LIST</button>
   </div>
 
 </div>
