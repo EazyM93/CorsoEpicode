@@ -1,5 +1,5 @@
 p{
-  color: white;
+  color: black;
   font-size: 1.5em;
   i{
     color: rgb(116, 190, 3)
@@ -8,4 +8,9 @@ p{
 
 i:hover{
   cursor:pointer;
+}
+
+input{
+
+  border: 2px solid rgb(207, 179, 18);
 }

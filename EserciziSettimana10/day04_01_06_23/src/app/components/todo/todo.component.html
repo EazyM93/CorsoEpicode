@@ -35,10 +35,10 @@
 
 
 
-  <div class="input-group mb-3">
+  <div class="mb-3 d-flex align-items-center">
 
-    <input type="text" class="form-control" [(ngModel)]="newTask">
-    <button type="button" class="btn" style="background-color: bisque;" (click)="addTask(newTask)">AddTask</button>
+    <input type="text" class="form-control me-1" [(ngModel)]="newTask">
+    <i class="bi bi-plus-circle-fill fs-4" style="color: #1D5C62" (click)="addTask(newTask)"></i>
 
   </div>
 

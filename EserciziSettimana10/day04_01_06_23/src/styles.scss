@@ -2,12 +2,14 @@
 @import '~bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  background-color: rgb(175, 165, 167);
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F7;
 }
 
 p{
