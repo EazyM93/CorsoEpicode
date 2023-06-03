@@ -6,7 +6,7 @@
 
   <ng-template #taskIsPresent>
 
-    <ng-container *ngIf="todoList.length === 0; else elseBlock">
+    <ng-container *ngIf="todoList.length === 0 || checkCompleted(); else elseBlock">
       <p class="mb-3">OPS...NON CI SONO TASK</p>
     </ng-container>
 
@@ -14,9 +14,16 @@
 
       <div *ngFor="let item of todoList" class="mb-3">
 
-        <div *ngIf="!item.completed">
+        <div *ngIf="!item.completed" class="d-flex justify-content-between p-2 rounded-pill" style="background-color:burlywood;">
 
-          <p class="bg-primary p-2 rounded-pill">{{item.title}} <i class="bi bi-check-square-fill p-0" (click)="done(item.id)"></i></p>
+          <div class="ms-2">
+            <p>{{item.title}}</p>
+          </div>
+
+          <div>
+            <button type="button" class="btn bg-success text-white me-2 rounded-pill" (click)="changes(item.id, 'done')">Done</button>
+            <button type="button" class="btn bg-danger text-white me-2 rounded-pill" (click)="changes(item.id, 'dadegi')">Delete</button>
+          </div>
 
         </div>
 
@@ -28,11 +35,15 @@
 
 
 
-  <div class="input-group">
+  <div class="input-group mb-3">
 
     <input type="text" class="form-control" [(ngModel)]="newTask">
     <button type="button" class="btn" style="background-color: bisque;" (click)="addTask(newTask)">AddTask</button>
 
+  </div>
+
+  <div>
+    <button type="button" class="btn bg-danger text-white" (click)="clearList()">RESET LIST</button>
   </div>
 
 </div>

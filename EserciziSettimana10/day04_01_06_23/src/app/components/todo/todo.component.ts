@@ -29,15 +29,17 @@ export class TodoComponent implements OnInit {
 
   }
 
-  // funzione che gestisce quando premiamo l'icona del task completato cercando in base all' id
-  done(id:number):void{
+  // funzione che gestisce quando premiamo l'icona del task completato o cancellato cercando in base all' id
+  changes(id:number, change:string):void{
 
-    (this.todoSrv.getList()).forEach(e => {
+    const arr = this.todoSrv.getList()
+
+    arr.forEach(e => {
 
       if(e.id === id){
 
         setTimeout(() => {
-          e.completed = true; // modifica il completamento
+          (change === 'done') ? e.completed = true : arr.splice(arr.indexOf(e), 1);
         }, 2000)
 
       }
@@ -46,7 +48,7 @@ export class TodoComponent implements OnInit {
 
   }
 
-// funzione che gestisce quando inseriamo un nuovo task
+  // funzione che gestisce quando inseriamo un nuovo task
   addTask(inputTask: string):void{
 
     setTimeout(() => {
@@ -56,5 +58,20 @@ export class TodoComponent implements OnInit {
 
   }
 
+  // clear list
+  clearList():void{
+    this.todoSrv.clearList();
+    setTimeout(() => {
+      this.todoList = this.todoSrv.getList()
+    }, 2000)
+  }
+
+  // check delle proprietà completed, ci sono due modi per eseguire questo check: filter o every
+  checkCompleted():boolean{
+
+    return this.todoList.every(e => e.completed === true);
+    // this.todoList.filter(e => e.completed === true).length > 0
+
+  }
 
 }

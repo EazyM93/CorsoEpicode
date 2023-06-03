@@ -1,7 +1,7 @@
 <div class="container text-center text-white" style="width: 30em">
 
   <ng-container *ngIf="loading; else elseBlock">
-    <p class="mb-3">Recuperando i task compleytati...</p>
+    <p class="mb-3">Recuperando i task completati...</p>
   </ng-container>
 
   <ng-template #elseBlock>
@@ -9,7 +9,7 @@
     <ng-container *ngIf="completedTasks.length !== 0; else empty">
 
       <div>
-        <p>COMPLETED TASKS</p>
+        <p>COMPLETED TASKS <button class="rounded-pill">Clear list</button></p>
       </div>
 
       <div class="text-start d-flex">

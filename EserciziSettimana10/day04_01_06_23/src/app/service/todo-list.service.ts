@@ -18,5 +18,7 @@ export class TodoListService {
   // metodo ceh ritorna l'array
   getList():Todo[] { return this.taskList }
 
+  // metdo che rimuove tutti gli oggetti dell'array
+  clearList():void { this.taskList = []; }
 
 }
