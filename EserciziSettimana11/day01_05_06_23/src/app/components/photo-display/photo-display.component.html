@@ -1,0 +1,31 @@
+<div class="container mt-5">
+
+  <p>FAVOURITES PHOTOS {{favourites}}</p>
+  <ng-container *ngIf="photosArr; else loading">
+
+    <div class="row row-cols-4">
+      <div *ngFor="let card of photosArr" class="col mb-3">
+
+        <div class="card h-100">
+          <img [src]="card.thumbnailUrl" class="card-img-top" alt="card_image" />
+          <div class="card-body">
+            <h5 class="card-title">{{card.title}}</h5>
+            <a (click)="onDeletePhoto(card.id)" class="btn btn-danger ">Elimina</a>
+            <a (click)="onFavorite()" class="btn  btn-success ms-4">Mi piace</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </ng-template>
+
+</div>
+
+
