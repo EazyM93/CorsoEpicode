@@ -1,0 +1,31 @@
+<div *ngIf="loading; else esleBlock">
+
+  <div class="row row-cols-3">
+
+    <div *ngFor="let movie of movies">
+
+      <div class="col mb-3">
+          <div class="card h-100" style="background-color: #1C1C1C">
+            <img src={{baseUrl+movie.poster_path}} class="card-img-top" alt="...">
+            <div class="card-body yellowPar">
+              <h5 class="card-title">{{movie.title}}</h5>
+            </div>
+            <div class="text-start">
+              <i class="bi bi-heart-fill mx-2 fs-3" style="color: rgba(255, 255, 255, 0.816);"></i>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #esleBlock>
+  <p>Loading Movies...</p>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading Movies...</span>
+  </div>
+</ng-template>
