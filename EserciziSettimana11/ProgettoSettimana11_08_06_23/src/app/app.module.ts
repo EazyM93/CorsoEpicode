@@ -8,8 +8,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MoviepageComponent } from './components/moviepage/moviepage.component';
 import { FavouritespageComponent } from './components/favouritespage/favouritespage.component';
 import { ProfilepageComponent } from './components/profilepage/profilepage.component';
-import { LoginpageComponent } from './components/loginpage/loginpage.component';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
+import { LoginComponent } from './auth/login/login.component';
+
+
 
 const routes: Route[] = [
 
@@ -31,7 +33,7 @@ const routes: Route[] = [
   },
   {
     path: 'login',
-    component: LoginpageComponent
+    component: LoginComponent
   }
 
 ];
@@ -43,8 +45,8 @@ const routes: Route[] = [
     MoviepageComponent,
     FavouritespageComponent,
     ProfilepageComponent,
-    LoginpageComponent,
-    WelcomepageComponent
+    WelcomepageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
