@@ -9,11 +9,16 @@ import { StreamingpirataSRVService } from 'src/app/service/streamingpirata-srv.s
 })
 export class WelcomepageComponent implements OnInit {
 
-
+  variabileUtente: boolean = false;
 
   constructor(private moviesSrv: StreamingpirataSRVService) { }
 
   ngOnInit(): void {
   }
 
+  checkUserWelcome(){
+    return (this.variabileUtente) ? `Ciao Manuel!
+    Bentornato!` : `Sei un nuovo utente!
+    Registrati per usufruire dei nostri servizi!`;
+  }
 }
