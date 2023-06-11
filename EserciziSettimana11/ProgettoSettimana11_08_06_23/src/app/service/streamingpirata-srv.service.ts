@@ -17,8 +17,8 @@ export class StreamingpirataSRVService {
     return this.httpClient.get(this.jsonMovies);
   }
 
-  singup(data: { nome: string; cognome: string; email: string; password: string;
-  }){
+  singup(data: { nome: string; cognome: string; email: string; password: string; favourites:number[] }){
+    data.favourites = [];
     return this.httpClient.post('http://localhost:4201/api/users', data);
   }
 
