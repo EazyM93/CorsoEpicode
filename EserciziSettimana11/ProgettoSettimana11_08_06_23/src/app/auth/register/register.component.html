@@ -1,1 +1,19 @@
-<p>register works!</p>
+<form #form="ngForm" (ngSubmit)="register(form)" class="p-4 mb-5 text-start" style="background-color: #1C1C1C;">
+  <h2 class="mb-5 text-center">{{'effettua la registrazione' | uppercase}}</h2>
+  <div class="form-group">
+    <label for="nome">Nome</label><br>
+    <input required ngModel class="form-control mb-3" type="text" name="nome" id="nome">
+    <label for="cognome">Cognome</label><br>
+    <input required ngModel class="form-control mb-3" type="text" name="cognome" id="cognome">
+  </div>
+  <div class="form-group">
+    <label for="Email">Email</label><br>
+    <input required ngModel class="form-control mb-3" type="email" name="email" id="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label><br>
+    <input required ngModel class="form-control mb-3" type="password" name="password" id="password">
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-warning">Registrati</button>
+</form>
+

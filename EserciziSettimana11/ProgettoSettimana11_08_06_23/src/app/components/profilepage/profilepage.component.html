@@ -1,1 +1,14 @@
-<p>profilepage works!</p>
+<div *ngIf="loading; else esleBlock">
+  <div class="p-4 text-start" style="background-color: #1C1C1C;">
+    <h3><span class="yellowPar">User:</span> {{ currentUserId }}</h3>
+    <h3><span class="yellowPar">Nome:</span> {{ currentUserName }}</h3>
+    <h3><span class="yellowPar">Email:</span> {{ currentUserEmail }}</h3>
+  </div>
+</div>
+
+<ng-template #esleBlock>
+  <p>Loading Users...</p>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading Movies...</span>
+  </div>
+</ng-template>

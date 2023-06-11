@@ -5,6 +5,6 @@ export interface User {
   cognome: string;
   email: string;
   password: string;
-  favourites: number[];
+  favorites: number[];
 
 }

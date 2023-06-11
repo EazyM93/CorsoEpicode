@@ -1,6 +1,66 @@
 {
   "users": [
-
+    {
+      "nome": "Manuel",
+      "cognome": "Centini",
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "favourites": [],
+      "id": 1
+    },
+    {
+      "nome": "Luca",
+      "cognome": "Iannice",
+      "email": "lucaiannice@gmail.com",
+      "password": "luca",
+      "favourites": [],
+      "id": 2
+    },
+    {
+      "nome": "Luca",
+      "cognome": "Quaglino",
+      "email": "lucaquaglino@gmail.com",
+      "password": "luca2",
+      "favourites": [],
+      "id": 3
+    }
+  ],
+  "login": [
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 1
+    },
+    {
+      "email": "lucaiannice@gmail.com",
+      "password": "luca",
+      "id": 2
+    },
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 3
+    },
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 4
+    },
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 5
+    },
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 6
+    },
+    {
+      "email": "manuelcentini@gmail.com",
+      "password": "manuel",
+      "id": 7
+    }
   ],
   "movies-popular": [
     {
