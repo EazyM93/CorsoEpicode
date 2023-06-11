@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { StreamingpirataSRVService } from 'src/app/service/streamingpirata-srv.service';
 
 @Component({
     selector: 'app-login',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-    constructor() {}
+  constructor(private movieSrv: StreamingpirataSRVService) {}
 
-    ngOnInit(): void {}
+  ngOnInit(): void {}
 
+  register(form: NgForm): void {
+    try{
+      this.movieSrv.singup(form.value).subscribe();
+    }catch(e){console.log(e);}
+  }
 
 }
