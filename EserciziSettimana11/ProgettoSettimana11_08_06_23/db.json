@@ -5,7 +5,9 @@
       "cognome": "Centini",
       "email": "manuelcentini@gmail.com",
       "password": "manuel",
-      "favourites": [],
+      "favourites": [
+        567189
+      ],
       "id": 1
     },
     {
@@ -30,36 +32,6 @@
       "email": "manuelcentini@gmail.com",
       "password": "manuel",
       "id": 1
-    },
-    {
-      "email": "lucaiannice@gmail.com",
-      "password": "luca",
-      "id": 2
-    },
-    {
-      "email": "manuelcentini@gmail.com",
-      "password": "manuel",
-      "id": 3
-    },
-    {
-      "email": "manuelcentini@gmail.com",
-      "password": "manuel",
-      "id": 4
-    },
-    {
-      "email": "manuelcentini@gmail.com",
-      "password": "manuel",
-      "id": 5
-    },
-    {
-      "email": "manuelcentini@gmail.com",
-      "password": "manuel",
-      "id": 6
-    },
-    {
-      "email": "manuelcentini@gmail.com",
-      "password": "manuel",
-      "id": 7
     }
   ],
   "movies-popular": [

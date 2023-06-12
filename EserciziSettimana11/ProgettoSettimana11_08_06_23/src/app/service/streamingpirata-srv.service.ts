@@ -43,6 +43,11 @@ export class StreamingpirataSRVService {
   )
   }
 
+  putFav(arr: number[], userId:number): void{
+    const body = {favourites: arr};
+    this.httpClient.put<any>(`${this.jsonMovies}users/${userId}`, body);
+  }
+
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
