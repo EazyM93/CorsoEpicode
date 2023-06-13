@@ -39,7 +39,7 @@ export class MoviepageComponent implements OnInit {
         if(JSON.parse(localStorage.getItem('user')!).email === user.email) {
           this.userId = user.id!;
           this.arrFav = user.favourites;
-          this.arrFav.push(id)
+          this.arrFav.push(id);
           console.log(`${this.arrFav} è uscito`)
         }
       });

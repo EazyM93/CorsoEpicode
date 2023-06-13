@@ -1,0 +1,17 @@
+<div class="row row-cols-4 g-4">
+  <div *ngFor="let photo of groupPhoto">
+    <div class="col">
+      <div class="card h-100">
+        <img src={{photo.url}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="text-center">{{'immagine '+photo.id | uppercase}}</p>
+          <div class="d-flex justify-content-between">
+            <button class="btn bg-primary text-white">Modifica titolo</button>
+          <button class="btn bg-danger text-white"><i class="bi bi-x-square fs-5"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
